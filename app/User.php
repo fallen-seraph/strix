@@ -6,7 +6,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-
     protected $connection = 'strixdb';
     protected $table = 'users';
 
@@ -16,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'account_id', 'username', 'email', 'password',
+        'username', 'email', 'password',
     ];
 
     /**
@@ -27,8 +26,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function account_information(){
-        return $this->belongsTo('App\account_information');
-    }
 }
