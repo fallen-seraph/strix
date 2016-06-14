@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class account_information extends Model
 {
-    protected $fillable = ['email', 'first_name', 'last_name', 'account_type', 'service', 'company', 'email', 'phone', 'address_one', 'address_two', 'city', 'state', 'zip', 'country'];
-    protected $connection = 'strixdb';
+    protected $fillable = ['email', 'account_type', 'service', 'first_name', 'last_name', 'company','phone', 'address_one', 'address_two', 'city', 'state', 'zip', 'country'];
+    //protected $connection = 'strixdb';
     protected $table = 'account_information';
 
     public function billing_information(){
@@ -18,7 +18,7 @@ class account_information extends Model
         return $this->hasMany('App\invoices');
     }
 
-    public function User(){
-        return $this->hasMany('App\User');
-    }
+    // public function User(){
+    //     return $this->hasMany('App\User');
+    // }
 }
