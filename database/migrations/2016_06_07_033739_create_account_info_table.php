@@ -14,19 +14,19 @@ class CreateAccountInfoTable extends Migration
     {
         Schema::connection('mysql')->create('account_information', function (Blueprint $table) {
             $table->increments('account_id');
-			$table->string('first_name');
-			$table->string('last_name');
+			$table->string('first_name')->nullable();
+			$table->string('last_name')->nullable();
 			$table->string('account_type');
 			$table->boolean('service');
 			$table->string('company')->nullable();
 			$table->string('email')->unique();
-			$table->string('phone');//111-222-3333
-			$table->string('address_one');
+			$table->string('phone')->nullable();//111-222-3333
+			$table->string('address_one')->nullable();
 			$table->string('address_two')->nullable();
-			$table->string('city');
-			$table->string('state');
-			$table->integer('zip')->unsigned();
-			$table->string('country');
+			$table->string('city')->nullable();
+			$table->string('state')->nullable();
+			$table->integer('zip')->unsigned()->nullable();
+			$table->string('country')->nullable();
             $table->timestamps();
         });
     }
