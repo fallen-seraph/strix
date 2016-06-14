@@ -10,7 +10,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::connection('strixdb')->create('users', function (Blueprint $table) {
+        Schema::connection('mysql')->create('users', function (Blueprint $table) {
 		$table->increments('id');
         	//$table->integer('account_id')->unsigned();
         	//$table->string('username');
@@ -28,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::connection('strixdb')->drop('users');
+        Schema::connection('mysql')->drop('users');
     }
 }
