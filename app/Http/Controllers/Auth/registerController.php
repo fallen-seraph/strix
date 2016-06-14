@@ -17,12 +17,12 @@ class registerController extends Controller
         return view('register');
     }
     public function register(Request $request, account_information $account, User $user){
-        // $this->validate($request, [
-        // 	'username' => 'required|unique:mysql.users,username',
-        // 	'password' => 'required|min:8|confirmed',
-        // 	'password_confirmation' => 'required|min:8',
-        // 	'email' => 'required|email|unique:mysql.users,email'
-        // ]);
+        $this->validate($request, [
+        	'username' => 'required|unique:mysql.users,username',
+        	'password' => 'required|min:8|confirmed',
+        	'password_confirmation' => 'required|min:8',
+        	'email' => 'required|email|unique:mysql.users,email'
+        ]);
         
         $account->create([
             'email' => $request->email,
