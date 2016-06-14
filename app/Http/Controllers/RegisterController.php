@@ -26,10 +26,10 @@ class RegisterController extends Controller
         
         $account->create([
             'email' => $request->email,
-            'first_name' => $request->fname,
-            'last_name' => $request->lname,
             'account_type' => $request->account_type,
             'service' => 0,
+            'first_name' => $request->fname,
+            'last_name' => $request->lname,
             'company' => $request->company,
             'phone' => $request->phone,
             'address_one' => $request->addr_one,
@@ -44,12 +44,11 @@ class RegisterController extends Controller
         
         $user->create([
             'account_id' => $accountId,
-            'username' => $request->user,
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ]);
         
-        Schema::connection('accountLogs')->create($accountId, function (Blueprint $table) {
+        Schema::connection('accountLogs')->create($request->email, function (Blueprint $table) {
             $table->increments('log_num');
             $table->string('type');
             $table->string('value');
