@@ -12,7 +12,7 @@ class CreateInvoiceItemsTable extends Migration
      */
     public function up()
     {
-        Schema::connection('strixdb')->create('invoice_items', function (Blueprint $table) {
+        Schema::connection('mysql')->create('invoice_items', function (Blueprint $table) {
             $table->integer('account_id')->unsigned();
             $table->integer('invoice_number')->unsigned();
             $table->integer('line_number')->unsigned();
@@ -20,7 +20,7 @@ class CreateInvoiceItemsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::connection('strixdb')->table('invoice_items', function($table) {
+        Schema::connection('mysql')->table('invoice_items', function($table) {
             $table->foreign('account_id')->references('account_id')->on('account_information');
             $table->foreign('invoice_number')->references('invoice_number')->on('invoices');
         });
@@ -32,6 +32,6 @@ class CreateInvoiceItemsTable extends Migration
      */
     public function down()
     {
-        Schema::connection('strixdb')->drop('invoice_items');
+        Schema::connection('mysql')->drop('invoice_items');
     }
 }
