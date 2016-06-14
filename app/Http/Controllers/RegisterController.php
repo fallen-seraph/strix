@@ -55,13 +55,8 @@ class RegisterController extends Controller
             $table->timestamps();
         });
         
-        $user = new User;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        
-        Auth::login($user);
-        
+        return redirect()->action('Auth\AuthController@login', ['email' => $request->email, 'password' => bcrypt(password)]);
             
-        return view('monitoring');
+        //return view('monitoring');
     }
 }
