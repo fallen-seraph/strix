@@ -12,7 +12,7 @@ class CreateUsersTable extends Migration
     {
         Schema::connection('mysql')->create('users', function (Blueprint $table) {
 		$table->increments('id');
-        	//$table->integer('account_id')->unsigned();
+        	$table->integer('account_id')->unsigned();
         	//$table->string('username');
         	$table->string('email')->unique();
         	$table->string('password');
