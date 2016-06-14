@@ -14,7 +14,7 @@ use App\Http\Requests;
 class RegisterController extends Controller
 {
     public function showForm(){
-        return view('register');
+        return view('auth.register');
     }
     public function register(Request $request, account_information $account, User $user){
         $this->validate($request, [
