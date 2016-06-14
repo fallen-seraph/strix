@@ -55,7 +55,7 @@ class RegisterController extends Controller
             $table->timestamps();
         });
         
-        if(Auth::attempt([$request->email, bcrypt($request->password)])){
+        if(Auth::attempt(['email' => $request->email, 'password' => bcrypt($request->password)])){
             return view('monitoring');
         }
         return view('login');
