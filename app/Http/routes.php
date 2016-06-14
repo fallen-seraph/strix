@@ -20,8 +20,8 @@ Route::post('login', 'Auth\AuthController@login');
 Route::get('logout', 'Auth\AuthController@logout');
 
 // Registration Routes...
-Route::get('register', 'Auth\registerController@showForm');
-Route::post('register', 'Auth\registerController@register');
+Route::get('register', 'Auth\RegisterController@showForm');
+Route::post('register', 'Auth\RegisterController@register');
 
 // Password Reset Routes...
 Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
