@@ -55,7 +55,7 @@ class RegisterController extends Controller
             $table->timestamps();
         });
         
-        Auth::login($request->email);
+        Auth::login($user);
             
         return view('monitoring');
     }
