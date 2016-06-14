@@ -10,7 +10,7 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql')->create('products', function (Blueprint $table) {
+        Schema::connection('strixProducts')->create('products', function (Blueprint $table) {
             $table->integer('product_id')->unique();
 			$table->string('product_name');
 			$table->text('product_description')->nullable();
@@ -25,6 +25,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::connection('mysql')->drop('products');
+        Schema::connection('strixProducts')->drop('products');
     }
 }
