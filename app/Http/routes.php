@@ -29,3 +29,10 @@ Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
 Route::post('password/reset', 'Auth\PasswordController@reset');
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('monitoring', 'monitoringController@index');
+Route::get('monitoring/hosts', 'monitoringController@hosts');
+Route::get('monitoring/users', 'monitoringController@users');
+Route::get('monitoring/contacts', 'monitoringController@contacts');
+Route::get('monitoring/contactgroups', 'monitoringController@contactgroups');
+Route::get('monitoring/settings', 'monitoringController@settings');
