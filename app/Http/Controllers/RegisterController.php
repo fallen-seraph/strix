@@ -48,7 +48,7 @@ class RegisterController extends Controller
             'password' => bcrypt($request->password)
         ]);
         
-        Schema::connection('accountLogs')->create($request->email, function (Blueprint $table) {
+        Schema::connection('accountLogs')->create($accountId, function (Blueprint $table) {
             $table->increments('log_num');
             $table->string('type');
             $table->string('value');
