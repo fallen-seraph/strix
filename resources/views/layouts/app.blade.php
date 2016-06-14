@@ -48,11 +48,12 @@
                 <!-- Left Side Of Navbar -->
                 @if (Auth::guest())
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/home') }}">Home</a></li>
                     </ul>
                 @else
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/monitoring') }}">Home</a></li>
+                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('/monitoring') }}">Monitoring</a></li>
                     </ul>
                 @endif
 
