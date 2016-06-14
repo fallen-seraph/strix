@@ -10,7 +10,7 @@ class CreateBillingInfoTable extends Migration
      */
     public function up()
     {
-        Schema::connection('strixdb')->create('billing_information', function (Blueprint $table) {
+        Schema::connection('mysql')->create('billing_information', function (Blueprint $table) {
 			$table->increments('billing_id')->unique();
 			$table->integer('account_id')->unsigned();
 			$table->string('first_name');
@@ -39,6 +39,6 @@ class CreateBillingInfoTable extends Migration
      */
     public function down()
     {
-        Schema::connection('strixdb')->drop('billing_information');
+        Schema::connection('mysql')->drop('billing_information');
     }
 }
