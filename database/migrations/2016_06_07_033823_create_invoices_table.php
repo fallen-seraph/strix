@@ -10,7 +10,7 @@ class CreateInvoicesTable extends Migration
      */
     public function up()
     {
-        Schema::connection('strixdb')->create('invoices', function (Blueprint $table) {
+        Schema::connection('mysql')->create('invoices', function (Blueprint $table) {
         	$table->increments('invoice_number');
             $table->integer('account_id')->unsigned();
             $table->string('invoice_status');
@@ -27,6 +27,6 @@ class CreateInvoicesTable extends Migration
      */
     public function down()
     {
-        Schema::connection('strixdb')->drop('invoices');
+        Schema::connection('mysql')->drop('invoices');
     }
 }
