@@ -12,7 +12,7 @@ class CreateAccountInfoTable extends Migration
      */
     public function up()
     {
-        Schema::connection('strixdb')->create('account_information', function (Blueprint $table) {
+        Schema::connection('mysql')->create('account_information', function (Blueprint $table) {
             $table->increments('account_id');
 			$table->string('first_name');
 			$table->string('last_name');
@@ -38,6 +38,6 @@ class CreateAccountInfoTable extends Migration
      */
     public function down()
     {
-        Schema::connection('strixdb')->drop('account_information');
+        Schema::connection('mysql')->drop('account_information');
     }
 }
