@@ -12,7 +12,7 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-        Schema::connection('strixdb')->create('password_resets', function (Blueprint $table) {
+        Schema::connection('mysql')->create('password_resets', function (Blueprint $table) {
             $table->string('email')->index();
             $table->string('token')->index();
             $table->timestamp('created_at');
@@ -26,6 +26,6 @@ class CreatePasswordResetsTable extends Migration
      */
     public function down()
     {
-        Schema::connection('strixdb')->drop('password_resets');
+        Schema::connection('mysql')->drop('password_resets');
     }
 }
