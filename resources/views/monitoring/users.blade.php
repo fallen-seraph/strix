@@ -9,7 +9,8 @@
 
                     <div class="panel-body">
                         <ul>
-                            @foreach ($users-all() as $user)
+                            <?php dd($user) ?>
+                            @foreach ($users->email as $user)
                                 <li>{{ $user }}</li>
                             @endforeach
                         </ul>
