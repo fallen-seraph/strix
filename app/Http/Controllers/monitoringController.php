@@ -13,6 +13,7 @@ class monitoringController extends Controller
         return view('monitoring.home');
     }
     public function users(){
+        //$user = User::where();
         return view('monitoring.users');
     }
     public function contacts(){
