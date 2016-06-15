@@ -35,9 +35,9 @@ class monitoringController extends Controller
         return redirect()->action('monitoringController@users');
     }
     public function deleteUsers($user){
-
-        User::where('email', $user)->delete();
-
+        if(User::where('account_id', Auth::user()->account_id)-value('email') = $user){
+            User::where('email', $user)->delete();
+        }
         return back();
     }
     public function contacts(){
