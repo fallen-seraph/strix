@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    <a href="monitoring">Monitoring Home</a>
+    <a href="">Monitoring Home</a>
     <a href="monitoring/users">Users</a>
     <a href="monitoring/contacts">Contacts</a>
     <a href="monitoring/contactgroups">Contact Groups</a>

@@ -5,15 +5,18 @@ use App\Http\Requests;
 class pagesController extends Controller
 {
     public function index(){
-        return view('index');
+        return view('pages.welcome');
     }
     public function pricing(){
-        return view('pricing');
+        return view('pages.pricing');
+    }
+    public function tour(){
+        return view('pages.tour');
     }
     public function support(){
-        return view('index');
+        return view('pages.support');
     }
     public function aboutus(){
-        return view('about');
+        return view('pages.about');
     }
 }

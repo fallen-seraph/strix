@@ -59,6 +59,7 @@
                         <li><a href="{{ url('/monitoring/contacts') }}">Contacts</a></li>
                         <li><a href="{{ url('/monitoring/contactgroups') }}">Contact Groups</a></li>
                         <li><a href="{{ url('/monitoring/hosts') }}">Hosts</a></li>
+                        <li><a href="{{ url('/support') }}">Support</a></li>
                     </ul>
                 @endif
 

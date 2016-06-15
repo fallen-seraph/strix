@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//pages routes
+Route::ge('/', 'pagesController@index');
+Route::get('pricing', 'pagesController@pricing');
+Route::get('tour', 'pagesController@tour');
+Route::get('support', 'pagesController@support');
+Route::get('about', 'pagesController@aboutus');
 
+//login routes
 Route::get('login', 'Auth\AuthController@showLoginForm');
 Route::post('login', 'Auth\AuthController@login');
 Route::get('logout', 'Auth\AuthController@logout');
@@ -28,8 +32,7 @@ Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
 Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
 Route::post('password/reset', 'Auth\PasswordController@reset');
 
-Route::get('/home', 'HomeController@index');
-
+//monitoring routes
 Route::get('monitoring', 'monitoringController@index');
 Route::get('monitoring/hosts', 'monitoringController@hosts');
 Route::get('monitoring/users', 'monitoringController@users');
