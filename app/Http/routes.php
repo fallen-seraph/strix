@@ -41,5 +41,7 @@ Route::post('monitoring/users', 'monitoringController@newUser');
 Route::get('/monitoring/users/{user}', 'monitoringController@deleteUsers');
 
 Route::get('monitoring/contacts', 'monitoringController@contacts');
+Route::post('monitoring/contacts', 'monitoringController@newContact');
+
 Route::get('monitoring/contactgroups', 'monitoringController@contactgroups');
 Route::get('settings', 'monitoringController@settings');
