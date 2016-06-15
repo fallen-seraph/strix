@@ -10,12 +10,12 @@
                     <div class="panel-body">
                         <ul>
                             @foreach ($users as $user)
-                                <li>
-                                    @unless( Auth::user()->email == $user )
+                                @unless( Auth::user()->email == $user )
+                                    <li>
                                         {{ $user }} |
                                         <a href="/monitoring/users/{{ $user }}">Delete</a>
-                                    @endunless
-                                </li>
+                                    </li>
+                                @endunless
                             @endforeach
                         </ul>
                     </div>
