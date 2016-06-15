@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Welcome</div>
+                    <div class="panel-heading">Monitoring Users</div>
 
                     <div class="panel-body">
                         <ul>
@@ -19,7 +19,10 @@
                             @endforeach
                         </ul>
                     </div>
+                    <hr>
                     <div class="panel-body">
+                        <label class="col-md-4 control-label">Add New User</label>
+
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/newUser') }}">
                             {{ csrf_field() }}
 
