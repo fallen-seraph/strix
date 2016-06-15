@@ -16,16 +16,15 @@ class monitoringController extends Controller
         return view('monitoring.home');
     }
     public function users(){
-        $accountId = account_information::where('email', Auth::user()->email)->value('account_id');
-        $users = User::where('account_id', $accountId)->lists('email');
+        $users = User::where('account_id', Auth::user()->account_id)->lists('email');
         return view('monitoring.users', compact('users'));
     }
     public function newUser(Request $request, User $user){
-        $accountId = account_information::where('email', Auth::user()->email)->value('account_id');
         $user->create([
-            'account_id' => $accountId,
+            'account_id' => Auth::user()->account_id,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
+            'type' => 'sub'
         ]);
 
         return redirect()->action('monitoringController@users');
