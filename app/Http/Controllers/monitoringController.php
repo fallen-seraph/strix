@@ -17,7 +17,7 @@ class monitoringController extends Controller
     public function users(){
         $accountId = account_information::where('email', 'Auth::user()->email')->value('account_id');
         $users = User::where('account_id', $accountId)->lists('email');
-        dd($users);
+        dd($accountId);
         return view('monitoring.users')->with('users', $users);//, compact('users'));
     }
     public function contacts(){
