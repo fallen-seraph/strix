@@ -12,7 +12,7 @@
 */
 
 //pages routes
-Route::ge('/', 'pagesController@index');
+Route::get('/', 'pagesController@index');
 Route::get('pricing', 'pagesController@pricing');
 Route::get('tour', 'pagesController@tour');
 Route::get('support', 'pagesController@support');
