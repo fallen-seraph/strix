@@ -20,7 +20,7 @@ class monitoringController extends Controller
         $users = User::where('account_id', $accountId)->lists('email');
         return view('monitoring.users', compact('users'));
     }
-    public function newUser(User $user){
+    public function newUser(Request $request, User $user){
         $accountId = account_information::where('email', Auth::user()->email)->value('account_id');
         $user->create([
             'account_id' => $accountId,
