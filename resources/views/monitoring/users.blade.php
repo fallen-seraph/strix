@@ -9,8 +9,8 @@
 
                     <div class="panel-body">
                         <ul>
-                            @foreach ($user->email as $users)
-                                <li>{{ $users }}</li>
+                            @foreach ($users as $user)
+                                <li>{{ $user }}</li>
                             @endforeach
                         </ul>
                     </div>
