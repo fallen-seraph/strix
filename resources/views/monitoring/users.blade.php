@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         <ul>
-                            @foreach ($users as $user)
+                            @foreach ($users-all() as $user)
                                 <li>{{ $user }}</li>
                             @endforeach
                         </ul>
