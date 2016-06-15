@@ -36,7 +36,7 @@ class monitoringController extends Controller
     }
     public function deleteUsers($user){
         if(Auth::user()->type == 'main'){
-            if(User::where('account_id', Auth::user()->account_id)->where('email', $user)->value('email') == $user){
+            if(User::where('account_id', Auth::user()->account_id)->where('email', $user)->where('type', 'sub')->value('email') == $user){
                 User::where('email', $user)->delete();
             }
         }
