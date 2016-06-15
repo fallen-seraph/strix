@@ -12,7 +12,9 @@
                             @foreach ($users as $user)
                                 <li>
                                     {{ $user }} |
-                                    <a href="/monitoring/users/{{ $user }}">Delete</a>
+                                    @unless( Auth::user()->email == $user )
+                                        <a href="/monitoring/users/{{ $user }}">Delete</a>
+                                    @endunless
                                 </li>
                             @endforeach
                         </ul>

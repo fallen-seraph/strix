@@ -22,7 +22,6 @@ class monitoringController extends Controller
     }
     public function deleteUsers($user){
 
-        dd($user);
         User::where('email', $user)->delete();
 
         return back();
