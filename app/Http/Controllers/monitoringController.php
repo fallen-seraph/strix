@@ -20,6 +20,11 @@ class monitoringController extends Controller
         return view('monitoring.users', compact('users'));
     }
     public function newUser(Request $request, User $user){
+        $this->validate($request, [
+        	'email' => 'required|email|unique:mysql.users,email',
+        	'password' => 'required|min:8|confirmed',
+        ]);
+        
         $user->create([
             'account_id' => Auth::user()->account_id,
             'email' => $request->email,
