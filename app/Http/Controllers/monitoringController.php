@@ -28,7 +28,7 @@ class monitoringController extends Controller
             'password' => bcrypt($request->password)
         ]);
 
-        return redirect()->url('monitoring');
+        return redirect()->action('monitoringController@users');
     }
     public function deleteUsers($user){
 
