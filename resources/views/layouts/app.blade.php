@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
-
+    <title>Server Strix</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
@@ -48,12 +47,18 @@
                 <!-- Left Side Of Navbar -->
                 @if (Auth::guest())
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('/pricing') }}">Pricing</a></li>
+                        <li><a href="{{ url('/tour') }}">Tour</a></li>
+                        <li><a href="{{ url('/support') }}">Support</a></li>
+                        <li><a href="{{ url('/about') }}">About</a></li>
                     </ul>
                 @else
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/home') }}">Home</a></li>
-                        <li><a href="{{ url('/monitoring') }}">Monitoring</a></li>
+                        <li><a href="{{ url('monitoring') }}">Monitoring Home</a></li>
+                        <li><a href="{{ url('/monitoring/users') }}">Users</a></li>
+                        <li><a href="{{ url('/monitoring/contacts') }}">Contacts</a></li>
+                        <li><a href="{{ url('/monitoring/contactgroups') }}">Contact Groups</a></li>
+                        <li><a href="{{ url('/monitoring/hosts') }}">Hosts</a></li>
                     </ul>
                 @endif
 
@@ -70,6 +75,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/acctSettings') }}"><i class="fa fa-btn fa-sign-out"></i>Account Settings</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
