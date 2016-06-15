@@ -3,8 +3,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use User;
-use account_information;
+use App\User;
+use App\account_information;
+//use Auth;
 
 class monitoringController extends Controller
 {
@@ -15,9 +16,9 @@ class monitoringController extends Controller
         return view('monitoring.home');
     }
     public function users(){
-        $accountId = account_information::where('email', 'Auth::user()->email')->value('account_id');
+        $accountId = account_information::where('email', Auth::user()->email)->value('account_id');
         $users = User::where('account_id', $accountId)->lists('email');
-        dd($accountId);
+        dd(Auth::user()->email);
         return view('monitoring.users')->with('users', $users);//, compact('users'));
     }
     public function contacts(){
