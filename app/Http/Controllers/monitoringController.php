@@ -20,7 +20,7 @@ class monitoringController extends Controller
         $users = User::where('account_id', $accountId)->lists('email');
         return view('monitoring.users', compact('users'));
     }
-    public function deleteUsers(){
+    public function deleteUsers($user){
 
         dd($user);
         User::where('email', $user)->delete();
