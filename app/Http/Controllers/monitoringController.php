@@ -48,24 +48,24 @@ class monitoringController extends Controller
         return view('monitoring.contacts', compact('contacts'));
     }
     public function newContact(Request $request, Contacts $contact){
-	$request->contact_name = Auth::user()->account_id . "_" . $request->alias;
-		
-        $this->validate($request, [
-        	'alias' => 'required|min:3'
-        	'contact_name' => 'required|unique:nagidb.contacts,contact_name',
-		'email' => 'required|email',
-        ]);
-		
-	$contact->create([
-            'account_id' => Auth::user()->account_id,
-            'contact_name' => Auth::user()->account_id . "_" . $request->alias,
-            'alias' => $request->alias,
-            'contact_groups' => $request->contact_groups,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'misc' => $request->misc,
+		$request->contact_name = Auth::user()->account_id . "_" . $request->alias;
+			
+	        $this->validate($request, [
+	        	'alias' => 'required|min:3',
+	        	'contact_name' => 'required|unique:nagidb.contacts,contact_name',
+			'email' => 'required|email',
+	        ]);
+			
+		$contact->create([
+	        'account_id' => Auth::user()->account_id,
+	        'contact_name' => Auth::user()->account_id . "_" . $request->alias,
+	        'alias' => $request->alias,
+	        'contact_groups' => $request->contact_groups,
+	        'email' => $request->email,
+	        'phone' => $request->phone,
+	        'misc' => $request->misc,
 			'receive' => '1',
-        ]);
+	    ]);
         
         return redirect()->action('monitoringController@contacts');
     }
