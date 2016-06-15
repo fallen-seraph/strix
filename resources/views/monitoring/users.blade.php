@@ -8,7 +8,11 @@
                     <div class="panel-heading">Welcome</div>
 
                     <div class="panel-body">
-                        Server Strix Coming Soon!
+                        <ul>
+                            @foreach ($user->all() as $user)
+                                <li>{{ $user }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
