@@ -55,7 +55,7 @@ class RegisterController extends Controller
         });
         
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            return view('monitoring.home');
+            return redirect()->action('monitoringController@index');
         }
         return view('auth.login');
         }
