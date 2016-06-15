@@ -51,8 +51,9 @@ class monitoringController extends Controller
 	$request->contact_name = Auth::user()->account_id . "_" . $request->alias;
 		
         $this->validate($request, [
+        	'alias' => 'required|min:3'
         	'contact_name' => 'required|unique:nagidb.contacts,contact_name',
-			'email' => 'required|email',
+		'email' => 'required|email',
         ]);
 		
 	$contact->create([
