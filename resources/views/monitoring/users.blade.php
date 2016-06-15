@@ -20,10 +20,10 @@
                         </ul>
                     </div>
 
+                    <div class="panel-heading">Monitoring Users</div>
                     <div class="panel-body">
-                        <label for="newUser" class="col-md-4 control-label">Add New User</label>
 
-                        <form class="form-horizontal" name="newUser" role="form" method="POST" action="{{ url('/monitoring/users') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/users') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
