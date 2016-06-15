@@ -18,10 +18,8 @@ class RegisterController extends Controller
     }
     public function register(Request $request, account_information $account, User $user){
         // $this->validate($request, [
-        // 	'username' => 'required|unique:mysql.users,username',
-        // 	'password' => 'required|min:8|confirmed',
-        // 	'password_confirmation' => 'required|min:8',
         // 	'email' => 'required|email|unique:mysql.users,email'
+        // 	'password' => 'required|min:8|confirmed',
         // ]);
         
         $account->create([
@@ -45,7 +43,8 @@ class RegisterController extends Controller
         $user->create([
             'account_id' => $accountId,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
+            'type' => 'main'
         ]);
         
         Schema::connection('accountLogs')->create($accountId, function (Blueprint $table) {
