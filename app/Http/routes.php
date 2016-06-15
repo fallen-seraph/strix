@@ -38,4 +38,4 @@ Route::get('monitoring/hosts', 'monitoringController@hosts');
 Route::get('monitoring/users', 'monitoringController@users');
 Route::get('monitoring/contacts', 'monitoringController@contacts');
 Route::get('monitoring/contactgroups', 'monitoringController@contactgroups');
-Route::get('monitoring/settings', 'monitoringController@settings');
+Route::get('settings', 'monitoringController@settings');
