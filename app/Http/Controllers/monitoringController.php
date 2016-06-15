@@ -43,7 +43,29 @@ class monitoringController extends Controller
         return back();
     }
     public function contacts(){
-        return view('monitoring.contacts');
+        $contacts = Contacts::where('account_id', Auth::user()->account_id)->lists('alias');
+        return view('monitoring.contacts', compact('contacts'));
+    }
+    public function newContact(Request $request){
+		$request->contact_name => Auth::user()->account_id . "_" . $request->alias;
+		
+        $this->validate($request, [
+        	'contact_name' => 'required|unique:nagidb.contacts,contact_name',
+			'email' => 'required|email',
+        ]);
+		
+		$contact->create([
+            'account_id' => Auth::user()->account_id,
+            'contact_name' => Auth::user()->account_id . "_" . $request->alias,
+            'alias' => $request->alias,
+            'contact_groups' => $request->contact_groups,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'misc' => $request->misc,
+			'receive' => '1',
+        ]);
+        
+        return redirect()->action('monitoringController@contacts');
     }
     public function contactgroups(){
         return view('monitoring.contactgroups');
