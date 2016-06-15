@@ -18,7 +18,7 @@ class CreateNagiosContact extends Migration
             $table->integer('account_id')->unsigned();
             $table->string('contact_name');
             $table->string('alias');
-            $table->text('contact_groups');
+            $table->text('contact_groups')->nullable();
             $table->string('email');
             $table->string('phone')->nullable();
             $table->string('misc')->nullable();
