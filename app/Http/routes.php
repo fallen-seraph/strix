@@ -37,6 +37,7 @@ Route::get('monitoring', 'monitoringController@index');
 Route::get('monitoring/hosts', 'monitoringController@hosts');
 
 Route::get('monitoring/users', 'monitoringController@users');
+Route::post('monitoring/users', 'monitoringController@newUser');
 Route::get('/monitoring/users/{user}', 'monitoringController@deleteUsers');
 
 Route::get('monitoring/contacts', 'monitoringController@contacts');

@@ -20,6 +20,16 @@ class monitoringController extends Controller
         $users = User::where('account_id', $accountId)->lists('email');
         return view('monitoring.users', compact('users'));
     }
+    public function newUser(User $user){
+        $accountId = account_information::where('email', Auth::user()->email)->value('account_id');
+        $user->create([
+            'account_id' => $accountId,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+
+        return view('monitoring.users');
+    }
     public function deleteUsers($user){
 
         User::where('email', $user)->delete();

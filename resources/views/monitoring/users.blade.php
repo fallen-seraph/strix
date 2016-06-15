@@ -19,11 +19,11 @@
                             @endforeach
                         </ul>
                     </div>
-                    <hr>
-                    <div class="panel-body">
-                        <label class="col-md-4 control-label">Add New User</label>
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/newUser') }}">
+                    <div class="panel-body">
+                        <label for="newUser" class="col-md-4 control-label">Add New User</label>
+
+                        <form class="form-horizontal" name="newUser" role="form" method="POST" action="{{ url('/monitoring/users') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
