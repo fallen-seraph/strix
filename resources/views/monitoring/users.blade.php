@@ -10,7 +10,10 @@
                     <div class="panel-body">
                         <ul>
                             @foreach ($users as $user)
-                                <li>{{ $user }}</li>
+                                <li>
+                                    {{ $user }} |
+                                    <a href="/monitoring/users/{{ $user }}">Delete</a>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
