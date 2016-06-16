@@ -64,7 +64,7 @@
                                         <div class="col-md-6">
                                             <select id="member" class="form-control" name="member" value="{{ old('member') }}">
                                                 @foreach($users as $user)
-                                                    <select>{{ $user }}</select>
+                                                    <option>{{ $user }}</option>
                                                 @endforeach
                                             @if ($errors->has('member'))
                                                 <span class="help-block">
