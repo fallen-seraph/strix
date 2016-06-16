@@ -15,7 +15,8 @@
                                         <a href="/monitoring/contacts/update/{{ $contact->alias }}">Update</a> |
                                         <a href="/monitoring/contacts/{{ $contact->alias }}">Delete</a>
                                         <ul>
-                                            <li>Email  | {{ $contact->email }}</li>
+                                            <li>Email  | {{ $contact->email }}
+                                            <?php dd($contact); ?>
                                             @if(is_null($contact->phone))
                                                 <li>Phone | {{ $contact->phone }}</li>
                                             @endif
