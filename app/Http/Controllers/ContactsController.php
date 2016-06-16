@@ -21,7 +21,6 @@ class ContactsController extends Controller
         $contactName=$account_id . "_" . $request->alias;
         $request->request->add(['contact_name' => $contactName]);
 
-        dd($request);
         $this->validate($request, [
             'alias' => 'required|min:3',
             'contact_name' => 'required|unique:nagidb.nagios_contact,contact_name',
