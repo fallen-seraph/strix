@@ -13,11 +13,13 @@ class ContactsController extends Controller
         $this->middleware('auth');
     }
     public function contacts(){
-        $contacts = Contacts::where('account_id', Auth::user()->account_id)->lists('alias');
+        $contacts = Contacts::where('account_id', Auth::user()->account_id);
         return view('monitoring.contacts', compact('contacts'));
     }
     public function newContact(Request $request, Contacts $contact){
-        $request->request->add(['contact_name' => Auth::user()->account_id . "_" . $request->alias]);
+        $account_id=Auth::user()->account_id;
+        $contactName=$account_id . "_" . $request->alias;
+        $request->request->add(['contact_name' => $contactName]);
 
         $this->validate($request, [
             'alias' => 'required|min:3',
@@ -26,8 +28,8 @@ class ContactsController extends Controller
         ]);
 
         $contact->create([
-            'account_id' => Auth::user()->account_id,
-            'contact_name' => Auth::user()->account_id . "_" . $request->alias,
+            'account_id' => $account_id,
+            'contact_name' => $contactName,
             'alias' => $request->alias,
             'contact_groups' => $request->contact_groups,
             'email' => $request->email,
