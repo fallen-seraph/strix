@@ -26,6 +26,7 @@
 
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/groups') }}">
                             {{ csrf_field() }}
+                            
 
                             <div class="form-group{{ $errors->has('group_name') ? ' has-error' : '' }}">
                                 <label for="alias" class="col-md-4 control-label">Group Name</label>
@@ -55,8 +56,9 @@
                         <div class="panel-heading">Add User to Group</div>
                         <div class="panel-body">
 
-                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/group/user') }}">
+                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/groups') }}">
                                 {{ csrf_field() }}
+                                {{ method_field('PATCH') }}
 
                                 <div class="form-group{{ $errors->has('group') ? ' has-error' : '' }}">
                                     <label for="group" class="col-md-4 control-label">Group</label>
