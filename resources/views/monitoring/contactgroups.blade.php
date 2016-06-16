@@ -51,7 +51,7 @@
                         </form>
                     </div>
 
-                    @if($users)
+                    @if($users->first())
                         <div class="panel-heading">Add User to Group</div>
                         <div class="panel-body">
 
