@@ -16,7 +16,7 @@ class CreateNagiosContact extends Migration
         Schema::connection('nagidb')->create('nagios_contact', function (Blueprint $table) {
             $table->increments('contact_id')->unsigned();
             $table->integer('account_id')->unsigned();
-            $table->string('contact_name');
+            $table->string('contact_name')->unique();
             $table->string('alias');
             $table->text('contact_groups')->nullable();
             $table->string('email');

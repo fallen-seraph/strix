@@ -13,7 +13,7 @@ class ContactsController extends Controller
         $this->middleware('auth');
     }
     public function contacts(){
-        $contacts = Contacts::where('account_id', Auth::user()->account_id);
+        $contacts = Contacts::where('account_id', Auth::user()->account_id)->get();
         return view('monitoring.contacts', compact('contacts'));
     }
     public function newContact(Request $request, Contacts $contact){
@@ -21,11 +21,11 @@ class ContactsController extends Controller
         $contactName=$account_id . "_" . $request->alias;
         $request->request->add(['contact_name' => $contactName]);
 
-//        $this->validate($request, [
-//            'alias' => 'required|min:2',
-//            'email' => 'required|email',
-//            'contact_name' => 'required|unique:nagidb.nagios_contact,contact_name',
-//        ]);
+        $this->validate($request, [
+            'alias' => 'required|min:2',
+            'email' => 'required|email',
+            'contact_name' => 'required|unique:nagidb.nagios_contact,contact_name',
+        ]);
 
         $contact->create([
             'account_id' => $account_id,
