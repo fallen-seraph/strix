@@ -13,7 +13,16 @@ class ContactGroupsController extends Controller
         $this->middleware('auth');
     }
     public function groups(){
-        $groups = Group::where('account_id', Auth::user()->account_id)->get();
+        $accountId=Auth::user()->account_id;
+        $groups = Group::where('account_id', $accountId)->get();
+        
+        foreach($groups as $group){
+            $group->members = explode(',', $group->members);
+            foreach($group->members as $member){
+                trim($member, $accountId . "_")
+            }
+        }
+
         return view('monitoring.contactgroups', compact('groups'));
     }
     public function newGroup(Request $request, Group $group){

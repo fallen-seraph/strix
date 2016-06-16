@@ -9,8 +9,8 @@
 
                     <div class="panel-body">
                         <ul>
-                            @foreach ($contactGroup as $group)
-                                <li>{{ $group }}</li>
+                            @foreach ($groups as $group)
+                                <li>{{ $group->alias }}</li>
                             @endforeach
                         </ul>
                     </div>
