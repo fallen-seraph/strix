@@ -41,11 +41,9 @@ class ContactsController extends Controller
     public function deleteContact($contact){
         $accountId=Auth::user()->account_id;
         $contactName=$accountId . "_" . $contact;
-        if(Contacts::where('account_id', $accountId)
-        ->where('contact_name', $contactName)
-        ->value('contact_name') == $contactName)
+        if(Contacts::where('account_id', $accountId)->where('contact_name', $contactName)->value('contact_name') == $contactName)
         {
-            Contacts::where('contact_name', $contact)->delete();
+            Contacts::where('contact_name', $contactName)->delete();
         }
         return back();
     }
