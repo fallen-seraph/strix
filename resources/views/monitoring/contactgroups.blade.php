@@ -13,7 +13,7 @@
                                 <li>{{ $group->alias }}</li>
                                 <ul>
                                     <li>Members</li>
-                                    @foreach ($group->member as $member)
+                                    @foreach ($group->members as $member)
                                         <li>{{ trim($member, Auth::user()->account_id . "_") }}</li>
                                     @endforeach
                                 </ul>
