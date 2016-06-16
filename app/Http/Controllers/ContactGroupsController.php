@@ -18,9 +18,6 @@ class ContactGroupsController extends Controller
 
         foreach($groups as $group){
             $group->members = explode(',', $group->members);
-            foreach($group->members as $member){
-                trim($member, $accountId . "_");
-            }
         }
 
         return view('monitoring.contactgroups', compact('groups'));
