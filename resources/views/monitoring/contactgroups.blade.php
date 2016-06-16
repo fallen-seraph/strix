@@ -31,7 +31,7 @@
                                 <label for="alias" class="col-md-4 control-label">Group Name</label>
 
                                 <div class="col-md-6">
-                                    <input id="alias" type="email" class="form-control" name="alias" value="{{ old('alias') }}">
+                                    <input id="alias" type="text" class="form-control" name="alias" value="{{ old('alias') }}">
 
                                     @if ($errors->has('group_name'))
                                         <span class="help-block">
