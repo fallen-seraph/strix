@@ -11,12 +11,14 @@
                         <ul>
                             @foreach ($groups as $group)
                                 <li>{{ $group->alias }}</li>
-                                <ul>
-                                    Members
-                                    @foreach ($group->members as $member)
-                                        <li>{{ trim($member, Auth::user()->account_id . "_") }}</li>
-                                    @endforeach
-                                </ul>
+                                @if($group->members)
+                                    <ul>
+                                        Members
+                                        @foreach ($group->members as $member)
+                                            <li>{{ trim($member, Auth::user()->account_id . "_") }}</li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             @endforeach
                         </ul>
                     </div>
