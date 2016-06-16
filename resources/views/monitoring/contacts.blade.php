@@ -11,8 +11,17 @@
                         <ul>
                             @foreach ($contacts as $contact)
                                     <li>
-                                        {{ $contact }} |
+                                        {{ $contact->alias }} |
                                         <a href="/monitoring/contacts/{{ $contact }}">Delete</a>
+                                        <ul>
+                                            <li>{{ $contact->email }}</li>
+                                            @if($contact->has('phone'))
+                                                <li>{{ $contact->phone }}</li>
+                                            @endif
+                                            @if($contact->has('misc'))
+                                                <li>{{ $contact->misc }}</li>
+                                            @endif
+                                        </ul>
                                     </li>
                             @endforeach
                         </ul>
