@@ -20,7 +20,7 @@ class ContactGroupsController extends Controller
             $group->members = explode(',', $group->members);
         }
 
-        $users = \App\Contact::where('account_id', $accountId)->lists('alias');
+        $users = \App\Contacts::where('account_id', $accountId)->lists('alias');
 
         return view('monitoring.contactgroups', compact('groups', 'users'));
     }
