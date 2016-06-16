@@ -14,12 +14,12 @@
                                         {{ $contact->alias }} |
                                         <a href="/monitoring/contacts/{{ $contact }}">Delete</a>
                                         <ul>
-                                            <li>{{ $contact->email }}</li>
+                                            <li>Email | {{ $contact->email }}</li>
                                             @if(!is_null($contact->phone))
-                                                <li>{{ $contact->phone }}</li>
+                                                <li>Phone | {{ $contact->phone }}</li>
                                             @endif
                                             @if(!is_null($contact->misc))
-                                                <li>{{ $contact->misc }}</li>
+                                                <li>Misc | {{ $contact->misc }}</li>
                                             @endif
                                         </ul>
                                     </li>
