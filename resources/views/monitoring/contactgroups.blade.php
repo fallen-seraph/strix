@@ -27,43 +27,15 @@
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/group') }}">
                             {{ csrf_field() }}
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <div class="form-group{{ $errors->has('group_name') ? ' has-error' : '' }}">
+                                <label for="alias" class="col-md-4 control-label">Group Name</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                    <input id="alias" type="email" class="form-control" name="alias" value="{{ old('alias') }}">
 
-                                    @if ($errors->has('email'))
+                                    @if ($errors->has('group_name'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="col-md-4 control-label">Password</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password">
-
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
-
-                                    @if ($errors->has('password_confirmation'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                        <strong>{{ $errors->first('group_name') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -72,43 +44,46 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-user"></i> New User
+                                        <i class="fa fa-btn fa-user"></i> New Group
                                     </button>
                                 </div>
                             </div>
                         </form>
                     </div>
 
+                    @if($users)
+                        <div class="panel-heading">Add User to Group</div>
+                        <div class="panel-body">
 
-                    <div class="panel-heading">Add User to Group</div>
-                    <div class="panel-body">
+                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/group/user') }}">
+                                {{ csrf_field() }}
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/group/user') }}">
-                            {{ csrf_field() }}
+                                    <div class="form-group{{ $errors->has('member') ? ' has-error' : '' }}">
+                                        <label for="member" class="col-md-4 control-label">Add User</label>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                        <div class="col-md-6">
+                                            <select id="member" class="form-control" name="member" value="{{ old('member') }}">
+                                                @foreach($users as $user)
+                                                    <select>{{ $user }}</select>
+                                                @endforeach
+                                            @if ($errors->has('member'))
+                                                <span class="help-block">
+                                                <strong>{{ $errors->first('member') }}</strong>
+                                            </span>
+                                            @endif
+                                        </div>
+                                    </div>
 
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-btn fa-user"></i> Add User
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-user"></i> New User
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                            </form>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
