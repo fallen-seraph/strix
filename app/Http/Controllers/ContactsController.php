@@ -39,7 +39,12 @@ class ContactsController extends Controller
         return redirect()->action('monitoringController@contacts');
     }
     public function deleteContact($contact){
-        if(Contacts::where('account_id', Auth::user()->account_id)->where('contact_name', Auth::user()->account_id . "_" . $contact)->value('contact_name') == $contact){
+        $accountId=Auth::user()->account_id;
+        $contactName=$accountId . "_" . $contact;
+        if(Contacts::where('account_id', $accountId)
+        ->where('contact_name', $contactName)
+        ->value('contact_name') == $contactName)
+        {
             Contacts::where('contact_name', $contact)->delete();
         }
         return back();
