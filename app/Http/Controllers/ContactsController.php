@@ -19,9 +19,9 @@ class ContactsController extends Controller
     public function newContact(Request $request, Contacts $contact){
         $account_id=Auth::user()->account_id;
         $contactName=$account_id . "_" . $request->alias;
-        dd($contactName);
         $request->request->add(['contact_name' => $contactName]);
 
+        dd($request);
         $this->validate($request, [
             'alias' => 'required|min:3',
             'contact_name' => 'required|unique:nagidb.nagios_contact,contact_name',

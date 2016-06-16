@@ -51,7 +51,7 @@
                                 <label for="email" class="col-md-4 control-label">Email</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                     @if ($errors->has('email'))
                                         <span class="help-block">
@@ -65,7 +65,7 @@
                                 <label for="password-confirm" class="col-md-4 control-label">Phone</label>
 
                                 <div class="col-md-6">
-                                    <input id="phone" type="text" class="form-control" name="phone">
+                                    <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}">
 
                                     @if ($errors->has('phone'))
                                         <span class="help-block">
@@ -79,7 +79,7 @@
                                 <label for="password-confirm" class="col-md-4 control-label">Misc</label>
 
                                 <div class="col-md-6">
-                                    <input id="misc" type="text" class="form-control" name="misc">
+                                    <input id="misc" type="text" class="form-control" name="misc" value="{{ old('misc') }}">
 
                                     @if ($errors->has('misc'))
                                         <span class="help-block">
