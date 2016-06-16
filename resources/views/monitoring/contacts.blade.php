@@ -15,10 +15,10 @@
                                         <a href="/monitoring/contacts/{{ $contact }}">Delete</a>
                                         <ul>
                                             <li>{{ $contact->email }}</li>
-                                            @if($contact->has('phone'))
+                                            @if(!is_null($contact->phone))
                                                 <li>{{ $contact->phone }}</li>
                                             @endif
-                                            @if($contact->has('misc'))
+                                            @if(!is_null($contact->misc))
                                                 <li>{{ $contact->misc }}</li>
                                             @endif
                                         </ul>
