@@ -30,7 +30,6 @@ class ContactGroupsController extends Controller
         $request->request->add(['group_name' => $groupName]);
 
         $this->validate($request, [
-            'alias' => 'required|min:2',
             'group_name' => 'required|unique:nagidb.nagios_contact_group,group_name',
         ]);
 
