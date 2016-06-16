@@ -16,11 +16,11 @@
                                         <a href="/monitoring/contacts/{{ $contact->alias }}">Delete</a>
                                         <ul>
                                             <li>Email  | {{ $contact->email }}
-                                            <?php dd($contact); ?>
-                                            @if(is_null($contact->phone))
+                                            
+                                            @if(!is_null($contact->phone))
                                                 <li>Phone | {{ $contact->phone }}</li>
                                             @endif
-                                            @if(is_null($contact->misc))
+                                            @if(!is_null($contact->misc))
                                                 <li>Misc    | {{ $contact->misc }}</li>
                                             @endif
                                         </ul>
