@@ -48,7 +48,7 @@ class monitoringController extends Controller
         return view('monitoring.contacts', compact('contacts'));
     }
     public function newContact(Request $request, Contacts $contact){
-		$request->flashOnly('contact_name', Auth::user()->account_id . "_" . $request->alias);
+		$request->add(['contact_name' => Auth::user()->account_id . "_" . $request->alias]);
 		
 		dd($request);
 			
