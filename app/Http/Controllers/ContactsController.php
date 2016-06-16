@@ -19,6 +19,7 @@ class ContactsController extends Controller
     public function newContact(Request $request, Contacts $contact){
         $account_id=Auth::user()->account_id;
         $contactName=$account_id . "_" . $request->alias;
+        dd($contactName);
         $request->request->add(['contact_name' => $contactName]);
 
         $this->validate($request, [
