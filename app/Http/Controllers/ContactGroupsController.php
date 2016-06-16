@@ -38,6 +38,8 @@ class ContactGroupsController extends Controller
             'group_name' => $groupName,
             'alias' => $request->alias,
         ]);
+        
+        return redirect()->action('ContactGroupsController@groups');
     }
     public function addUser(){
 
