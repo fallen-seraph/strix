@@ -104,7 +104,6 @@
             </div>
         </div>
     </div>
+
+    <?php dd($errors); ?>
 @endsection
-
-
-<?php dd($errors); ?>
