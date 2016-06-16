@@ -66,6 +66,7 @@
                                                 @foreach($users as $user)
                                                     <option>{{ $user }}</option>
                                                 @endforeach
+                                            </select>
                                             @if ($errors->has('member'))
                                                 <span class="help-block">
                                                 <strong>{{ $errors->first('member') }}</strong>
