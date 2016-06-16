@@ -49,6 +49,8 @@ class monitoringController extends Controller
     }
     public function newContact(Request $request, Contacts $contact){
 		$request->contact_name = Auth::user()->account_id . "_" . $request->alias;
+		
+		dd($request);
 			
 	        $this->validate($request, [
 	        	'alias' => 'required|min:3',
@@ -64,7 +66,7 @@ class monitoringController extends Controller
 	        'email' => $request->email,
 	        'phone' => $request->phone,
 	        'misc' => $request->misc,
-			'receive' => '1',
+		'receive' => '1',
 	    ]);
         
         return redirect()->action('monitoringController@contacts');
