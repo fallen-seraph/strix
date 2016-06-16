@@ -35,15 +35,15 @@
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/contacts') }}">
                             {{ csrf_field() }}
 
-                            <div class="form-group{{ $errors->has('alias') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('contact_name') ? ' has-error' : '' }}">
                                 <label for="alias" class="col-md-4 control-label">Contact Name</label>
 
                                 <div class="col-md-6">
                                     <input id="alias" type="text" class="form-control" name="alias" value="{{ old('alias') }}">
 
-                                    @if ($errors->has('alias'))
+                                    @if ($errors->has('contact_name'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('alias') }}</strong>
+                                        <strong>{{ $errors->first('contact_name') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -104,6 +104,4 @@
             </div>
         </div>
     </div>
-
-    <?php dd($errors); ?>
 @endsection
