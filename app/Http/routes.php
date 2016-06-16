@@ -44,5 +44,9 @@ Route::get('monitoring/contacts', 'ContactsController@contacts');
 Route::post('monitoring/contacts', 'ContactsController@newContact');
 Route::get('monitoring/contacts/{contact_name}', 'ContactsController@deleteContact');
 
-Route::get('monitoring/contactgroups', 'monitoringController@contactgroups');
-Route::get('settings', 'monitoringController@settings');
+Route::get('monitoring/group', 'ContactGroupsController@group');
+Route::post('monitoring/group', 'ContactGroupsController@newGroup');
+Route::patch('monitoring/group', 'ContactGroupsController@addUser');
+Route::get('monitoring/group/{group}', 'ContactGroupsController@delGroup');
+
+Route::get('settings', 'SettingsController@settings');

@@ -15,9 +15,6 @@ class monitoringController extends Controller
     public function index(){
         return view('monitoring.home');
     }
-    public function contactgroups(){
-        return view('monitoring.contactgroups');
-    }
     public function hosts(){
         return view('monitoring.hosts');
     }
