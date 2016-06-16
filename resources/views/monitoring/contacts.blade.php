@@ -34,7 +34,7 @@
 
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/contacts') }}">
                             {{ csrf_field() }}
-                            <?php dd($errors); ?>
+
                             <div class="form-group{{ $errors->has('alias') ? ' has-error' : '' }}">
                                 <label for="alias" class="col-md-4 control-label">Contact Name</label>
 
@@ -105,3 +105,6 @@
         </div>
     </div>
 @endsection
+
+
+<?php dd($errors); ?>
