@@ -49,8 +49,6 @@ class monitoringController extends Controller
     }
     public function newContact(Request $request, Contacts $contact){
 		$request->request->add(['contact_name' => Auth::user()->account_id . "_" . $request->alias]);
-		
-		dd($request);
 			
 	        $this->validate($request, [
 	        	'alias' => 'required|min:3',
