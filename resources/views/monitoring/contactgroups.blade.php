@@ -8,7 +8,7 @@
                     <div class="panel-heading">Monitoring Groups</div>
 
                     <div class="panel-body">
-                        <ul>
+                        <ul><?php dd($groups); ?>
                             @foreach ($groups as $group)
                                 <li>{{ $group->alias }}</li>
                                 <ul>
