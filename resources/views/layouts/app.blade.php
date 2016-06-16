@@ -62,7 +62,7 @@
                         <li><a href="{{ url('monitoring') }}">Monitoring Home</a></li>
                         <li><a href="{{ url('/monitoring/users') }}">Users</a></li>
                         <li><a href="{{ url('/monitoring/contacts') }}">Contacts</a></li>
-                        <li><a href="{{ url('/monitoring/contactgroups') }}">Contact Groups</a></li>
+                        <li><a href="{{ url('/monitoring/groups') }}">Contact Groups</a></li>
                         <li><a href="{{ url('/monitoring/hosts') }}">Hosts</a></li>
                         <li><a href="{{ url('/support') }}">Support</a></li>
                     </ul>
