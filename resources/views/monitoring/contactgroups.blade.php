@@ -11,7 +11,7 @@
                         <ul>
                             @foreach ($groups as $group)
                                 <li>{{ $group->alias }}</li>
-                                @if($group->members)
+                                @if($group->members[0])
                                     <ul>
                                         Members
                                         @foreach ($group->members as $member)
