@@ -24,7 +24,7 @@
                     <div class="panel-heading">Add Group</div>
                     <div class="panel-body">
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/group') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/groups') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('group_name') ? ' has-error' : '' }}">
