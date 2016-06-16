@@ -38,7 +38,7 @@ class ContactsController extends Controller
             'receive' => '1',
         ]);
 
-        return redirect()->action('monitoringController@contacts');
+        return redirect()->action('ContactsController@contacts');
     }
     public function deleteContact($contact){
         $accountId=Auth::user()->account_id;

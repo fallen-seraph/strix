@@ -29,7 +29,7 @@ class UserController extends Controller
             'type' => 'sub'
         ]);
 
-        return redirect()->action('monitoringController@users');
+        return redirect()->action('UserController@users');
     }
     public function deleteUsers($user){
         if(Auth::user()->type == 'main'){
