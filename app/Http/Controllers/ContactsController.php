@@ -22,9 +22,9 @@ class ContactsController extends Controller
         $request->request->add(['contact_name' => $contactName]);
 
         $this->validate($request, [
-            'alias' => 'required|min:3',
-            'contact_name' => 'required|unique:nagidb.nagios_contact,contact_name',
+            'alias' => 'required|min:2',
             'email' => 'required|email',
+            'contact_name' => 'required|unique:nagidb.nagios_contact,contact_name',
         ]);
 
         $contact->create([
