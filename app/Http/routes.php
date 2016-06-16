@@ -36,12 +36,13 @@ Route::post('password/reset', 'Auth\PasswordController@reset');
 Route::get('monitoring', 'monitoringController@index');
 Route::get('monitoring/hosts', 'monitoringController@hosts');
 
-Route::get('monitoring/users', 'monitoringController@users');
-Route::post('monitoring/users', 'monitoringController@newUser');
-Route::get('/monitoring/users/{user}', 'monitoringController@deleteUsers');
+Route::get('monitoring/users', 'UserController@users');
+Route::post('monitoring/users', 'UserController@newUser');
+Route::get('/monitoring/users/{user}', 'UserController@deleteUsers');
 
-Route::get('monitoring/contacts', 'monitoringController@contacts');
-Route::post('monitoring/contacts', 'monitoringController@newContact');
+Route::get('monitoring/contacts', 'ContactsController@contacts');
+Route::post('monitoring/contacts', 'ContactsController@newContact');
+Route::get('monitoring/contacts/{contact_name}', 'ContactsController@deleteContact');
 
 Route::get('monitoring/contactgroups', 'monitoringController@contactgroups');
 Route::get('settings', 'monitoringController@settings');
