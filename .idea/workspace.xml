@@ -81,27 +81,9 @@
       <file leaf-file-name="contactgroups.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/monitoring/contactgroups.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36376604">
-              <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
-              <folding>
-                <marker date="1466060449248" expanded="true" signature="521:835" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="1041:1138" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="1472:1588" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="1732:1799" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="2242:2409" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="2487:2554" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="3029:3217" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="3308:3375" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="3626:3983" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="3697:3948" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="3780:3909" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="4160:4257" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="4596:4712" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="4856:4923" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="5158:5515" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="5229:5480" placeholder="..." />
-                <marker date="1466060449248" expanded="true" signature="5312:5441" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.33951497">
+              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -376,7 +358,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -746,27 +728,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/monitoring/contactgroups.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36376604">
-          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
-          <folding>
-            <marker date="1466060449248" expanded="true" signature="521:835" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="1041:1138" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="1472:1588" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="1732:1799" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="2242:2409" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="2487:2554" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="3029:3217" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="3308:3375" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="3626:3983" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="3697:3948" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="3780:3909" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="4160:4257" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="4596:4712" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="4856:4923" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="5158:5515" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="5229:5480" placeholder="..." />
-            <marker date="1466060449248" expanded="true" signature="5312:5441" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.33951497">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
