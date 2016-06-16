@@ -52,7 +52,7 @@ class monitoringController extends Controller
 			
 	        $this->validate($request, [
 	        	'alias' => 'required|min:3',
-	        	'contact_name' => 'required|unique:nagidb.contacts,contact_name',
+	        	'contact_name' => 'required|unique:nagios_contact,contact_name',
 			'email' => 'required|email',
 	        ]);
 			
