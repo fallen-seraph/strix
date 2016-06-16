@@ -11,6 +11,12 @@
                         <ul>
                             @foreach ($groups as $group)
                                 <li>{{ $group->alias }}</li>
+                                <ul>
+                                    <li>Members</li>
+                                    @foreach ($group->member as $member)
+                                        <li>{{ $member }}</li>
+                                    @endforeach
+                                </ul>
                             @endforeach
                         </ul>
                     </div>

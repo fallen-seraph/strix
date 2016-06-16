@@ -15,11 +15,11 @@ class ContactGroupsController extends Controller
     public function groups(){
         $accountId=Auth::user()->account_id;
         $groups = Group::where('account_id', $accountId)->get();
-        
+
         foreach($groups as $group){
             $group->members = explode(',', $group->members);
             foreach($group->members as $member){
-                trim($member, $accountId . "_")
+                trim($member, $accountId . "_");
             }
         }
 
