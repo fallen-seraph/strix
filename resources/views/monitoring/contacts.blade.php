@@ -12,14 +12,14 @@
                             @foreach ($contacts as $contact)
                                     <li>
                                         {{ $contact->alias }} |
-                                        <a href="/monitoring/contacts/update/{{ $contact->alias }}">Update</a> | 
+                                        <a href="/monitoring/contacts/update/{{ $contact->alias }}">Update</a> |
                                         <a href="/monitoring/contacts/{{ $contact->alias }}">Delete</a>
                                         <ul>
                                             <li>Email  | {{ $contact->email }}</li>
-                                            @if(!is_null($contact->phone))
+                                            @if(is_null($contact->phone))
                                                 <li>Phone | {{ $contact->phone }}</li>
                                             @endif
-                                            @if(!is_null($contact->misc))
+                                            @if(is_null($contact->misc))
                                                 <li>Misc    | {{ $contact->misc }}</li>
                                             @endif
                                         </ul>
