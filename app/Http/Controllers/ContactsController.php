@@ -14,7 +14,10 @@ class ContactsController extends Controller
     }
     public function contacts(){
         $contacts = Contacts::where('account_id', Auth::user()->account_id)->get();
-        $contacts->contact_groups = explode(",", $contacts->contact_groups);
+        foreach($contacts as $contact){
+            $contact->contact_groups = explode(",", $contact->contact_groups);
+        }
+        
         return view('monitoring.contacts', compact('contacts'));
     }
     public function newContact(Request $request, Contacts $contact){
