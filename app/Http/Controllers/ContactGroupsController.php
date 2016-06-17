@@ -51,7 +51,7 @@ class ContactGroupsController extends Controller
 
         if(strpos($existingMembers, $newMember) !== false){
             //return redirect()->action('ContactGroupsController@groups')->withErrors(['member' => 'Contact is already a part of this group']);
-            return back()->withErrors(['member' => 'Contact is already a part of this group'])
+            return back()->withErrors(['member' => 'Contact is already a part of this group']);
         }
 
         if($existingMembers) {

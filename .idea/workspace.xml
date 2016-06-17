@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactGroupsController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4978602">
-              <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+              <caret line="53" column="95" selection-start-line="53" selection-start-column="95" selection-end-line="53" selection-end-column="95" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -756,7 +756,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactGroupsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4978602">
-          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <caret line="53" column="95" selection-start-line="53" selection-start-column="95" selection-end-line="53" selection-end-column="95" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
