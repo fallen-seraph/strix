@@ -50,7 +50,6 @@ class ContactGroupsController extends Controller
         $existingMembers=Group::where('account_id', $accountId)->where('group_name', $groupName)->value('members');
 
         if(strpos($existingMembers, $newMember) !== false){
-            //return redirect()->action('ContactGroupsController@groups')->withErrors(['member' => 'Contact is already a part of this group']);
             return back()->withErrors(['member' => 'Contact is already a part of this group']);
         }
 
@@ -73,10 +72,11 @@ class ContactGroupsController extends Controller
     public function deleteGroup($deletedGroup){
         $accountId=Auth::user()->account_id;
         $groupName=$accountId . "_" . $deletedGroup;
-        $contacts = Contacts::where('account_id', $accountId)->where('contact_groups', 'like', "%" . $groupName . "%")->lists('contact_groups');
 
-        foreach($contacts as $contact_groups) {
-            Contacts::where('account_id', $accountId)->where('contact_groups', 'like', "%" . $groupName . "%")->update(['contact_groups', str_replace($groupName . ",", "", $contact_groups)]);
+        $contacts = Contacts::where('account_id', '1')->where('contact_groups', 'like', "%" . '1_Beta' . "%")->select('contact_id', 'contact_groups')->get();
+
+        foreach($contacts as $contact) {
+            Contacts::where('account_id', $accountId)->where('contact_id', $contact->contact_id)->update(['contact_groups' => str_replace($groupName . ",", "", $contact->contact_groups)]);
         };
             
         Group::where('group_name', $groupName)->where('account_id', $accountId)->delete();

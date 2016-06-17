@@ -49,8 +49,8 @@
       <file leaf-file-name="ContactGroupsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactGroupsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4978602">
-              <caret line="53" column="95" selection-start-line="53" selection-start-column="95" selection-end-line="53" selection-end-column="95" />
+            <state vertical-scroll-proportion="0.6362339">
+              <caret line="75" column="157" selection-start-line="75" selection-start-column="157" selection-end-line="75" selection-end-column="157" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -755,8 +755,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactGroupsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4978602">
-          <caret line="53" column="95" selection-start-line="53" selection-start-column="95" selection-end-line="53" selection-end-column="95" />
+        <state vertical-scroll-proportion="0.6362339">
+          <caret line="75" column="157" selection-start-line="75" selection-start-column="157" selection-end-line="75" selection-end-column="157" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
