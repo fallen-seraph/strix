@@ -13,9 +13,11 @@ class ContactsController extends Controller
         $this->middleware('auth');
     }
     public function contacts(){
-        $contacts = Contacts::where('account_id', Auth::user()->account_id)->get();
+        $accountId=Auth::user()->account_id;
+        $contacts = Contacts::where('account_id', $accountId)->get();
         foreach($contacts as $contact){
             $contact->contact_groups=str_replace(",", ", ", $contact->contact_groups);
+            $contact->contact_groups=str_replace($accountId . "_", "", $contact->contact_groups);
         }
 
         return view('monitoring.contacts', compact('contacts'));
