@@ -10,7 +10,7 @@
                     <div class="panel-body">
                         <ul>
                             @foreach ($groups as $group)
-                                <li>{{ $group->alias }}</li>
+                                <li>{{ $group->alias }}</li> | <a href="monitoring/groups/{{ $group->alias }}">Delete</a>
                                 @if($group->members[0])
                                     <ul>
                                         Members
