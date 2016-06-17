@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Contacts;
+use App\Group;
 use App\Http\Requests;
 
 class ContactsController extends Controller
@@ -49,10 +50,29 @@ class ContactsController extends Controller
     public function deleteContact($contact){
         $accountId=Auth::user()->account_id;
         $contactName=$accountId . "_" . $contact;
-        if(Contacts::where('account_id', $accountId)->where('contact_name', $contactName)->value('contact_name') == $contactName)
-        {
-            Contacts::where('contact_name', $contactName)->delete();
-        }
+        
+        Contacts::where('account_id', $accountId)->where('contact_name', $contactName)->delete();
+        
+        $members=Group::where('account_id', $accountId)->where('members', 'like', "%" . $contact . "%")->get();
+        
+        foreach($members as $group) {
+            if(strpos($group->members, ",") !== false){
+                Group::where('account_id', $accountId)
+                    ->where('group_id', $group->group_id)
+                    ->update([
+                        'members' => str_replace($contactName . ",", "", $group->members)
+                    ]);
+            } else {
+                Group::where('account_id', $accountId)
+                    ->where('group_id', $group->group_id)
+                    ->update([
+                        'members' => str_replace($contactName, "", $group->members)
+                    ]);
+            }
+        };
+        \App\Group::where('account_id', $accountId)->update([
+            
+        ]);
         return back();
     }
 }
