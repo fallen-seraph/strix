@@ -49,11 +49,19 @@ class ContactGroupsController extends Controller
 
         $existingMembers=Group::where('account_id', $accountId)->where('group_name', $groupName)->value('members');
 
-        Group::where('account_id', $accountId)->where('group_name', $groupName)->update(['members' => $existingMembers . "," . $newMember]);
+        if($existingMembers) {
+            Group::where('account_id', $accountId)->where('group_name', $groupName)->update(['members' => $existingMembers . "," . $newMember]);
+        } else {
+            Group::where('account_id', $accountId)->where('group_name', $groupName)->update(['members' => $newMember]);
+        }
 
         $existingGroups=Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->value('contact_groups');
 
-        Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->update(['contact_groups' => $existingGroups . "," . $groupName]);
+        if($existingGroups){
+            Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->update(['contact_groups' => $existingGroups . "," . $groupName]);
+        }else{
+            Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->update(['contact_groups' => $groupName]);
+        }
 
         return redirect()->action('ContactGroupsController@groups');
     }
