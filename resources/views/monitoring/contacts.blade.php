@@ -10,28 +10,24 @@
                     <div class="panel-body">
                         <ul>
                             @foreach ($contacts as $contact)
-                                <li>
-                                    {{ $contact->alias }} |
-                                    <a href="/monitoring/contacts/update/{{ $contact->alias }}">Update</a> |
-                                    <a href="/monitoring/contacts/{{ $contact->alias }}">Delete</a>
-                                </li>
-                                    <ul>
-                                        <li>Email | {{ $contact->email }}</li>
-                                        @if($contact->contact_groups)
-                                            <ul>
-                                                Contact Groups
-                                                @foreach($contact->contact_groups as $group)
-                                                    <li>{{ $group }}</li>
-                                                @endforeach
-                                            </ul>
-                                        @endif
-                                        @if($contact->phone)
-                                            <li>Phone | {{ $contact->phone }}</li>
-                                        @endif
-                                        @if($contact->misc)
-                                            <li>Misc | {{ $contact->misc }}</li>
-                                        @endif
-                                    </ul>
+                                {{ $contact->alias }} |
+                                <a href="/monitoring/contacts/update/{{ $contact->alias }}">Update</a> |
+                                <a href="/monitoring/contacts/{{ $contact->alias }}">Delete</a>
+                                <ul>
+                                    <li>Email | {{ $contact->email }}</li>
+                                    @if($contact->contact_groups)
+                                        <li>Contact Groups</li>
+                                        <ul>
+                                            <li>{{ $contact->contact_groups}}</li>
+                                        </ul>
+                                    @endif
+                                    @if($contact->phone)
+                                        <li>Phone | {{ $contact->phone }}</li>
+                                    @endif
+                                    @if($contact->misc)
+                                        <li>Misc | {{ $contact->misc }}</li>
+                                    @endif
+                                </ul>
                             @endforeach
                         </ul>
                     </div>
