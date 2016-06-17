@@ -49,10 +49,10 @@ class ContactGroupsController extends Controller
         $groupName=$accountId . "_" . $deletedGroup;
         $contacts = \App\Contacts::where('account_id', '1')->where('contact_groups', 'like', "%" . 'alpha' . "%")->list('contact_groups');
 
-        foreach($contacts as $contact_groups)
+        foreach($contacts as $contact_groups) {
             \App\Contacts::where('account_id', $accountId)->where('contact_groups', 'like', "%" . $groupName . "%")->update('contact_groups', str_replace($groupName . ",", "", $contact_groups));
 
-        );
+        };
             
         Group::where('group_name', $groupName)->where('account_id', $accountId)->delete();
         return back();
