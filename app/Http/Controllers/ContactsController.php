@@ -15,7 +15,7 @@ class ContactsController extends Controller
     public function contacts(){
         $contacts = Contacts::where('account_id', Auth::user()->account_id)->get();
         foreach($contacts as $contact){
-            str_replace(",", ", ", $contact->contact_groups);
+            $contact->contact_groups=str_replace(",", ", ", $contact->contact_groups);
         }
 
         return view('monitoring.contacts', compact('contacts'));
