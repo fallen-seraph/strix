@@ -10,13 +10,20 @@
                     <div class="panel-body">
                         <ul>
                             @foreach ($contacts as $contact)
-                                    <li>
+                                    <ul>
                                         {{ $contact->alias }} |
                                         <a href="/monitoring/contacts/update/{{ $contact->alias }}">Update</a> |
                                         <a href="/monitoring/contacts/{{ $contact->alias }}">Delete</a>
                                         <ul>
-                                            <li>Email | {{ $contact->email }}
-
+                                            <li>Email | {{ $contact->email }}</li>
+                                            @if($contact->contact_groups)
+                                                <ul>
+                                                    Contact Groups
+                                                    @foreach($contact->contact_groups as $group)
+                                                        <li>{{ $group }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
                                             @if($contact->phone)
                                                 <li>Phone | {{ $contact->phone }}</li>
                                             @endif
