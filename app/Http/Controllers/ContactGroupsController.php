@@ -47,19 +47,20 @@ class ContactGroupsController extends Controller
         $groupName=$accountId . "_" . $request->group;
         $newMember=$accountId . "_" . $request->member;
 
-        $existingMembers=Group::where('group_name', $groupName)->where('account_id', $accountId)->value('members');
+        $existingMembers=Group::where('account_id', $accountId)->where('group_name', $groupName)->value('members');
 
-        Group::where('group_name', $groupName)->where('account_id', $accountId)->update(['members' => $existingMembers . $newMember]);
+        Group::where('account_id', $accountId)->where('group_name', $groupName)->update(['members' => $existingMembers . "," . $newMember]);
 
         $existingGroups=Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->value('contact_groups');
-        Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->update(['contact_groups' => $existingGroups . $groupName]);
+
+        Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->update(['contact_groups' => $existingGroups . "," . $groupName]);
 
         return redirect()->action('ContactGroupsController@groups');
     }
     public function deleteGroup($deletedGroup){
         $accountId=Auth::user()->account_id;
         $groupName=$accountId . "_" . $deletedGroup;
-        $contacts = Contacts::where('account_id', '1')->where('contact_groups', 'like', "%" . $groupName . "%")->lists('contact_groups');
+        $contacts = Contacts::where('account_id', $accountId)->where('contact_groups', 'like', "%" . $groupName . "%")->lists('contact_groups');
 
         foreach($contacts as $contact_groups) {
             Contacts::where('account_id', $accountId)->where('contact_groups', 'like', "%" . $groupName . "%")->update(['contact_groups', str_replace($groupName . ",", "", $contact_groups)]);
