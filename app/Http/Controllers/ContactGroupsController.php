@@ -66,6 +66,6 @@ class ContactGroupsController extends Controller
         };
             
         Group::where('group_name', $groupName)->where('account_id', $accountId)->delete();
-        return back();
+        return redirect()->action('ContactGroupsController@groups');
     }
 }
