@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Group;
+use App\Contacts;
 use App\Http\Requests;
 
 class ContactGroupsController extends Controller
@@ -20,7 +21,7 @@ class ContactGroupsController extends Controller
             $group->members = explode(',', $group->members);
         }
 
-        $users = \App\Contacts::where('account_id', $accountId)->lists('alias');
+        $users = Contacts::where('account_id', $accountId)->lists('alias');
 
         return view('monitoring.contactgroups', compact('groups', 'users'));
     }
@@ -41,17 +42,27 @@ class ContactGroupsController extends Controller
         
         return redirect()->action('ContactGroupsController@groups');
     }
-    public function addUser(){
+    public function addUser(Request $request){
+        $accountId=Auth::user()->account_id;
+        $groupName=$accountId . "_" . $request->group;
+        $newMember=$accountId . "_" . $request->member;
 
+        $existingMembers=Group::where('group_name', $groupName)->where('account_id', $accountId)->value('members');
+
+        Group::where('group_name', $groupName)->where('account_id', $accountId)->update('members', $existingMembers . $newMember);
+
+        $existingGroups=Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->value('contact_groups');
+        Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->update('contact_groups', $existingGroups . $groupName);
+
+        return redirect()->action('ContactGroupsController@groups');
     }
     public function deleteGroup($deletedGroup){
         $accountId=Auth::user()->account_id;
         $groupName=$accountId . "_" . $deletedGroup;
-        $contacts = \App\Contacts::where('account_id', '1')->where('contact_groups', 'like', "%" . 'alpha' . "%")->list('contact_groups');
+        $contacts = Contacts::where('account_id', '1')->where('contact_groups', 'like', "%" . $groupName . "%")->list('contact_groups');
 
         foreach($contacts as $contact_groups) {
-            \App\Contacts::where('account_id', $accountId)->where('contact_groups', 'like', "%" . $groupName . "%")->update('contact_groups', str_replace($groupName . ",", "", $contact_groups));
-
+            Contacts::where('account_id', $accountId)->where('contact_groups', 'like', "%" . $groupName . "%")->update('contact_groups', str_replace($groupName . ",", "", $contact_groups));
         };
             
         Group::where('group_name', $groupName)->where('account_id', $accountId)->delete();
