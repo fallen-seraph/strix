@@ -76,7 +76,19 @@ class ContactGroupsController extends Controller
         $contacts = Contacts::where('account_id', '1')->where('contact_groups', 'like', "%" . '1_Beta' . "%")->select('contact_id', 'contact_groups')->get();
 
         foreach($contacts as $contact) {
-            Contacts::where('account_id', $accountId)->where('contact_id', $contact->contact_id)->update(['contact_groups' => str_replace($groupName . ",", "", $contact->contact_groups)]);
+            if(strpos($contact->contact_groups, ",") !== false){
+                Contacts::where('account_id', $accountId)
+                    ->where('contact_id', $contact->contact_id)
+                    ->update([
+                        'contact_groups' => str_replace($groupName . ",", "", $contact->contact_groups)
+                    ]);
+            } else {
+                Contacts::where('account_id', $accountId)
+                    ->where('contact_id', $contact->contact_id)
+                    ->update([
+                        'contact_groups' => str_replace($groupName, "", $contact->contact_groups)
+                    ]);
+            }
         };
             
         Group::where('group_name', $groupName)->where('account_id', $accountId)->delete();
