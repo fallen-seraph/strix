@@ -73,7 +73,7 @@ class ContactGroupsController extends Controller
         $accountId=Auth::user()->account_id;
         $groupName=$accountId . "_" . $deletedGroup;
 
-        $contacts = Contacts::where('account_id', '1')->where('contact_groups', 'like', "%" . '1_Beta' . "%")->select('contact_id', 'contact_groups')->get();
+        $contacts = Contacts::where('account_id', '1')->where('contact_groups', 'like', "%" . $deletedGroup . "%")->select('contact_id', 'contact_groups')->get();
 
         foreach($contacts as $contact) {
             if(strpos($contact->contact_groups, ",") !== false){
