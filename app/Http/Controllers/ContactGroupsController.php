@@ -49,6 +49,10 @@ class ContactGroupsController extends Controller
 
         $existingMembers=Group::where('account_id', $accountId)->where('group_name', $groupName)->value('members');
 
+        if(strpos($existingMembers, $newMember) !== false){
+            return redirect()->action('ContactGroupsController@groups')->withErrors(['member' => 'Contact is already a part of this group']);
+        }
+
         if($existingMembers) {
             Group::where('account_id', $accountId)->where('group_name', $groupName)->update(['members' => $existingMembers . "," . $newMember]);
         } else {
