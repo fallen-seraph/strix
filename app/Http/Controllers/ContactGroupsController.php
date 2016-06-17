@@ -59,7 +59,7 @@ class ContactGroupsController extends Controller
     public function deleteGroup($deletedGroup){
         $accountId=Auth::user()->account_id;
         $groupName=$accountId . "_" . $deletedGroup;
-        $contacts = Contacts::where('account_id', '1')->where('contact_groups', 'like', "%" . $groupName . "%")->list('contact_groups');
+        $contacts = Contacts::where('account_id', '1')->where('contact_groups', 'like', "%" . $groupName . "%")->lists('contact_groups');
 
         foreach($contacts as $contact_groups) {
             Contacts::where('account_id', $accountId)->where('contact_groups', 'like', "%" . $groupName . "%")->update(['contact_groups', str_replace($groupName . ",", "", $contact_groups)]);
