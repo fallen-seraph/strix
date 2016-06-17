@@ -17,7 +17,7 @@ class ContactsController extends Controller
         foreach($contacts as $contact){
             $contact->contact_groups = explode(",", $contact->contact_groups);
         }
-        
+
         return view('monitoring.contacts', compact('contacts'));
     }
     public function newContact(Request $request, Contacts $contact){
