@@ -44,6 +44,16 @@ class ContactGroupsController extends Controller
     public function addUser(){
 
     }
-    public function deleteGroup(){
+    public function deleteGroup($deletedGroup){
+        $accountId=Auth::user()->account_id;
+        $groupName=$accountId . "_" . $group;
+        $group = Group::where('account_id', $accountId)->where('group_name', $groupName)->first();
+        if($group->group_name == $groupName)
+        {
+            $contact = \App\Contact::where('account_id', $accountId)->where('group_name', 'like', $deletedGroup);
+            
+            Contacts::where('contact_name', $groupName)->delete();
+        }
+        return back();
     }
 }
