@@ -113,7 +113,7 @@
             console.log(e);
             var group_name = e.target.value;
 
-            $.get('{{ url('api/dropdown') }}/create/ajax-state?state_id=' + group_name, function(data) {
+            $.get('{{ url('api/dropdown') }}', function(data) {
                 console.log(data);
                 $('#member').empty();
                 $.each(data, function(index,subCatObj){
