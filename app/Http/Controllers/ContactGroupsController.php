@@ -21,9 +21,23 @@ class ContactGroupsController extends Controller
             $group->members = explode(',', $group->members);
         }
 
-        $users = Contacts::where('account_id', $accountId)->lists('alias');
+        return view('monitoring.contactgroups', compact('groups'));
+    }
+    public function dropdown(){
 
-        return view('monitoring.contactgroups', compact('groups', 'users'));
+        $input = Input::get('option');
+
+        $users = Group::where('accountId', Auth::user()->account_id)
+            ->where('alias', $input)
+            ->lists('members');
+
+        $users=$users->toArray();
+
+        foreach($users as &$member){
+            $member=str_replace(Auth::user()->account_id . "_", "", $member);
+        }
+
+        return Response::json($users);
     }
     public function newGroup(Request $request, Group $group){
         $account_id=Auth::user()->account_id;
