@@ -114,10 +114,10 @@
                     function(data) {
                         var member = $('#member');
                             member.empty();
-                            $.each(data, function(key, value) {
+                            $.each(data, function(value) {
                         member
                             .append($("<option></option>")
-                            .attr("value",key)
+                            .attr("value")
                             .text(value));
                         });
                     });
