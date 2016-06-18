@@ -23,7 +23,7 @@ class ContactGroupsController extends Controller
 
         $users = Contacts::where('account_id', $accountId)->lists('alias');
 
-        return view('monitoring.contactgroups', compact('groups'))->response()->json('users');
+        return response()->json('users')->view('monitoring.contactgroups', compact('groups'));
     }
     public function newGroup(Request $request, Group $group){
         $account_id=Auth::user()->account_id;
