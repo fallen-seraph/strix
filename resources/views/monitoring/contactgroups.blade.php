@@ -120,7 +120,7 @@
                 function(data) {
                     var member = $('#member');
                     member.empty();
-                    $.each(data, function(key, value) {
+                    $.each({!! $users !!}, function(key, value) {
                         member
                             .append($("<option></option>")
                             .attr("value",key)
