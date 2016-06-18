@@ -110,4 +110,24 @@
             </div>
         </div>
     </div>
+
+    <!--  Script for dependent drop downs.   -->
+    <script>
+
+        $(document).ready(function($){
+            $('#group').change(function(){
+                $.get("{{ url('/monitoring/groups')}}", { option: $(this).val() },
+                function(data) {
+                    var member = $('#member');
+                    member.empty();
+                    $.each(data, function(key, value) {
+                        member
+                            .append($("<option></option>")
+                            .attr("value",key)
+                            .text(value));
+                    });
+                });
+            });
+        });
+    </script>
 @endsection
