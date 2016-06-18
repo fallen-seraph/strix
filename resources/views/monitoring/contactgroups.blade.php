@@ -110,17 +110,14 @@
     <script>
         $(document).ready(function($){
             $('#group').change(function(){
-                $.get("{{ url('monitoring/dropdown') }}", { option: $(this).val() },
-                    function(data) {
-                        var member = $('#member');
-                            member.empty();
-                            $.each(data, function(value) {
-                        member
-                            .append($("<option></option>")
-                            .attr("value")
-                            .text(value));
+                $.get("{{ url('monitoring/dropdown')}}",
+                        { option: $(this).val() },
+                        function(data) {
+                            $('#member').empty();
+                            $.each(data, function(element) {
+                                $('#member').append("<option>" + element + "</option>");
+                            });
                         });
-                    });
             });
         });
     </script>

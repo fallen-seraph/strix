@@ -49,6 +49,6 @@ Route::post('monitoring/groups', 'ContactGroupsController@newGroup');
 Route::patch('monitoring/groups', 'ContactGroupsController@addUser');
 Route::get('monitoring/groups/{group}', 'ContactGroupsController@deleteGroup');
 
-Route::get('api/dropdown', 'ContactGroupsController@dropdown');
+Route::get('monitoring/dropdown', 'ContactGroupsController@dropdown');
 
 Route::get('settings', 'SettingsController@settings');
