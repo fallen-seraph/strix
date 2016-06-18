@@ -109,16 +109,15 @@
 
     <!--  Script for dependent drop downs.   -->
     <script>
-        jQuery(document).ready(function($){
-            $('#group').change(function(){
-                $.get("{{ url('api/dropdown')}}",
-                { option: $(this).val() },
-                function(data) {
-                    var item = $('#member');
-                    item.empty();
-                    $.each(data, function(key, value) {
-                        item.append("<option>" + value + "</option>");
-                    });
+        $('#group').on('change', function(e){
+            console.log(e);
+            var group_name = e.target.value;
+
+            $.get('{{ url('information') }}/create/ajax-state?state_id=' + group_name, function(data) {
+                console.log(data);
+                $('#member').empty();
+                $.each(data, function(index,subCatObj){
+                    $('#member').append(''+subCatObj.name+'');
                 });
             });
         });
