@@ -84,9 +84,7 @@
 
                                     <div class="col-md-6">
                                         <select id="member" class="form-control" name="member" value="{{ old('member') }}">
-                                            @foreach($users as $user)
-                                                <option>{{ $user }}</option>
-                                            @endforeach
+                                            <option>- - -</option>
                                         </select>
                                         @if ($errors->has('member'))
                                             <span class="help-block">
@@ -116,7 +114,9 @@
 
         $(document).ready(function($){
             $('#group').change(function(){
-                $.get("{{ url('/monitoring/groups')}}", { option: $(this).val() },
+                $.get("{{ url('/monitoring/groups')}}", {
+                    option: $(this).val()
+                },
                 function(data) {
                     var member = $('#member');
                     member.empty();
