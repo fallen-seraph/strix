@@ -114,11 +114,9 @@
                 $.get("{{ url('api/dropdown')}}",
                 { option: $(this).val() },
                 function(data) {
-
                     var item = $('#member');
                     item.empty();
-
-                    $.each(data, function(value) {
+                    $.each(data, function(key, value) {
                         item.append("<option>" + value + "</option>");
                     });
                 });
