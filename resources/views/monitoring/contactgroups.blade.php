@@ -65,6 +65,7 @@
 
                                 <div class="col-md-6">
                                     <select id="group" class="form-control" name="group" value="{{ old('group') }}">
+                                        <option>- - - </option>
                                         @foreach($groups as $group)
                                             <option>{{ $group->alias }}</option>
                                         @endforeach
@@ -108,16 +109,19 @@
 
     <!--  Script for dependent drop downs.   -->
     <script>
-        $(document).ready(function($){
+        jQuery(document).ready(function($){
             $('#group').change(function(){
-                $.get("{{ url('monitoring/dropdown')}}",
-                        { option: $(this).val() },
-                        function(data) {
-                            $('#member').empty();
-                            $.each(data, function(element) {
-                                $('#member').append("<option>" + element + "</option>");
-                            });
-                        });
+                $.get("{{ url('api/dropdown')}}",
+                { option: $(this).val() },
+                function(data) {
+
+                    var item = $('#member');
+                    item.empty();
+
+                    $.each(data, function(value) {
+                        item.append("<option>" + value + "</option>");
+                    });
+                });
             });
         });
     </script>
