@@ -109,9 +109,9 @@
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
-        jQuery(document).ready(function($){
+        $(document).ready(function($){
             $('#group').change(function(){
-                console.log({{ url('/api/dropdown') }});
+                console.log(('#group').val());
             });
         });
     </script>
