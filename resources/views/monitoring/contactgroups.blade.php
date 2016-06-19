@@ -67,7 +67,7 @@
                                     <select id="group" class="form-control" name="group" value="{{ old('group') }}">
                                         <option>- - - </option>
                                         @foreach($groups as $group)
-                                            <option>{{ $group->alias }}</option>
+                                            <option value="{{ $group->alias }}">{{ $group->alias }}</option>
                                         @endforeach
                                     </select>
                                     @if ($errors->has('group'))
