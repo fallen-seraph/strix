@@ -109,18 +109,18 @@
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function($){
             $('#group').change(function(){
-                $.get("{{ url('/api/dropdown')}}", { option: $('#group').val() },
-                function(data) {
-                    var members = $('#member');
-                    members.empty();
-                    $.each(data, function(value) {
-                        members.append($("<option></option>")
-                                .attr("value",value)
-                                .text(value));
-                    });
-                });
+                $.get("{{ url('api/dropdown')}}",
+                        { option: $('#group').val() },
+                        function(data) {
+                            var model = $('member');
+                            model.empty();
+
+                            $.each(data, function(index, element) {
+                                model.append("<option value='"+ element +"'>" + element + "</option>");
+                            });
+                        });
             });
         });
     </script>
