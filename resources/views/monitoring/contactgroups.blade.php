@@ -111,7 +111,8 @@
     <script>
         $(document).ready(function($){
             $('#group').change(function(group){
-                console.log(group.target.value);
+                var group_alias=group.target.value;
+                console.log(group_alias);
             });
         });
     </script>
