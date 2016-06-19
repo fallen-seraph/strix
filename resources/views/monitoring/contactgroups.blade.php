@@ -111,9 +111,7 @@
     <script>
         $( document ).ready(function() {
             $('#group').change(function(){
-                $.get("{{ url('api/dropdown')}}", { option: $('#group').val() },
-                function(data) {
-                });
+                console.log(  $('#group').val() )
             });
         });
     </script>
