@@ -112,7 +112,7 @@
         jQuery(document).ready(function($){
             $('#group').change(function(){
                 //$.get("", {}, function(data){
-                    alert({{ url('/api/dropdown')}});
+                    console.log({{ url('/api/dropdown')}});
                 //});
             });
         });
