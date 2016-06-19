@@ -106,15 +106,13 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
         $( document ).ready(function() {
-            console.log( "document loaded" );
-        });
-
-        $( window ).load(function() {
-            console.log( "window loaded" );
+            $('#group').change(function(){
+                console.log( "group changed" );
+            });
         });
     </script>
 @endsection
