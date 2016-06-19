@@ -27,7 +27,6 @@ class ContactGroupsController extends Controller
         $accountId=Auth::user()->account_id;
         //$input = Input::get('option');
         $input='Alpha';
-        dd($accountId);
 
         $group_contacts = Group::where('account_id', $accountId)
             ->where('alias', $input)
