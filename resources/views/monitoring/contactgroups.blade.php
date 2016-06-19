@@ -107,19 +107,21 @@
         </div>
     </div>
 
-    <!--  Script for dependent drop downs.   -->
+    <script type="text/javascript" src="{{ asset('js/jquery-1.10.2.js') }}"></script>
     <script>
-        $('#group').on('change', function(e){
-            console.log(e);
-            var group_name = e.target.value;
-
-            $.get('{{ url('api/dropdown') }}', function(data) {
-                console.log(data);
-                $('#member').empty();
-                $.each(data, function(index,subCatObj){
-                    $('#member').append(''+subCatObj.name+'');
-                });
+        jQuery(document).ready(function($) {
+            $('#group').change(function(){
+                $.get("{{ url('api/dropdown')}}", { option: $('#group').val() },
+                        function(data) {
+                            var member = $('#member');
+                            member.empty();
+                            $.each(data, function(key, value) {
+                                member .append($("<option></option>")
+                                        .attr("value",key)
+                                        .text(value));
+                            });
+                        });
             });
-        });
+        }
     </script>
 @endsection
