@@ -111,8 +111,7 @@
     <script>
         jQuery(document).ready(function($){
             $('#group').change(function(){
-                $.get("{{ url('api/dropdown')}}",
-                        { option: $('#group').val() },
+                $.get("{{ url('api/dropdown')}}" + $('#group').val(),
                         function(data) {
                             var model = $('member');
                             model.empty();
