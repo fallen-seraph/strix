@@ -110,8 +110,8 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
         $(document).ready(function($){
-            $('#group').change(function(){
-                console.log(('#group').val());
+            $('#group').change(function(group){
+                console.log(group.target.value);
             });
         });
     </script>

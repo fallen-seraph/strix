@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Group;
 use App\Contacts;
+use Response;
+use Input;
 use App\Http\Requests;
 
 class ContactGroupsController extends Controller
