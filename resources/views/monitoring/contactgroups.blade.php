@@ -109,9 +109,18 @@
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
-        $( document ).ready(function() {
+        jQuery(document).ready(function($) {
             $('#group').change(function(){
-                console.log(  $('#group').val() )
+                $.get("{{ url('api/dropdown')}}", { option: $('#group').val() },
+                function(data) {
+                    var members = $('#member');
+                    members.empty();
+                    $.each(data, function(key, value) {
+                        members.append($("<option></option>")
+                                .attr("value",key)
+                                .text(value[0]));
+                    });
+                });
             });
         });
     </script>
