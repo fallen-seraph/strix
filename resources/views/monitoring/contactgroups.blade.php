@@ -111,15 +111,9 @@
     <script>
         jQuery(document).ready(function($){
             $('#group').change(function(){
-                $.get("{{ url('api/dropdown')}}" + $('#group').val(),
-                        function(data) {
-                            var model = $('member');
-                            model.empty();
-
-                            $.each(data, function(index, element) {
-                                model.append("<option value='"+ element +"'>" + element + "</option>");
-                            });
-                        });
+                $.get("{{ url('api/dropdown')}}", function(data){
+                    console.log(data);
+                });
             });
         });
     </script>
