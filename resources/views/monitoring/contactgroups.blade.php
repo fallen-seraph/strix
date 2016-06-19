@@ -112,7 +112,8 @@
         $(document).ready(function($){
             $('#group').change(function(group){
                 var group_alias=group.target.value;
-                console.log(group_alias);
+                $.get('/api/dropdown?group+alias=' + group_alias, function(data){
+                    console.log(data);
             });
         });
     </script>
