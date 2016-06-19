@@ -106,22 +106,4 @@
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="{{ asset('js/jquery-1.10.2.js') }}"></script>
-    <script>
-        jQuery(document).ready(function($) {
-            $('#group').change(function(){
-                $.get("{{ url('api/dropdown')}}", { option: $('#group').val() },
-                        function(data) {
-                            var member = $('#member');
-                            member.empty();
-                            $.each(data, function(key, value) {
-                                member .append($("<option></option>")
-                                        .attr("value",key)
-                                        .text(value));
-                            });
-                        });
-            });
-        });
-    </script>
 @endsection
