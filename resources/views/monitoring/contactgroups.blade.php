@@ -113,12 +113,13 @@
             $('#group').change(function(){
                 $.get("{{ url('api/dropdown')}}", { option: $('#group').val() },
                 function(data) {
+                    console.log( data );
                     var members = $('#member');
                     members.empty();
                     $.each(data, function(key, value) {
                         members.append($("<option></option>")
                                 .attr("value",key)
-                                .text(value[0]));
+                                .text(value));
                     });
                 });
             });
