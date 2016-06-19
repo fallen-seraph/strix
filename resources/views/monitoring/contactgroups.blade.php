@@ -115,9 +115,9 @@
                 function(data) {
                     var members = $('#member');
                     members.empty();
-                    $.each(data, function(key, value) {
+                    $.each(data, function(value) {
                         members.append($("<option></option>")
-                                .attr("value",key)
+                                .attr("value",value)
                                 .text(value));
                     });
                 });

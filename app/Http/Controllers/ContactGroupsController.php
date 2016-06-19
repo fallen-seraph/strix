@@ -26,7 +26,7 @@ class ContactGroupsController extends Controller
     public function dropdown(){
         $accountId=Auth::user()->account_id;
         $input = Input::get('option');
-        dd($input);
+        dd($accountId);
 
         $group_contacts = Group::where('account_id', $accountId)
             ->where('alias', $input)
