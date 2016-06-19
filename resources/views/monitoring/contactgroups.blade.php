@@ -111,9 +111,9 @@
     <script>
         jQuery(document).ready(function($){
             $('#group').change(function(){
-                $.get("{{ url('/api/dropdown')}}", {}, function(data){
-                    alert(data);
-                });
+                //$.get("", {}, function(data){
+                    alert({{ url('/api/dropdown')}});
+                //});
             });
         });
     </script>
