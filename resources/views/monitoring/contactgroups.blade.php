@@ -122,6 +122,6 @@
                             });
                         });
             });
-        }
+        });
     </script>
 @endsection
