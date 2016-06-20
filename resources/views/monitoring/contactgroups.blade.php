@@ -121,7 +121,7 @@
                             $('#member').append('<option value="' + value + '">' + value + '</option>');
                         });
                     } else {
-                        $('#member').append('<option>No Available Contacts</option>');
+                        $('#member').append('<option selected disabled>No Available Contacts</option>');
                     }
 
                 });
