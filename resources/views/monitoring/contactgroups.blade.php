@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('header')
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-@endsection
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -113,9 +109,6 @@
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
-        $.ajaxSetup({
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
-        });
 
         $(document).ready(function($){
             $('#group').change(function(group){
@@ -128,7 +121,9 @@
                             $('#member').append('<option value="' + value + '">' + value + '</option>');
                         });
                     } else {
-                        $('#member').append('<option>No Available Contacts</option>');
+                        $.each(data, function(value) {
+                            $('#member').append('<option>No Available Contacts</option>');
+                        });
                     }
 
                 });
