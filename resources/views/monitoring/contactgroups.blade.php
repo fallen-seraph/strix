@@ -116,7 +116,7 @@
                 $.get('/api/dropdown', { option: group_alias }, function(data) {
                     $('#member').empty();
 
-                    if($.isEmptyObject(data)) {
+                    if(!$.isEmptyObject(data)) {
                         $.each(data, function (index, value) {
                             $('#member').append('<option value="' + value + '">' + value + '</option>');
                         });
