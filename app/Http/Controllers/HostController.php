@@ -16,6 +16,7 @@ class HostController extends Controller
         $accountId=Auth::user()->account_id;
         $hosts=Host::where('account_id', $accountId)->lists('host_name');
 
+        $hosts=$hosts->toArray();
         foreach($hosts as &$host){$host=trim($host, $accountId . "_");}
 
         return view('monitoring.hosts', compact('hosts'));
