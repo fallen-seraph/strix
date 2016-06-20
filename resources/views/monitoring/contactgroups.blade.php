@@ -82,7 +82,7 @@
                                 <label for="member" class="col-md-4 control-label">Member</label>
 
                                 <div class="col-md-6">
-                                    <select id="member" class="form-control" name="member" value="{{ old('member') }}">
+                                    <select required id="member" class="form-control" name="member" value="{{ old('member') }}">
                                         <option selected disabled>Choose a contact</option>
                                     </select>
                                     @if ($errors->has('member'))
