@@ -30,12 +30,11 @@ class ContactGroupsController extends Controller
         //$input = Input::get('option');
         $input='Alpha';
 
-        $group_contacts = Group::where('account_id', $accountId)
-            ->where('alias', $input)
-            ->lists('members');
+        $group_contacts = Group::where('account_id', $accountId)->where('alias', $input)->lists('members');
+        $group_contacts=explode(",", $group_contacts);
 
-        $users = Contacts::where('account_id', $accountId)
-            ->lists('contact_name');
+        $users = Contacts::where('account_id', $accountId)->lists('contact_name');
+        $users=$users->toArray();
 
         $availableUsers=array_diff($users, $group_contacts);
 
