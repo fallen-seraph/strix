@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Auth;
 use App\Group;
 use App\Contacts;
 use Response;
-use Input;
 use App\Http\Requests;
 
 class ContactGroupsController extends Controller
