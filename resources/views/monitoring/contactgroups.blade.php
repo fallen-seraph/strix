@@ -116,14 +116,12 @@
                 $.get('/api/dropdown', { option: group_alias }, function(data) {
                     $('#member').empty();
 
-                    if(data) {
+                    if(data[0]) {
                         $.each(data, function (index, value) {
                             $('#member').append('<option value="' + value + '">' + value + '</option>');
                         });
                     } else {
-                        $.each(data, function(value) {
-                            $('#member').append('<option>No Available Contacts</option>');
-                        });
+                        $('#member').append('<option>No Available Contacts</option>');
                     }
 
                 });
