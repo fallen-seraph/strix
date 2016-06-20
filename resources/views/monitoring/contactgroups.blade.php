@@ -113,7 +113,7 @@
         $(document).ready(function($){
             $('#group').change(function(group){
                 var group_alias=group.target.value;
-                $.get('/api/dropdown', { option: group_alias }, function(data) {
+                $.get('/group/dropdown', { option: group_alias }, function(data) {
                     $('#member').empty();
 
                     if(!$.isEmptyObject(data)) {

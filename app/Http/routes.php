@@ -49,6 +49,11 @@ Route::post('monitoring/groups', 'ContactGroupsController@newGroup');
 Route::patch('monitoring/groups', 'ContactGroupsController@addUser');
 Route::get('monitoring/groups/{group}', 'ContactGroupsController@deleteGroup');
 
-Route::get('api/dropdown', 'ContactGroupsController@dropdown');
+Route::get('group/dropdown', 'ContactGroupsController@dropdown');
+
+Route::get('monitoring/hosts', 'HostController@hosts');
+Route::post('monitoring/hosts', 'HostController@hosts');
+Route::patch('monitoring/hosts', 'HostController@hosts');
+Route::get('monitoring/hosts/{host}', 'HostController@hosts');
 
 Route::get('settings', 'SettingsController@settings');
