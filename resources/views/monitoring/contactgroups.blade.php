@@ -65,7 +65,7 @@
 
                                 <div class="col-md-6">
                                     <select id="group" class="form-control" name="group" value="{{ old('group') }}">
-                                        <option>- - - </option>
+                                        <option selected disabled>Choose a Group</option>
                                         @foreach($groups as $group)
                                             <option value="{{ $group->alias }}">{{ $group->alias }}</option>
                                         @endforeach
@@ -83,7 +83,6 @@
 
                                 <div class="col-md-6">
                                     <select id="member" class="form-control" name="member" value="{{ old('member') }}">
-                                        <option>- - -</option>
                                     </select>
                                     @if ($errors->has('member'))
                                         <span class="help-block">
@@ -117,6 +116,7 @@
                     $('#member').empty();
 
                     if(data[0]) {
+                        $('#member').append('<option selected disabled>Choose a contact</option>');
                         $.each(data, function (index, value) {
                             $('#member').append('<option value="' + value + '">' + value + '</option>');
                         });
