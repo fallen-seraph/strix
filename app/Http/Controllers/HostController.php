@@ -50,7 +50,7 @@ class HostController extends Controller
         
         return redirect()->action('HostController@hosts');
     }
-	public function addContacts(Request $request{
+	public function addContacts(Request $request){
 	
 	}
 	public function addService(Request $request, HostService $hostService){
