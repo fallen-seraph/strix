@@ -120,8 +120,16 @@
         $(document).ready(function($){
             $('#group').change(function(group){
                 var group_alias=group.target.value;
-                $.get('/api/dropdown', { option: group_alias }, function(data){
-                    console.log(data.value);
+                $.get('/api/dropdown', { option: group_alias }, function(data) {
+                    $('#member').empty();
+
+                    $('#member').append(' Please choose one');
+
+                    $.each(data, function (index, value) {
+                        $('#member').append('<option value="' + value + '">' + value + '</option>');
+
+
+                    });
                 });
             });
         });
