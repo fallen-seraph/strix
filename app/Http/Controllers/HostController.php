@@ -67,13 +67,13 @@ class HostController extends Controller
 		
 		if($existingServices){
 			Host::where('account_id', $accountId)
-				->where('host_name, $hostName)
+				->where('host_name', $hostName)
 				->update([
 					'services' => $existingServices . "," . $request->service,
 				]);
 		} else {
 			Host::where('account_id', $accountId)
-				->where('host_name, $hostName)
+				->where('host_name', $hostName)
 				->update([
 					'services' => $request->service,
 				]);
