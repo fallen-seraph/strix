@@ -34,7 +34,7 @@ class ContactGroupsController extends Controller
         $users = Contacts::where('account_id', $accountId)->lists('contact_name');
 
         $group_contacts=$group_contacts->toArray();
-        $availableUsers=array_diff(explode(",", $group_contacts[0]), $users->toArray());
+        $availableUsers=array_diff($users->toArray(), explode(",", $group_contacts[0]));
 
         foreach($availableUsers as &$user){$user=str_replace("1_", "", $user);}
 
