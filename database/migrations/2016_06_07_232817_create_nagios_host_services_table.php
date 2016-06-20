@@ -14,18 +14,20 @@ class CreateNagiosHostServicesTable extends Migration
     public function up()
     {
         Schema::connection('nagidb')->create('nagios_host_services', function (Blueprint $table) {
-            $table->integer('account_id')->unsigned();
-            $table->integer('host_id')->unsigned();
-            $table->integer('service_num');
-            $table->string('host_name');
-            $table->text('service_description');
-            $table->string('check_command');
-            $table->text('contacts');
-            $table->string('contact_groups');
-            $table->timestamps();
+        	$table->increments('host_service_id');
+        	$table->integer('host_id')->unsigned();
+        	$table->integer('account_id')->unsigned();
+        	$table->integer('service_id')->unsigned();
+        	$table->string('host_name');
+        	$table->text('service_description');
+        	$table->string('check_command');
+        	$table->text('contacts');
+        	$table->text('contact_groups');
+        	$table->timestamps();
         });
         Schema::connection('nagidb')->table('nagios_host_services', function($table) {
             $table->foreign('account_id')->references('account_id')->on(new Expression('strixdb.account_information'));
+            $table->foreign('service_id')->references('service_id')->on(new Expression('strixProducts.services'));
         });
     }
 
