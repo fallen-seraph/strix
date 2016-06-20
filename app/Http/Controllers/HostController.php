@@ -28,7 +28,7 @@ class HostController extends Controller
     }
     public function newHost(Request $request, Host $host){
         $accountId=Auth::user()->account_id;
-        $hostName=$account_id . "_" . $request->alias;
+        $hostName=$accountId . "_" . $request->alias;
         $request->request->add(['host_name' => $hostName]);
 		
         $this->validate($request, [
