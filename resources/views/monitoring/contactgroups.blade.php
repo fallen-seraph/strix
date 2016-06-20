@@ -83,6 +83,7 @@
 
                                 <div class="col-md-6">
                                     <select id="member" class="form-control" name="member" value="{{ old('member') }}">
+                                        <option selected disabled>Choose a contact</option>
                                     </select>
                                     @if ($errors->has('member'))
                                         <span class="help-block">
@@ -116,7 +117,6 @@
                     $('#member').empty();
 
                     if(data[0]) {
-                        $('#member').append('<option selected disabled>Choose a contact</option>');
                         $.each(data, function (index, value) {
                             $('#member').append('<option value="' + value + '">' + value + '</option>');
                         });
