@@ -19,8 +19,8 @@ class CreateNagiosHostTable extends Migration
             $table->string('host_name');
             $table->string('alias');
             $table->string('address');
-            $table->text('contacts');
-            $table->string('contact_groups');
+            $table->text('contacts')->nullable();
+            $table->string('contact_groups')->nullable();
             $table->timestamps();
         });
         Schema::connection('nagidb')->table('nagios_host', function($table) {

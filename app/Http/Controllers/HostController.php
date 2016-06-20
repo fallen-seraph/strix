@@ -14,12 +14,8 @@ class HostController extends Controller
     }
     public function hosts(){
         $accountId=Auth::user()->account_id;
-        $groups = Group::where('account_id', $accountId)->get();
+        $hosts=Host::where('account_id', $accountId)->lists('host_name');
 
-        foreach($groups as $group){
-            $group->members = explode(',', $group->members);
-        }
-
-        return view('monitoring.contactgroups', compact('hosts'));
+        return view('monitoring.hosts', compact('hosts'));
     }
 }

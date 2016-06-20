@@ -5,10 +5,14 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Welcome</div>
+                    <div class="panel-heading">Nagios Hosts and Services</div>
 
                     <div class="panel-body">
-                        Server Strix Coming Soon!
+                        <ul>
+                            @foreach ($hosts as $host)
+                                <li>{{ $host }} | <a href="/monitoring/hosts/{{ $host }}">Delete</a></li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
