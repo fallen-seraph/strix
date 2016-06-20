@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use Host;
+use App\Host;
 use App\Http\Requests;
 
 class HostController extends Controller
