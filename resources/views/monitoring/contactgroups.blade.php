@@ -123,13 +123,14 @@
                 $.get('/api/dropdown', { option: group_alias }, function(data) {
                     $('#member').empty();
 
-                    $('#member').append(' Please choose one');
+                    if(data) {
+                        $.each(data, function (index, value) {
+                            $('#member').append('<option value="' + value + '">' + value + '</option>');
+                        });
+                    } else {
+                        $('#member').append('<option>No Available Contacts</option>');
+                    }
 
-                    $.each(data, function (index, value) {
-                        $('#member').append('<option value="' + value + '">' + value + '</option>');
-
-
-                    });
                 });
             });
         });
