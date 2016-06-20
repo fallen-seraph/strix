@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Host;
+use App\Contacts;
+use App\Group;
 use App\Http\Requests;
 
 class HostController extends Controller
@@ -18,8 +20,11 @@ class HostController extends Controller
 
         $hosts=$hosts->toArray();
         foreach($hosts as &$host){$host=trim($host, $accountId . "_");}
+        
+        $contacts=Contacts::where('account_id', $accountId)->lists('contact_name');
+        $contact_groups=Group::where('account_id', $accountId)->lists('group_name');
 
-        return view('monitoring.hosts', compact('hosts'));
+        return view('monitoring.hosts', compact('hosts', 'contacts', 'contact_groups'));
     }
     public function newHost(Request $request, Host $host){
         $accountId=Auth::user()->account_id;
