@@ -23,9 +23,9 @@ class HostController extends Controller
         
         $contacts=Contacts::where('account_id', $accountId)->lists('contact_name');
         $contact_groups=Group::where('account_id', $accountId)->lists('group_name');
-		//$services=Service::select('')
+		$services=Services::select('service_id', 'service_name')->get();
 
-        return view('monitoring.hosts', compact('hosts', 'contacts', 'contact_groups'));
+        return view('monitoring.hosts', compact('hosts', 'contacts', 'contact_groups', 'services'));
     }
     public function newHost(Request $request, Host $host){
         $accountId=Auth::user()->account_id;
@@ -59,15 +59,15 @@ class HostController extends Controller
         $host=Host::where('account_id', $accountId)->where('host_name', $hostName)->get();
 		$service=Service::where('service_id', $request->service_id)->select('check_command', 'description');
 		
-        if(strpos($existingServices->services, $newService) !== false){
+        if(strpos($host->services, $request->service_id) !== false){
             return back()->withErrors(['service' => 'This service is already being monitored on this host.']);
         }
 		
-		if($existingServices){
+		if($host->services){
 			Host::where('account_id', $accountId)
 				->where('host_name', $hostName)
 				->update([
-					'services' => $existingServices . "," . $request->service,
+					'services' => $host->services . "," . $request->service_id,
 				]);
 		} else {
 			Host::where('account_id', $accountId)

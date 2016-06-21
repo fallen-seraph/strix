@@ -19,6 +19,7 @@ class CreateNagiosHostTable extends Migration
             $table->string('host_name')->index();
             $table->string('alias');
             $table->string('address');
+            $table->string('services')->nullable();
             $table->text('contacts')->nullable();
             $table->text('contact_groups')->nullable();
             $table->timestamps();

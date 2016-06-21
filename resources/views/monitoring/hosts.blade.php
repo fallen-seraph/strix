@@ -52,6 +52,7 @@
 
                                 <div class="col-md-6">
                                     <select id="contacts" class="form-control" name="contacts">
+                                        <option selected disabled>Choose a Contact</option>
 										@foreach($contacts as $contact)
 											<option>{{ trim($contact, Auth::user()->account_id . "_") }}</option>
 										@endforeach
@@ -69,10 +70,98 @@
 
                                 <div class="col-md-6">
                                     <select id="contact_groups" class="form-control" name="contact_groups">
+                                        <option selected disabled>Choose a Contact Group</option>
 										@foreach($contact_groups as $groups)
 											<option>{{ trim($groups, Auth::user()->account_id . "_") }}</option>
 										@endforeach
 									</select>
+                                    @if ($errors->has('contact_groups'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('contact_groups') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-btn fa-user"></i> New Host
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-heading">Add Service</div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('monitoring/hosts/service') }}">
+                            {{ csrf_field() }}
+                            {{ method_field('PATCH') }}
+
+
+                            <div class="form-group{{ $errors->has('host') ? ' has-error' : '' }}">
+                                <label for="host" class="col-md-4 control-label">Host Name</label>
+
+                                <div class="col-md-6">
+
+                                    <select id="host" class="form-control" name="host">
+                                        @foreach ($hosts as $host)
+                                            <option>{{ $host }}</option>
+                                        @endforeach
+                                    </select>
+
+                                    @if ($errors->has('host'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('host') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                                <label for="service" class="col-md-4 control-label">Service</label>
+
+                                <div class="col-md-6">
+                                    <select id="host" class="form-control" name="host">
+                                        <option selected disabled>Choose a Service</option>
+                                        @foreach ($services as $service)
+                                            <option value="{{ $service->service_id }}">{{ $service->service_name }}</option>
+                                        @endforeach
+                                    </select>
+
+                                    @if ($errors->has('address'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('contacts') ? ' has-error' : '' }}">
+                                <label for="contacts" class="col-md-4 control-label">contacts</label>
+
+                                <div class="col-md-6">
+                                    <select id="contacts" class="form-control" name="contacts">
+                                        @foreach($contacts as $contact)
+                                            <option>{{ trim($contact, Auth::user()->account_id . "_") }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('contacts'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('contacts') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('contact_groups') ? ' has-error' : '' }}">
+                                <label for="contact_groups" class="col-md-4 control-label">contact_groups</label>
+
+                                <div class="col-md-6">
+                                    <select id="contact_groups" class="form-control" name="contact_groups">
+                                        @foreach($contact_groups as $groups)
+                                            <option>{{ trim($groups, Auth::user()->account_id . "_") }}</option>
+                                        @endforeach
+                                    </select>
                                     @if ($errors->has('contact_groups'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('contact_groups') }}</strong>
