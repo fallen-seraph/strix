@@ -14,13 +14,13 @@ class CreateNagiosHostTable extends Migration
     public function up()
     {
         Schema::connection('nagidb')->create('nagios_host', function (Blueprint $table) {
+            $table->increments('host_id');
             $table->integer('account_id')->unsigned();
-            $table->integer('host_id')->unsigned();
-            $table->string('host_name');
+            $table->string('host_name')->index();
             $table->string('alias');
             $table->string('address');
             $table->text('contacts')->nullable();
-            $table->string('contact_groups')->nullable();
+            $table->text('contact_groups')->nullable();
             $table->timestamps();
         });
         Schema::connection('nagidb')->table('nagios_host', function($table) {
