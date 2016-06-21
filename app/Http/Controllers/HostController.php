@@ -7,6 +7,7 @@ use Auth;
 use App\Host;
 use App\Contacts;
 use App\Group;
+use App\Services;
 use App\Http\Requests;
 
 class HostController extends Controller
