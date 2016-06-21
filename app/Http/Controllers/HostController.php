@@ -32,7 +32,7 @@ class HostController extends Controller
         $request->request->add(['host_name' => $hostName]);
 		
         $this->validate($request, [
-            'group_name' => 'required|unique:nagidb.nagios_host,host_name',
+            'host_name' => 'required|unique:nagidb.nagios_host,host_name',
 			'address' => 'required',
         ]);
 		
