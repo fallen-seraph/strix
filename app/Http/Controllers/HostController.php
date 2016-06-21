@@ -56,10 +56,10 @@ class HostController extends Controller
 	public function addService(Request $request, HostService $hostService){
         $accountId=Auth::user()->account_id;
 		
-        $host=Host::where('account_id', $accountId)->where('host_name', $request->host)->get();
+        $host=Host::where('account_id', $accountId)->where('host_name', $request->host)->first();
 	$service=Services::where('service_id', $request->service_id)->select('check_command', 'description');
 
-	if($host->contains('services')){
+	if($host->services != null){
             if(strpos($host->services, $request->service_id) !== false){
                 return back()->withErrors(['service' => 'This service is already being monitored on this host.']);
             } else {
