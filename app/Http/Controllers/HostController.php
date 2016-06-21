@@ -57,7 +57,7 @@ class HostController extends Controller
         $accountId=Auth::user()->account_id;
 		
         $host=Host::where('account_id', $accountId)->where('host_name', $request->host)->first();
-	$service=Services::where('service_id', $request->service_id)->select('check_command', 'description');
+	$service=Services::where('service_id', $request->service_id)->select('check_command', 'description')->first();
 
 	if($host->services != null){
             if(strpos($host->services, $request->service_id) !== false){
