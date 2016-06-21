@@ -55,7 +55,7 @@ class HostController extends Controller
 	}
 	public function addService(Request $request, HostService $hostService){
         $accountId=Auth::user()->account_id;
-		
+		dd($request);
         $hostName=$accountId . "_" . $request->host;
 		
         $host=Host::where('account_id', $accountId)->where('host_name', $hostName)->get();
