@@ -23,11 +23,17 @@ class CreateNagiosHostServicesTable extends Migration
         	$table->string('check_command');
         	$table->text('contacts');
         	$table->text('contact_groups');
+            $table->string('argument_one');
+            $table->string('argument_two');
+            $table->string('argument_three');
+            $table->string('argument_four');
+            $table->string('argument_five');
         	$table->timestamps();
         });
         Schema::connection('nagidb')->table('nagios_host_services', function($table) {
             $table->foreign('account_id')->references('account_id')->on(new Expression('strixdb.account_information'));
             $table->foreign('service_id')->references('service_id')->on(new Expression('strixProducts.services'));
+            $table->foreign('host_id')->references('host_id')->on('nagios_host');
         });
     }
 
