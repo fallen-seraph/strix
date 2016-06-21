@@ -28,11 +28,11 @@ class HostController extends Controller
     }
     public function newHost(Request $request, Host $host){
         $accountId=Auth::user()->account_id;
-        $hostName=$accountId . "_" . $request->alias;
+        $hostName=$request->alias;
         $request->request->add(['host_name' => $hostName]);
 		
         $this->validate($request, [
-            'host_name' => 'required|unique:nagidb.nagios_host,host_name',
+            'host_name' => 'required',
 			'address' => 'required',
         ]);
 		
