@@ -34,9 +34,6 @@ class HostController extends Controller
         $this->validate($request, [
             'group_name' => 'required|unique:nagidb.nagios_host,host_name',
 			'address' => 'required',
-			'contacts' => 'exists:nagidb.nagios_contact,account_id, $accountId',
-			'contact_groups' => 'exists:nagidb.nagios_contact_group,account_id,$accountId',
-			
         ]);
 		
         $host->create([
