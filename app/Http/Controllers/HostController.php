@@ -23,6 +23,7 @@ class HostController extends Controller
         
         $contacts=Contacts::where('account_id', $accountId)->lists('contact_name');
         $contact_groups=Group::where('account_id', $accountId)->lists('group_name');
+		//$services=Service::select('')
 
         return view('monitoring.hosts', compact('hosts', 'contacts', 'contact_groups'));
     }
