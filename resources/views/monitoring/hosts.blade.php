@@ -118,20 +118,20 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('service') ? ' has-error' : '' }}">
                                 <label for="service" class="col-md-4 control-label">Service</label>
 
                                 <div class="col-md-6">
-                                    <select id="host" class="form-control" name="host">
+                                    <select id="service" class="form-control" name="service">
                                         <option selected disabled>Choose a Service</option>
                                         @foreach ($services as $service)
                                             <option value="{{ $service->service_id }}">{{ $service->service_name }}</option>
                                         @endforeach
                                     </select>
 
-                                    @if ($errors->has('address'))
+                                    @if ($errors->has('service'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('address') }}</strong>
+                                        <strong>{{ $errors->first('service') }}</strong>
                                     </span>
                                     @endif
                                 </div>
