@@ -8,12 +8,14 @@
                     <div class="panel-heading">Nagios Hosts and Services</div>
                     <div class="panel-body">
                         @foreach ($hosts as $host)
+                            Hostname:
                             <ul>
-                                Hostname:
                                 <li>{{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/{{ $host->host_name }}">Delete</a></li>
-                                IP Address:
+                            </ul>
+                            IP Address:
+                            <ul>
                                 <li>{{ $host->address }}</li>
-                                @if($host->services)
+                                @if($host->services != null)
                                     @foreach($hosts->services as $service)
                                         Services
                                         <ul>
