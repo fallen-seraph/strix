@@ -101,7 +101,7 @@ class HostController extends Controller
 		
         return redirect()->action('HostController@hosts');
     }
-    public function deleteHost(){
+    public function deleteHost($hostName){
     	$accountId=Auth::user()->account_id;
 	    $hostId=Host::where('account_id', $accountId)->where('host_name', $hostName)->value('host_id');
 		
