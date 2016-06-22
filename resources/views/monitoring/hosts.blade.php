@@ -10,6 +10,9 @@
                         <ul>
                             @foreach ($hosts as $host)
                                 <li>{{ $host }} | <a href="/monitoring/hosts/{{ $host }}">Delete</a></li>
+                                <ul>
+
+                                </ul>
                             @endforeach
                         </ul>
                     </div>

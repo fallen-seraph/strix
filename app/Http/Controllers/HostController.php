@@ -18,16 +18,9 @@ class HostController extends Controller
     }
     public function hosts(){
         $accountId=Auth::user()->account_id;
-        $hosts=Host::where('account_id', $accountId)->lists('host_name');
+        $hosts=Host::where('account_id', $accountId)->get();
 
-        $hosts=$hosts->toArray();
-        foreach($hosts as &$host){$host=trim($host, $accountId . "_");}
-        
-        $contacts=Contacts::where('account_id', $accountId)->lists('contact_name');
-        $contact_groups=Group::where('account_id', $accountId)->lists('group_name');
-		$services=Services::select('service_id', 'service_name')->get();
-
-        return view('monitoring.hosts', compact('hosts', 'contacts', 'contact_groups', 'services'));
+        return view('monitoring.hosts', compact('hosts'));
     }
     public function newHost(Request $request, Host $host){
         $accountId=Auth::user()->account_id;
@@ -57,23 +50,23 @@ class HostController extends Controller
         $accountId=Auth::user()->account_id;
 		
         $host=Host::where('account_id', $accountId)->where('host_name', $request->host)->first();
-	$service=Services::where('service_id', $request->service)->select('command_name', 'description')->first();
+        $service=Services::where('service_id', $request->service)->select('command_name', 'description')->first();
 
-	if($host->services != null){
-            if(strpos($host->services, $request->service) !== false){
+        if($host->services != null){
+            if(strpos($host->services, $service->command_name) !== false){
                 return back()->withErrors(['service' => 'This service is already being monitored on this host.']);
             } else {
                 Host::where('account_id', $accountId)
                     ->where('host_name', $request->host)
                     ->update([
-                        'services' => $host->services . "," . $request->service,
+                        'services' => $host->services . "," . $service->command_name,
                     ]);
             }
         } else {
 			Host::where('account_id', $accountId)
 				->where('host_name', $request->host)
 				->update([
-					'services' => $request->service,
+					'services' => $service->command_name,
 				]);
 		}
 		
@@ -89,8 +82,8 @@ class HostController extends Controller
 			'argument_three' => $request->arg_three,
 			'argument_four' => $request->arg_four,
 			'argument_five' => $request->arg_five,
-			'contacts' => $host->contacts,
-			'contact_groups' => $host->contact_groups,
+			'contacts' => $accountId . "_" . $host->contacts,
+			'contact_groups' => $accountId . "_" . $host->contact_groups,
 		]);
 		
         return redirect()->action('HostController@hosts');
