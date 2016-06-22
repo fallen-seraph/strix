@@ -17,28 +17,28 @@
                                 <ul>
                                     <li>{{ $host->address }}</li>
                                     @if(isset($host->services))
-                                        @foreach($host->services as $service)
-                                            Services
-                                            <ul>
+                                        Services:
+                                        <ul>
+                                            @foreach($host->services as $service)
                                                 <li>{{ $service }}</li>
-                                            </ul>
-                                        @endforeach
+                                            @endforeach
+                                        </ul>
                                     @endif
                                     @if(isset($host->contacts))
-                                        @foreach($host->contacts as $contact)
-                                            Contacts
-                                            <ul>
+                                        Contacts
+                                        <ul>
+                                            @foreach($host->contacts as $contact)
                                                 <li>{{ $contact }}</li>
-                                            </ul>
-                                        @endforeach
+                                            @endforeach
+                                        </ul>
                                     @endif
                                     @if(isset($host->contact_groups))
-                                        @foreach($host->contact_groups as $groups)
-                                            Contact Groups
-                                            <ul>
+                                        Contact Groups
+                                        <ul>
+                                            @foreach($host->contact_groups as $groups)
                                                 <li>{{ $groups }}</li>
-                                            </ul>
-                                        @endforeach
+                                            @endforeach
+                                        </ul>
                                     @endif
                                 </ul>
                             </ul>
