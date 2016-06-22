@@ -16,15 +16,15 @@
                                 IP Address:
                                 <ul>
                                     <li>{{ $host->address }}</li>
-                                    @if(isset($hosts->services))
-                                        @foreach($hosts->services as $service)
+                                    @if(isset($host->services))
+                                        @foreach($host->services as $service)
                                             Services
                                             <ul>
                                                 <li>{{ $service }}</li>
                                             </ul>
                                         @endforeach
                                     @endif
-                                    @if(isset($hosts->contacts))
+                                    @if(isset($host->contacts))
                                         @foreach($host->contacts as $contact)
                                             Contacts
                                             <ul>
@@ -32,7 +32,7 @@
                                             </ul>
                                         @endforeach
                                     @endif
-                                    @if(isset($hosts->contact_groups))
+                                    @if(isset($host->contact_groups))
                                         @foreach($host->contact_groups as $groups)
                                             Contact Groups
                                             <ul>
