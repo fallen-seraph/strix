@@ -49,8 +49,8 @@
       <file leaf-file-name="hosts.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/monitoring/hosts.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26676178">
-              <caret line="11" column="130" selection-start-line="11" selection-start-column="130" selection-end-line="11" selection-end-column="130" />
+            <state vertical-scroll-proportion="-1.0713267">
+              <caret line="95" column="92" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -758,8 +758,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/monitoring/hosts.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26676178">
-          <caret line="11" column="130" selection-start-line="11" selection-start-column="130" selection-end-line="11" selection-end-column="130" />
+        <state vertical-scroll-proportion="-1.0713267">
+          <caret line="95" column="92" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
           <folding />
         </state>
       </provider>

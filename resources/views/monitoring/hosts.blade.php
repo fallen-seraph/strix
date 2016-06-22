@@ -9,10 +9,13 @@
                     <div class="panel-body">
                         @foreach ($hosts as $host)
                             <ul>
+                                Hostname:
                                 <li>{{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/{{ $host->host_name }}">Delete</a></li>
+                                IP Address:
                                 <li>{{ $host->address }}</li>
                                 @if($host->services)
                                     @foreach($hosts->services as $service)
+                                        Services
                                         <ul>
                                             <li>{{ $service }}</li>
                                         </ul>
@@ -20,6 +23,7 @@
                                 @endif
                                 @if($host->contacts)
                                     @foreach($host->contacts as $contact)
+                                        Contacts
                                         <ul>
                                             <li>{{ $contact }}</li>
                                         </ul>
@@ -27,6 +31,7 @@
                                 @endif
                                 @if($host->contact_groups)
                                     @foreach($host->contact_groups as $groups)
+                                        Contact Groups
                                         <ul>
                                             <li>{{ $groups }}</li>
                                         </ul>
@@ -70,7 +75,7 @@
                                 </div>
                             </div>
 							<div class="form-group{{ $errors->has('contacts') ? ' has-error' : '' }}">
-                                <label for="contacts" class="col-md-4 control-label">contacts</label>
+                                <label for="contacts" class="col-md-4 control-label">Contacts</label>
 
                                 <div class="col-md-6">
                                     <select id="contacts" class="form-control" name="contacts">
@@ -88,7 +93,7 @@
                             </div>
 							
 							<div class="form-group{{ $errors->has('contact_groups') ? ' has-error' : '' }}">
-                                <label for="contact_groups" class="col-md-4 control-label">contact_groups</label>
+                                <label for="contact_groups" class="col-md-4 control-label">Contact Groups</label>
 
                                 <div class="col-md-6">
                                     <select id="contact_groups" class="form-control" name="contact_groups">
