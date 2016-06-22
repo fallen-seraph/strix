@@ -57,30 +57,30 @@ class HostController extends Controller
         $accountId=Auth::user()->account_id;
 		
         $host=Host::where('account_id', $accountId)->where('host_name', $request->host)->first();
-	$service=Services::where('service_id', $request->service_id)->select('command_name', 'description')->first();
+	$service=Services::where('service_id', $request->service)->select('command_name', 'description')->first();
 
 	if($host->services != null){
-            if(strpos($host->services, $request->service_id) !== false){
+            if(strpos($host->services, $request->service) !== false){
                 return back()->withErrors(['service' => 'This service is already being monitored on this host.']);
             } else {
                 Host::where('account_id', $accountId)
                     ->where('host_name', $request->host)
                     ->update([
-                        'services' => $host->services . "," . $request->service_id,
+                        'services' => $host->services . "," . $request->service,
                     ]);
             }
         } else {
 			Host::where('account_id', $accountId)
 				->where('host_name', $request->host)
 				->update([
-					'services' => $request->service_id,
+					'services' => $request->service,
 				]);
 		}
 		
 		$hostService->create([
 			'host_id' => $host->host_id,
 			'account_id' => $accountId,
-			'service_id' => $request->service_id,
+			'service_id' => $request->service,
 			'host_name' => $host->host_name,
 			'service_description' => $service->description,
 			'check_command' => $service->command_name,
