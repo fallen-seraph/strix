@@ -59,10 +59,7 @@ class HostController extends Controller
         
         return redirect()->action('HostController@hosts');
     }
-	public function addContacts(Request $request){
-	
-	}
-	public function addService(Request $request, HostService $hostService){
+    public function addService(Request $request, HostService $hostService){
         $accountId=Auth::user()->account_id;
 		
         $host=Host::where('account_id', $accountId)->where('host_name', $request->host)->first();
@@ -103,5 +100,14 @@ class HostController extends Controller
 		]);
 		
         return redirect()->action('HostController@hosts');
+    }
+    public function deleteHost(){
+    	$accountId=Auth::user()->account_id;
+	    $hostId=Host::where('account_id', $accountId)->where('host_name', $hostName)->value('host_id');
+		
+    	Host::where('account_id', $accountId)->where('host_id', $hostId)->delete();
+    	HostServices::where('account_id', $accountId)->where('host_id', $hostId)->delete();
+    	
+    	return redirect()->action('HostController@hosts');
     }
 }
