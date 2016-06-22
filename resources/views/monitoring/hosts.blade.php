@@ -7,14 +7,33 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Nagios Hosts and Services</div>
                     <div class="panel-body">
-                        <ul>
-                            @foreach ($hosts as $host)
-                                <li>{{ $host }} | <a href="/monitoring/hosts/{{ $host }}">Delete</a></li>
-                                <ul>
-
-                                </ul>
-                            @endforeach
-                        </ul>
+                        @foreach ($hosts as $host)
+                            <ul>
+                                <li>{{ $host->hostname }} | <a href="/monitoring/hosts/{{ $host->hostname }}">Delete</a></li>
+                                <li>{{ $host->address }}</li>
+                                @if($host->services)
+                                    @foreach($hosts->services as $service)
+                                        <ul>
+                                            <li>{{ $service }}</li>
+                                        </ul>
+                                    @endforeach
+                                @endif
+                                @if($host->contacts)
+                                    @foreach($host->contacts as $contact)
+                                        <ul>
+                                            <li>{{ $contact }}</li>
+                                        </ul>
+                                    @endforeach
+                                @endif
+                                @if($host->contact_groups)
+                                    @foreach($host->contact_groups as $groups)
+                                        <ul>
+                                            <li>{{ $groups }}</li>
+                                        </ul>
+                                    @endforeach
+                                @endif
+                            </ul>
+                        @endforeach
                     </div>
 					
 					<div class="panel-heading">Add Host</div>
