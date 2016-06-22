@@ -22,8 +22,9 @@ class HostController extends Controller
 
         $contacts=Contacts::where('account_id', $accountId)->lists('contact_name');
         $contact_groups=Group::where('account_id', $accountId)->lists('group_name');
+        $services=Services::select('service_id', 'service_name')->get();
 
-        return view('monitoring.hosts', compact('hosts', 'contacts', 'contact_groups'));
+        return view('monitoring.hosts', compact('hosts', 'contacts', 'contact_groups', 'services'));
     }
     public function newHost(Request $request, Host $host){
         $accountId=Auth::user()->account_id;

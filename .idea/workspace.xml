@@ -37,8 +37,8 @@
       <file leaf-file-name="HostController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5991441">
-              <caret line="25" column="84" selection-start-line="25" selection-start-column="84" selection-end-line="25" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.62339514">
+              <caret line="26" column="97" selection-start-line="26" selection-start-column="97" selection-end-line="26" selection-end-column="97" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -697,6 +697,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -765,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5991441">
-          <caret line="25" column="84" selection-start-line="25" selection-start-column="84" selection-end-line="25" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.62339514">
+          <caret line="26" column="97" selection-start-line="26" selection-start-column="97" selection-end-line="26" selection-end-column="97" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
