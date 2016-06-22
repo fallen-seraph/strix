@@ -11,7 +11,7 @@
                             <ul>
                                 Hostname:
                                 <ul>
-                                    <li>{{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/{{ $host->host_name }}">Delete</a></li>
+                                    <li>{{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="monitoring/hosts/delete/{{ $host->host_name }}">Delete</a></li>
                                 </ul>
                                 IP Address:
                                 <ul>
