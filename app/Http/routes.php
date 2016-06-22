@@ -55,6 +55,6 @@ Route::get('monitoring/hosts', 'HostController@hosts');
 Route::post('monitoring/hosts', 'HostController@newHost');
 Route::patch('monitoring/hosts/service', 'HostController@addService');
 Route::patch('monitoring/hosts/contact', 'HostController@addService');
-Route::get('monitoring/hosts/del/{host}', 'HostController@deleteHost');
+Route::get('monitoring/hosts/delete/{host}', 'HostController@deleteHost');
 
 Route::get('settings', 'SettingsController@settings');
