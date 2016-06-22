@@ -8,37 +8,39 @@
                     <div class="panel-heading">Nagios Hosts and Services</div>
                     <div class="panel-body">
                         @foreach ($hosts as $host)
-                            Hostname:
                             <ul>
-                                <li>{{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/{{ $host->host_name }}">Delete</a></li>
-                            </ul>
-                            IP Address:
-                            <ul>
-                                <li>{{ $host->address }}</li>
-                                @if(isset($hosts->services))
-                                    @foreach($hosts->services as $service)
-                                        Services
-                                        <ul>
-                                            <li>{{ $service }}</li>
-                                        </ul>
-                                    @endforeach
-                                @endif
-                                @if(isset($hosts->contacts))
-                                    @foreach($host->contacts as $contact)
-                                        Contacts
-                                        <ul>
-                                            <li>{{ $contact }}</li>
-                                        </ul>
-                                    @endforeach
-                                @endif
-                                @if(isset($hosts->contact_groups))
-                                    @foreach($host->contact_groups as $groups)
-                                        Contact Groups
-                                        <ul>
-                                            <li>{{ $groups }}</li>
-                                        </ul>
-                                    @endforeach
-                                @endif
+                                Hostname:
+                                <ul>
+                                    <li>{{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/{{ $host->host_name }}">Delete</a></li>
+                                </ul>
+                                IP Address:
+                                <ul>
+                                    <li>{{ $host->address }}</li>
+                                    @if(isset($hosts->services))
+                                        @foreach($hosts->services as $service)
+                                            Services
+                                            <ul>
+                                                <li>{{ $service }}</li>
+                                            </ul>
+                                        @endforeach
+                                    @endif
+                                    @if(isset($hosts->contacts))
+                                        @foreach($host->contacts as $contact)
+                                            Contacts
+                                            <ul>
+                                                <li>{{ $contact }}</li>
+                                            </ul>
+                                        @endforeach
+                                    @endif
+                                    @if(isset($hosts->contact_groups))
+                                        @foreach($host->contact_groups as $groups)
+                                            Contact Groups
+                                            <ul>
+                                                <li>{{ $groups }}</li>
+                                            </ul>
+                                        @endforeach
+                                    @endif
+                                </ul>
                             </ul>
                         @endforeach
                     </div>
