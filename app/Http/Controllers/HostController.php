@@ -106,7 +106,7 @@ class HostController extends Controller
 	    $hostId=Host::where('account_id', $accountId)->where('host_name', $hostName)->value('host_id');
 		
 		
-    	HostServices::where('account_id', $accountId)->where('host_id', $hostId)->delete();
+    	HostService::where('account_id', $accountId)->where('host_id', $hostId)->delete();
     	Host::where('account_id', $accountId)->where('host_id', $hostId)->delete();
     	
     	return redirect()->action('HostController@hosts');
