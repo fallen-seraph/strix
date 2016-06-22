@@ -21,13 +21,13 @@ class CreateNagiosHostServicesTable extends Migration
         	$table->string('host_name');
         	$table->text('service_description');
         	$table->string('check_command');
-        	$table->text('contacts');
-        	$table->text('contact_groups');
-            $table->string('argument_one');
-            $table->string('argument_two');
-            $table->string('argument_three');
-            $table->string('argument_four');
-            $table->string('argument_five');
+        	$table->text('contacts')->nullable();
+        	$table->text('contact_groups')->nullable();
+            $table->string('argument_one')->nullable();
+            $table->string('argument_two')->nullable();
+            $table->string('argument_three')->nullable();
+            $table->string('argument_four')->nullable();
+            $table->string('argument_five')->nullable();
         	$table->timestamps();
         });
         Schema::connection('nagidb')->table('nagios_host_services', function($table) {
