@@ -20,6 +20,18 @@ class HostController extends Controller
         $accountId=Auth::user()->account_id;
         $hosts=Host::where('account_id', $accountId)->get();
 
+        foreach($hosts as $host){
+            if($host->services){
+                $host->services=explode(",", $host->services);
+            }
+            if($host->contacts){
+                $host->contacts=explode(",", $host->contacts);
+            }
+            if($host->contact_groups){
+                $host->contact_groups=explode(",", $host->contact_groups);
+            }
+        }
+
         $contacts=Contacts::where('account_id', $accountId)->lists('contact_name');
         $contact_groups=Group::where('account_id', $accountId)->lists('group_name');
         $services=Services::select('service_id', 'service_name')->get();
