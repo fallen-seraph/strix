@@ -45,9 +45,9 @@ Route::get('/monitoring/users/delete/{user}', 'UserController@deleteUsers');
 //monitoring contacts routes
 Route::get('monitoring/contacts', 'ContactsController@contacts');
 Route::post('monitoring/contacts', 'ContactsController@newContact');
-Route::get('monitoring/contacts/delete/{contact_name}', 'ContactsController@deleteContact');
+Route::get('monitoring/contacts/delete/{contact_id}', 'ContactsController@deleteContact');
 
-Route::get('monitoring/contacts/update/{contact_name}', 'UpdatesController@contact');
+Route::get('monitoring/contacts/update/{contact_id}', 'UpdatesController@contact');
 Route::patch('monitoring/contacts/update', 'UpdatesController@updateContact');
 
 

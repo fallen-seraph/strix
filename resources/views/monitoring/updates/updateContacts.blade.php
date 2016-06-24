@@ -5,39 +5,14 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Monitoring Contacts</div>
-
-                    <div class="panel-body">
-                        <ul>
-                            @foreach ($contacts as $contact)
-                                {{ $contact->alias }} |
-                                <a href="/monitoring/contacts/update/{{ $contact->contact_id }}">Update</a> |
-                                <a href="/monitoring/contacts/{{ $contact->alias }}">Delete</a>
-                                <ul>
-                                    <li>Email | {{ $contact->email }}</li>
-                                    @if($contact->contact_groups)
-                                        <li>Contact Groups</li>
-                                        <ul>
-                                            <li>{{ $contact->contact_groups}}</li>
-                                        </ul>
-                                    @endif
-                                    @if($contact->phone)
-                                        <li>Phone | {{ $contact->phone }}</li>
-                                    @endif
-                                    @if($contact->misc)
-                                        <li>Misc | {{ $contact->misc }}</li>
-                                    @endif
-                                </ul>
-                            @endforeach
-                        </ul>
-                    </div>
-                    
-                    <div class="panel-heading">Add Contact</div>
+                    <div class="panel-heading">Update Contact {{ $contact->alias }}</div>
                     <div class="panel-body">
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/contacts') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/contacts/update') }}">
                             {{ csrf_field() }}
+                            {{ method_field('PATCH') }}
 
+                            <input id="contact_id" type="hidden" name="contact_id" value="{{ $contact->contact_id }}">
                             <div class="form-group{{ $errors->has('contact_name') ? ' has-error' : '' }}">
                                 <label for="alias" class="col-md-4 control-label">Contact Name</label>
 
@@ -79,7 +54,7 @@
                                     @endif
                                 </div>
                             </div>
-                            
+
                             <div class="form-group{{ $errors->has('misc') ? ' has-error' : '' }}">
                                 <label for="password-confirm" class="col-md-4 control-label">Misc</label>
 
