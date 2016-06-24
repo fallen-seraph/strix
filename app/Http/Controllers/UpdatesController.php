@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
+use App\Contacts;
+use App\Group;
 use App\Http\Requests;
 
 class UpdatesController extends Controller
