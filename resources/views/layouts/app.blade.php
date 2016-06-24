@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
+    <link rel="shortcut icon" href="favicon.ico" >
 
     @if (Auth::guest())
         <title>Server Strix</title>
@@ -46,7 +46,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/public/img/logo.png" alt="We watch it so you don't have to!">
+                    <img src="img/logo.png" alt="We watch it so you don't have to!">
                 </a>
             </div>
 
