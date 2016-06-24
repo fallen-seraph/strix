@@ -14,9 +14,9 @@ class UpdatesController extends Controller
         $this->middleware('auth');
     }
     public function contact($contact_id){
-        $contacts=Contacts::where('contact_id', $contact_id)->first();
+        $contact=Contacts::where('contact_id', $contact_id)->first();
 
-        return view('monitoring.updates.updateContacts', compact('contacts'));
+        return view('monitoring.updates.updateContacts', compact('contact'));
     }
     public function updateContact(Request $request){
         Contacts::where('contact_id', $request->contact_id)->update([
