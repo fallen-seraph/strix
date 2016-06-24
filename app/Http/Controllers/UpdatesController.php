@@ -20,7 +20,7 @@ class UpdatesController extends Controller
     }
     public function updateContact(Request $request){
         $accountId=Auth::user()->account_id;
-        Contacts::where('contact_id', $request->contact_id)->update([
+        Contacts::where('account_id', $accountId)->where('contact_id', $request->contact_id)->update([
             'contact_name' => $accountId . "_" . $request->alias,
             'alias' => $request->alias,
             'email' => $request->email,
