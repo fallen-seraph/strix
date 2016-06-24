@@ -46,7 +46,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="img/logo.png" alt="We watch it so you don't have to!">
+                    Server Strix<!--<img src="img/logo.png" alt="We watch it so you don't have to!">-->
                 </a>
             </div>
 
