@@ -11,7 +11,7 @@
                         <ul>
                             @foreach ($contacts as $contact)
                                 {{ $contact->alias }} |
-                                <a href="/monitoring/contacts/update/{{ $contact->contact_id }}">Update</a> |
+                                <a href="/monitoring/contacts/update/{{ $contact->alias }}">Update</a> |
                                 <a href="/monitoring/contacts/{{ $contact->alias }}">Delete</a>
                                 <ul>
                                     <li>Email | {{ $contact->email }}</li>
