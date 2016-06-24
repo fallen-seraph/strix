@@ -19,7 +19,9 @@ class UpdatesController extends Controller
         return view('monitoring.updates.updateContacts', compact('contact'));
     }
     public function updateContact(Request $request){
+        $accountId=Auth::user()->account_id;
         Contacts::where('contact_id', $request->contact_id)->update([
+            'contact_name' => $accountId . "_" . $request->alias,
             'alias' => $request->alias,
             'email' => $request->email,
             'phone' => $request->phone,
