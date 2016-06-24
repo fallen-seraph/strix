@@ -11,8 +11,8 @@
                         <ul>
                             @foreach ($groups as $group)
                                 <li>{{ $group->alias }} | 
-                                <a href="/monitoring/groups/{{ $group->alias }}">Delete</a> |
-                                <a href="/monitoring/groups/update/{{ $group->alias }}">Update</a></li>
+                                <a href="/monitoring/groups/update/{{ $group->alias }}">Update</a> |
+                                <a href="/monitoring/groups/{{ $group->alias }}">Delete</a></li>
                                 @if($group->members[0])
                                     <ul>
                                         Members
