@@ -10,9 +10,9 @@ use App\Http\Requests;
 
 class UpdatesController extends Controller
 {
+    protected $accountId = Auth::user()->account_id;
     public function __construct(){
         $this->middleware('auth');
-        $this->$accountId=Auth::user()->account_id;
     }
     public function contact($alias){
         $accountId=Auth::user()->account_id;
