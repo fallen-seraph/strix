@@ -31,13 +31,13 @@ class UpdatesController extends Controller
 
         return redirect()->action('ContactsController@contacts');
     }
-    public function contact($group){
+    public function group($group){
         $accountId=Auth::user()->account_id;
         $group=Group::where('account_id', $accountid)->where('alias', $group)->first();
         
         return view('monitoring.updates.updateGroups', compact('group'));
     }
-    public function updateContact(Request $request){
+    public function updateGroup(Request $request){
         $accountId=Auth::user()->account_id;
         Contacts::where('account_id', $accountId)->where('contact_id', $request->contact_id)->update([
             'contact_name' => $accountId . "_" . $request->alias,
