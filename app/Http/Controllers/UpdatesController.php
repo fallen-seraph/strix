@@ -16,7 +16,7 @@ class UpdatesController extends Controller
     public function contact($contact_id){
         $contacts=Contacts::where('contact_id', $contact_id)->first();
 
-        return view('monitoring.contacts', compact('contacts'));
+        return view('monitoring.updates.updateContacts', compact('contacts'));
     }
     public function updateContact(Request $request){
         Contacts::where('contact_id', $request->contact_id)->update([
