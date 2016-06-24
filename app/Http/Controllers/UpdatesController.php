@@ -32,7 +32,7 @@ class UpdatesController extends Controller
         return redirect()->action('ContactsController@contacts');
     }
     public function group($group){
-        //$accountId=Auth::user()->account_id;
+        $accountId=Auth::user()->account_id;
         $group=Group::where('account_id', $accountId)->where('alias', $group)->first();
         
         return view('monitoring.updates.updateGroups', compact('group'));
