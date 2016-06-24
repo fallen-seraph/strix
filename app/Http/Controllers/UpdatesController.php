@@ -12,6 +12,7 @@ class UpdatesController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
+        $this->$accountId=Auth::user()->account_id;
     }
     public function contact($alias){
         $accountId=Auth::user()->account_id;
@@ -32,8 +33,8 @@ class UpdatesController extends Controller
         return redirect()->action('ContactsController@contacts');
     }
     public function group($group){
-        $accountId=Auth::user()->account_id;
-        $group=Group::where('account_id', $accountid)->where('alias', $group)->first();
+        //$accountId=Auth::user()->account_id;
+        $group=Group::where('account_id', $accountId)->where('alias', $group)->first();
         
         return view('monitoring.updates.updateGroups', compact('group'));
     }
