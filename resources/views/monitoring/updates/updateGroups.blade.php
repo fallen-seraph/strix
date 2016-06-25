@@ -12,10 +12,12 @@
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
 
+                            <p class="col-md-4 control-label">Contacts with * are already added to the group.</p>
                             <input id="group_id" type="hidden" name="group_id" value="{{ $group->group_id }}">
                             
                             <div class="form-group{{ $errors->has('availableMembers') ? ' has-error' : '' }}">
                                 <label for="availableMembers" class="col-md-4 control-label">Contact List</label>
+
 
                                 <div class="col-md-6">
                                     <select id="availableMembers" class="form-control" name="availableMembers">
