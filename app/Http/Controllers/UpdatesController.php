@@ -34,7 +34,6 @@ class UpdatesController extends Controller
     }
     public function group($group){
         $accountId=Auth::user()->account_id;
-        $group=Group::where('account_id', $accountId)->where('alias', $group)->first();
 
         if(isset($group->members)) {
             $group->members = str_replace($accountId . "_", "", $group->members);
@@ -69,6 +68,7 @@ class UpdatesController extends Controller
 
         } elseif(Input::get('add') == 'add') {
             $contact=Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->value('contact_groups');
+            $group=Group::where('account_id', $accountId)->where('alias', $group)->first();
 
             if($group->members) {
                 Group::where('account_id', $accountId)
@@ -121,6 +121,7 @@ class UpdatesController extends Controller
             }
         }
 
+        $group=Group::where('account_id', $accountId)->where('alias', $group)->first();
         $redirectUrl='monitoring/hosts/update/' . $group->alias;
         return redirect($redirectUrl);
     }
