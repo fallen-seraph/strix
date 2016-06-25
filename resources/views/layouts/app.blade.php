@@ -34,7 +34,7 @@
         }
         .navbar-nav{
             padding-bottom: 0px;
-            margin-top: 70px;
+            margin-top: 65px;
         }
         .navbar-nav>li>a{
             padding-bottom: 0px;
