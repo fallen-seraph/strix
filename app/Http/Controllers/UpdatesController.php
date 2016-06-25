@@ -123,7 +123,7 @@ class UpdatesController extends Controller
         }
 
         $alias=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->value('alias');
-        $redirectUrl='monitoring/hosts/update/' . $alias;
+        $redirectUrl='monitoring/groups/update/' . $alias;
         return redirect($redirectUrl);
     }
 }
