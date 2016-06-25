@@ -122,8 +122,8 @@ class UpdatesController extends Controller
             }
         }
 
-        $group=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->first();
-        $redirectUrl='monitoring/hosts/update/' . $group->alias;
+        $alias=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->value('alias');
+        $redirectUrl='monitoring/hosts/update/' . $alias;
         return redirect($redirectUrl);
     }
 }
