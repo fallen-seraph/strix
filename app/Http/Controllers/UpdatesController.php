@@ -53,7 +53,7 @@ class UpdatesController extends Controller
     public function updateGroup(Request $request){
         $accountId=Auth::user()->account_id;
 
-        dd(Input::all());
+        dd(Input::get('nameChange') == 'nameChange');
         if(Input::get('nameChange')){
             Group::where('account_id', $accountId)
                 ->where('group_id', $request->group_id)
@@ -62,7 +62,7 @@ class UpdatesController extends Controller
                     'alias' => $request->alias,
                 ]);
 
-        } elseif(Input::get('add')) {
+        } elseif(Input::get('add') == 'add') {
             $group=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->first();
             $contact=Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->value('contact_groups');
 
@@ -94,7 +94,7 @@ class UpdatesController extends Controller
                     ]);
             }
 
-        } elseif(Input::get('remove')) {
+        } elseif(Input::get('remove') == 'remove') {
             $removedContact=str_replace("*", "", $request->availableMembers);
             $group=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->first();
             $contact=Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->value('contact_groups');

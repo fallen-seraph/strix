@@ -64,12 +64,12 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" name="add">
+                                    <button type="submit" class="btn btn-primary" name="add" value="add">
                                         <i class="fa fa-btn fa-user"></i> Add Member
                                     </button>
                                 </div>
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" name="remove">
+                                    <button type="submit" class="btn btn-primary" name="remove" value="remove">
                                         <i class="fa fa-btn fa-user"></i> Delete Member
                                     </button>
                                 </div>
