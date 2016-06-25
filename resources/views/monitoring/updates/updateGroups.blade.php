@@ -28,7 +28,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" id="nameChange">
+                                    <button type="submit" class="btn btn-primary" name="nameChange">
                                         <i class="fa fa-btn fa-user"></i> Change Group Name
                                     </button>
                                 </div>
@@ -64,12 +64,12 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" id="add">
+                                    <button type="submit" class="btn btn-primary" name="add">
                                         <i class="fa fa-btn fa-user"></i> Add Member
                                     </button>
                                 </div>
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" id="remove">
+                                    <button type="submit" class="btn btn-primary" name="remove">
                                         <i class="fa fa-btn fa-user"></i> Delete Member
                                     </button>
                                 </div>

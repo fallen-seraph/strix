@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="35781502-11e5-48c5-825d-3c413e3b887f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php" afterPath="$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php" />
     </list>
     <ignored path="strix.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpdatesController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UpdatesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26676178">
-              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -46,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateGroups.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="updateGroups.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.461538">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6519258">
+              <caret line="71" column="86" selection-start-line="71" selection-start-column="86" selection-end-line="71" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -120,8 +121,8 @@
         <option value="$PROJECT_DIR$/resources/views/monitoring/updates/updateContacts.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ContactsController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php" />
+        <option value="$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php" />
       </list>
     </option>
   </component>
@@ -750,21 +751,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.461538">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26676178">
-          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6519258">
+          <caret line="71" column="86" selection-start-line="71" selection-start-column="86" selection-end-line="71" selection-end-column="86" />
+          <folding />
         </state>
       </provider>
     </entry>
