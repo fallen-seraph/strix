@@ -118,6 +118,6 @@ class UpdatesController extends Controller
                 ]);
             }
         }
-        return redirect()->action('UpdateController@group', [$group->alias]);
+        return redirect()->back();
     }
 }
