@@ -37,7 +37,7 @@ class UpdatesController extends Controller
         $accountId=Auth::user()->account_id;
         $group=Group::where('account_id', $accountId)->where('alias', $group)->first();
 
-        if($group->members) {
+        if(isset($group->members)) {
             $group->members = str_replace($accountId . "_", "", $group->members);
             $group->members = explode(",", $group->members);
 
