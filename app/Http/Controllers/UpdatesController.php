@@ -117,6 +117,6 @@ class UpdatesController extends Controller
                 ]);
             }
         }
-        return redirect()->action('UpdatesController@host', ['group' => $group->member]);
+        return redirect()->action('UpdatesController@host', ['group' => $group->members]);
     }
 }
