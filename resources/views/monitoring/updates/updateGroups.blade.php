@@ -20,7 +20,7 @@
                                 <div class="col-md-6">
                                     <select id="availableMembers" class="form-control" name="availableMembers">
                                         <option selected disabled>Choose a contact</option>
-                                        @foreach($contactList as $contact)
+                                        @foreach($availableContacts as $contact)
                                             <option>{{ $contact }}</option>
                                         @endforeach
                                     </select>

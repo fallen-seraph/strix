@@ -45,9 +45,9 @@ class UpdatesController extends Controller
         foreach($group->members as $member){
             array_push($availableContacts, $member . "*");
         }
-        $contactsList=asort($availableContacts);
+        asort($availableContacts);
         
-        return view('monitoring.updates.updateGroups', compact('group', 'contactsList'));
+        return view('monitoring.updates.updateGroups', compact('group', 'availableContacts'));
     }
     public function updateGroup(Request $request){
         $accountId=Auth::user()->account_id;

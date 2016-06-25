@@ -4,6 +4,7 @@
     <list default="true" id="35781502-11e5-48c5-825d-3c413e3b887f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php" afterPath="$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php" />
     </list>
     <ignored path="strix.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +39,8 @@
       <file leaf-file-name="UpdatesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.615385">
-              <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+            <state vertical-scroll-proportion="-13.884615">
+              <caret line="49" column="73" selection-start-line="49" selection-start-column="73" selection-end-line="49" selection-end-column="90" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -47,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6804565">
-              <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+            <state vertical-scroll-proportion="-15.076923">
+              <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -60,8 +61,18 @@
       <file leaf-file-name="updateContacts.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/monitoring/updates/updateContacts.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.115385">
+            <state vertical-scroll-proportion="-19.615385">
               <caret line="30" column="83" selection-start-line="30" selection-start-column="83" selection-end-line="30" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updateGroups.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4850214">
+              <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -120,8 +131,9 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/monitoring/updates/updateContacts.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ContactsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php" />
+        <option value="$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php" />
       </list>
     </option>
   </component>
@@ -276,7 +288,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="app.&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/layouts/app.blade.php&#10;app.blade&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/layouts/app.blade.php&#10;contactGro&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contactgroups.blade.php&#10;contact&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/Controllers/ContactsController.php&#10;update&#9;null&#9;null&#10;group\&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/Controllers/ContactGroupsController.php&#10;api&#9;null&#9;null&#10;nagios_host&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232758_create_nagios_host_table.php&#10;host_ser&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232817_create_nagios_host_services_table.php&#10;host&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232758_create_nagios_host_table.php&#10;blade.php&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contactgroups.blade.php&#10;app.blade.php&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/layouts/app.blade.php&#10;contacts.b&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contacts.blade.php&#10;register.bl&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/auth/register.blade.php&#10;nagio&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232724_create_nagios_contact_group_table.php&#10;nag&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232724_create_nagios_contact_group_table.php&#10;Group.php&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Group.php&#10;Contacts.php&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Contacts.php&#10;user.b&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/users.blade.php&#10;contact.bl&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contacts.blade.php&#10;con&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contactgroups.blade.php&#10;users.b&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/users.blade.php&#10;nagios_conta&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232724_create_nagios_contact_group_table.php&#10;ContactGroups&#9;null&#9;null&#10;ContactGr&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contactgroups.blade.php&#10;users.bl&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/users.blade.php&#10;nagios_con&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232648_create_nagios_contact.php&#10;UserCon&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/Controllers/UserController.php&#10;contacts.&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contacts.blade.php&#10;registerCon&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/Controllers/RegisterController.php&#10;register&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/auth/register.blade.php&#10;register.blad&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/auth/register.blade.php&#10;mon&#9;null&#9;null&#10;moni&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/monitoring.blade.php&#10;AUTH&#9;null&#9;null&#10;pagesCon&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/Controllers/pagesController.php&#10;routes.php&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/routes.php&#10;routes&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="updateGroup&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/updates/updateGroups.blade.php&#10;app.&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/layouts/app.blade.php&#10;app.blade&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/layouts/app.blade.php&#10;contactGro&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contactgroups.blade.php&#10;contact&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/Controllers/ContactsController.php&#10;update&#9;null&#9;null&#10;group\&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/Controllers/ContactGroupsController.php&#10;api&#9;null&#9;null&#10;nagios_host&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232758_create_nagios_host_table.php&#10;host_ser&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232817_create_nagios_host_services_table.php&#10;host&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232758_create_nagios_host_table.php&#10;blade.php&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contactgroups.blade.php&#10;app.blade.php&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/layouts/app.blade.php&#10;contacts.b&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contacts.blade.php&#10;register.bl&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/auth/register.blade.php&#10;nagio&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232724_create_nagios_contact_group_table.php&#10;nag&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232724_create_nagios_contact_group_table.php&#10;Group.php&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Group.php&#10;Contacts.php&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Contacts.php&#10;user.b&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/users.blade.php&#10;contact.bl&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contacts.blade.php&#10;con&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contactgroups.blade.php&#10;users.b&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/users.blade.php&#10;nagios_conta&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232724_create_nagios_contact_group_table.php&#10;ContactGroups&#9;null&#9;null&#10;ContactGr&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contactgroups.blade.php&#10;users.bl&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/users.blade.php&#10;nagios_con&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/database/migrations/2016_06_07_232648_create_nagios_contact.php&#10;UserCon&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/Controllers/UserController.php&#10;contacts.&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/contacts.blade.php&#10;registerCon&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/Controllers/RegisterController.php&#10;register&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/auth/register.blade.php&#10;register.blad&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/auth/register.blade.php&#10;mon&#9;null&#9;null&#10;moni&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/resources/views/monitoring/monitoring.blade.php&#10;AUTH&#9;null&#9;null&#10;pagesCon&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/Controllers/pagesController.php&#10;routes.php&#9;FILE&#9;file://C:/Users/Fallen/Documents/GitHub/strix/app/Http/routes.php&#10;routes&#9;null&#9;null" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -381,14 +393,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/monitoring/contactgroups.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -571,6 +575,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38746437">
           <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -585,6 +590,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -606,6 +612,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33951497">
           <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -628,6 +635,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -642,6 +650,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60627675">
           <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -727,14 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/monitoring/updates/updateContacts.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.115385">
-          <caret line="30" column="83" selection-start-line="30" selection-start-column="83" selection-end-line="30" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-46.692307">
@@ -745,20 +746,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.076923">
+          <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.615385">
-          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+        <state vertical-scroll-proportion="-13.884615">
+          <caret line="49" column="73" selection-start-line="49" selection-start-column="73" selection-end-line="49" selection-end-column="90" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/monitoring/updates/updateContacts.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6804565">
-          <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+        <state vertical-scroll-proportion="-19.615385">
+          <caret line="30" column="83" selection-start-line="30" selection-start-column="83" selection-end-line="30" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4850214">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
           <folding />
         </state>
       </provider>
