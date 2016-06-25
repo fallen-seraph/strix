@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Input;
 use Auth;
 use App\Contacts;
@@ -68,7 +69,6 @@ class UpdatesController extends Controller
                 ]);
 
         } elseif(Input::get('add') == 'add') {
-            $group=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->first();
             $contact=Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->value('contact_groups');
 
             if($group->members) {
