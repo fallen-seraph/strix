@@ -38,7 +38,6 @@
         }
         .navbar-nav>li>a{
             padding-bottom: 0px;
-            font-size: 15pt;
         }
 
     </style>
