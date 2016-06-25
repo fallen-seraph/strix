@@ -41,7 +41,6 @@
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
 
-                            <p class="col-md-6">Contact* = Member of {{ $group->alias }}</p>
 
                             <input id="group_id" type="hidden" name="group_id" value="{{ $group->group_id }}">
 
