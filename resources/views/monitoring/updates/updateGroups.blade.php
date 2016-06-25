@@ -12,7 +12,7 @@
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
 
-                            <p class="col-md-4 control-label">Contacts with * are already added to the group.</p>
+                            <p>Contacts with * are already added to the group.</p>
                             <input id="group_id" type="hidden" name="group_id" value="{{ $group->group_id }}">
                             
                             <div class="form-group{{ $errors->has('availableMembers') ? ' has-error' : '' }}">
@@ -39,6 +39,7 @@
                                         <i class="fa fa-btn fa-user"></i> Add Member
                                     </button>
                                 </div>
+                                <br>
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary" id="remove">
                                         <i class="fa fa-btn fa-user"></i> Delete Member
