@@ -54,7 +54,7 @@ class UpdatesController extends Controller
         $accountId=Auth::user()->account_id;
 
         if(Input::get('nameChange')){
-
+            dd(Input::get('nameChange'));
             Group::where('account_id', $accountId)
                 ->where('group_id', $request->group_id)
                 ->update([
