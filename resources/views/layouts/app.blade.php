@@ -34,10 +34,11 @@
         }
         .navbar-nav{
             padding-bottom: 0px;
-            margin-top: 65px;
+            margin-top: 60px;
         }
         .navbar-nav>li>a{
             padding-bottom: 0px;
+            font-size: 15pt;
         }
 
     </style>
