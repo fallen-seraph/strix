@@ -35,7 +35,20 @@ class UpdatesController extends Controller
         $accountId=Auth::user()->account_id;
         $group=Group::where('account_id', $accountId)->where('alias', $group)->first();
         
-        return view('monitoring.updates.updateGroups', compact('group'));
+        $group->members=str_replace($accountId . "_", "", $group->members);
+        $group->members=explode(",", $group->members);
+        
+        $contacts=Contacts::where('account_id', $accountId)->lists('alias');
+        
+        $availableContacts=array_diff($contacts, $group->members);
+        
+        foreach($group->members as &$member){
+            $member=$member . "*";
+            $availableContacts=array_push($member);
+        }
+        $contactsList=asort($availableContacts);
+        
+        return view('monitoring.updates.updateGroups', compact('group', 'contactsList'));
     }
     public function updateGroup(Request $request){
         $accountId=Auth::user()->account_id;
