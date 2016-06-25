@@ -28,7 +28,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" name="nameChange">
+                                    <button type="submit" class="btn btn-primary" name="nameChange" value="nameChange">
                                         <i class="fa fa-btn fa-user"></i> Change Group Name
                                     </button>
                                 </div>
