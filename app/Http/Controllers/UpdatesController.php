@@ -97,7 +97,6 @@ class UpdatesController extends Controller
                         'contact_groups' => $group->group_name
                     ]);
             }
-
         } elseif(Input::get('remove') == 'remove') {
             $removedContact=str_replace("*", "", $request->availableMembers);
             $contact=Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->value('contact_groups');
