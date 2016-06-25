@@ -59,7 +59,7 @@
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <!--<img src="/public/img/logo.png" alt="We watch it so you don't have to!">-->
-                    {{ \HTML::image('img/logo.png', "We watch it so you don't have to!") }}
+                    <img src="{{ URL::to('/') }}img/logo.png" alt="We watch it so you don't have to!">
                 </a>
             </div>
 
