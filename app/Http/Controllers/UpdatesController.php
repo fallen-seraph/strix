@@ -57,6 +57,7 @@ class UpdatesController extends Controller
     }
     public function updateGroup(Request $request){
         $accountId=Auth::user()->account_id;
+        $group=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->first();
 
         if(Input::get('nameChange') == 'nameChange'){
             Group::where('account_id', $accountId)
@@ -100,7 +101,6 @@ class UpdatesController extends Controller
 
         } elseif(Input::get('remove') == 'remove') {
             $removedContact=str_replace("*", "", $request->availableMembers);
-            $group=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->first();
             $contact=Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->value('contact_groups');
 
             if(str_pos(",", $group->members) !== false) {
@@ -122,6 +122,7 @@ class UpdatesController extends Controller
                 ]);
             }
         }
+
         $redirectUrl='monitoring/hosts/update/' . $group->group_name;
         return redirect()->url($redirectUrl);
     }
