@@ -121,7 +121,7 @@ class UpdatesController extends Controller
             }
         }
 
-        $redirectUrl='monitoring/hosts/update/' . $group->group_name;
+        $redirectUrl='monitoring/hosts/update/' . $group->alias;
         return redirect($redirectUrl);
     }
 }
