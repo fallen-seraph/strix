@@ -36,6 +36,9 @@
             padding-bottom: 0px;
             margin-top: 70px;
         }
+        .navbar-nav>li>a{
+            padding-bottom: 0px;
+        }
 
     </style>
     @yield('header')
