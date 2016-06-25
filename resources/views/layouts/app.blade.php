@@ -30,10 +30,13 @@
         }
         .navbar-brand{
             height: 100px;
+            padding: 0px;
         }
-        a{
+        .navbar-nav{
             padding-bottom: 0px;
+            margin-top: 70px;
         }
+
     </style>
     @yield('header')
 </head>
