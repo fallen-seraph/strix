@@ -42,7 +42,7 @@ class UpdatesController extends Controller
         
         $availableContacts=array_diff($contacts->toArray(), $group->members);
         
-        foreach($group->members as &$member){
+        foreach($group->members as $member){
             array_push($availableContacts, $member . "*");
         }
         $contactsList=asort($availableContacts);
