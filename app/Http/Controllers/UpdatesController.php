@@ -117,6 +117,7 @@ class UpdatesController extends Controller
                 ]);
             }
         }
-        return redirect()->action('UpdatesController@host', ['group' => $group->members]);
+        $redirectUrl='monitoring/hosts/update/' . $group->group_name;
+        return redirect()->url($redirectUrl);
     }
 }
