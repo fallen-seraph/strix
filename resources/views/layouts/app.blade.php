@@ -28,6 +28,12 @@
         .fa-btn {
             margin-right: 6px;
         }
+        .navbar-brand{
+            height: 100px;
+        }
+        a{
+            padding-bottom: 0px;
+        }
     </style>
     @yield('header')
 </head>
