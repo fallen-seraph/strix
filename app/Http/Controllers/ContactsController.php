@@ -70,7 +70,7 @@ class ContactsController extends Controller
                     ]);
             }
         };
-        \App\Group::where('account_id', $accountId)->update([
+        Group::where('account_id', $accountId)->update([
             
         ]);
         return back();
