@@ -12,7 +12,6 @@
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
 
-                            <p class="form-control">Contact* = Member of {{ $group->alias }}</p>
                             <input id="group_id" type="hidden" name="group_id" value="{{ $group->group_id }}">
                             
                             <div class="form-group{{ $errors->has('availableMembers') ? ' has-error' : '' }}">
@@ -20,6 +19,7 @@
 
 
                                 <div class="col-md-6">
+                                    <p>Contact* = Member of {{ $group->alias }}</p>
                                     <select id="availableMembers" class="form-control" name="availableMembers">
                                         <option selected disabled>Choose a contact</option>
                                         @foreach($availableContacts as $contact)
