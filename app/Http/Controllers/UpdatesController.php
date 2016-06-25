@@ -118,6 +118,6 @@ class UpdatesController extends Controller
                 ]);
             }
         }
-        return redirect()->url('monitoring/groups/update/' $group->alias);
+        return redirect()->action('UpdateController@group', [$group->alias]);
     }
 }
