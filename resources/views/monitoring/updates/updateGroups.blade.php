@@ -15,13 +15,13 @@
                             <input id="group_id" type="hidden" name="group_id" value="{{ $group->group_id }}">
 
                             <div class="form-group{{ $errors->has('groupName') ? ' has-error' : '' }}">
-                                <label for="groupName" class="col-md-4 control-label">Group Name</label>
+                                <label for="alias" class="col-md-4 control-label">Group Name</label>
 
                                 <div class="col-md-6">
-                                    <input id="groupName" class="form-control" name="groupName" value="{{ $group->alias }}">
-                                    @if ($errors->has('groupName'))
+                                    <input id="alias" class="form-control" name="alias" value="{{ $group->alias }}">
+                                    @if ($errors->has('alias'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('groupName') }}</strong>
+                                        <strong>{{ $errors->first('alias') }}</strong>
                                     </span>
                                     @endif
                                 </div>
