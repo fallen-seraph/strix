@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Input;
 use Auth;
 use App\Contacts;
@@ -124,6 +123,6 @@ class UpdatesController extends Controller
         }
 
         $redirectUrl='monitoring/hosts/update/' . $group->group_name;
-        return redirect()->url($redirectUrl);
+        return redirect($redirectUrl);
     }
 }
