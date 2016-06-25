@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Input;
 use App\Contacts;
 use App\Group;
 use App\Http\Requests;
