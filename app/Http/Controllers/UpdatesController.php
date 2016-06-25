@@ -40,7 +40,7 @@ class UpdatesController extends Controller
         
         $contacts=Contacts::where('account_id', $accountId)->lists('alias');
         
-        $availableContacts=array_diff($contacts, $group->members);
+        $availableContacts=array_diff($contacts->toArray(), $group->members);
         
         foreach($group->members as &$member){
             $member=$member . "*";
