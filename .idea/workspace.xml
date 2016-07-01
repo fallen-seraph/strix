@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35781502-11e5-48c5-825d-3c413e3b887f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactGroupsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactGroupsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/monitoring/contactgroups.blade.php" afterPath="$PROJECT_DIR$/resources/views/monitoring/contactgroups.blade.php" />
     </list>
     <ignored path="strix.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContactGroupsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContactGroupsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactGroupsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46077034">
+            <state vertical-scroll-proportion="-12.423077">
               <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
@@ -70,19 +70,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contactgroups.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="contactgroups.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/monitoring/contactgroups.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.26923">
-              <caret line="137" column="44" selection-start-line="137" selection-start-column="44" selection-end-line="137" selection-end-column="44" />
+            <state vertical-scroll-proportion="2.149786">
+              <caret line="93" column="55" selection-start-line="93" selection-start-column="55" selection-end-line="93" selection-end-column="55" />
               <folding>
-                <marker date="1467352683084" expanded="true" signature="6572:7292" placeholder="..." />
-                <marker date="1467352683084" expanded="true" signature="6584:7291" placeholder="..." />
-                <marker date="1467352683084" expanded="true" signature="6620:7280" placeholder="..." />
-                <marker date="1467352683084" expanded="true" signature="6636:6752" placeholder="..." />
-                <marker date="1467352683084" expanded="true" signature="6771:7263" placeholder="..." />
-                <marker date="1467352683084" expanded="true" signature="6873:7100" placeholder="..." />
-                <marker date="1467352683084" expanded="true" signature="7108:7244" placeholder="..." />
+                <marker date="1467353060467" expanded="true" signature="6531:7251" placeholder="..." />
+                <marker date="1467353060467" expanded="true" signature="6543:7250" placeholder="..." />
+                <marker date="1467353060467" expanded="true" signature="6579:7239" placeholder="..." />
+                <marker date="1467353060467" expanded="true" signature="6595:6711" placeholder="..." />
+                <marker date="1467353060467" expanded="true" signature="6730:7222" placeholder="..." />
+                <marker date="1467353060467" expanded="true" signature="6832:7059" placeholder="..." />
+                <marker date="1467353060467" expanded="true" signature="7067:7203" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -139,9 +139,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php" />
         <option value="$PROJECT_DIR$/resources/views/monitoring/updates/updateGroups.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/monitoring/contactgroups.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ContactGroupsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/monitoring/contactgroups.blade.php" />
       </list>
     </option>
   </component>
@@ -736,18 +736,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/monitoring/contactgroups.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.26923">
-          <caret line="137" column="44" selection-start-line="137" selection-start-column="44" selection-end-line="137" selection-end-column="44" />
+        <state vertical-scroll-proportion="-21.576923">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
-            <marker date="1467352683084" expanded="true" signature="6572:7292" placeholder="..." />
-            <marker date="1467352683084" expanded="true" signature="6584:7291" placeholder="..." />
-            <marker date="1467352683084" expanded="true" signature="6620:7280" placeholder="..." />
-            <marker date="1467352683084" expanded="true" signature="6636:6752" placeholder="..." />
-            <marker date="1467352683084" expanded="true" signature="6771:7263" placeholder="..." />
-            <marker date="1467352683084" expanded="true" signature="6873:7100" placeholder="..." />
-            <marker date="1467352683084" expanded="true" signature="7108:7244" placeholder="..." />
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactGroupsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -762,22 +766,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/monitoring/contactgroups.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.576923">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state vertical-scroll-proportion="2.149786">
+          <caret line="93" column="55" selection-start-line="93" selection-start-column="55" selection-end-line="93" selection-end-column="55" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactGroupsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46077034">
-          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
+            <marker date="1467353060467" expanded="true" signature="6531:7251" placeholder="..." />
+            <marker date="1467353060467" expanded="true" signature="6543:7250" placeholder="..." />
+            <marker date="1467353060467" expanded="true" signature="6579:7239" placeholder="..." />
+            <marker date="1467353060467" expanded="true" signature="6595:6711" placeholder="..." />
+            <marker date="1467353060467" expanded="true" signature="6730:7222" placeholder="..." />
+            <marker date="1467353060467" expanded="true" signature="6832:7059" placeholder="..." />
+            <marker date="1467353060467" expanded="true" signature="7067:7203" placeholder="..." />
           </folding>
         </state>
       </provider>

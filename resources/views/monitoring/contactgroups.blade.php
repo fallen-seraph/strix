@@ -81,27 +81,26 @@
                                 </div>
                             </div>
 
-
-                            @if(isset($availableContacts))
-                                <div class="form-group{{ $errors->has('availableMembers') ? ' has-error' : '' }}">
-                                    <label for="availableMembers" class="col-md-4 control-label">Contact List</label>
+                            <div class="form-group{{ $errors->has('availableMembers') ? ' has-error' : '' }}">
+                                <label for="availableMembers" class="col-md-4 control-label">Contact List</label>
 
 
-                                    <div class="col-md-6">
-                                        <select id="availableMembers" class="form-control" name="availableMembers">
-                                            <option selected disabled>Choose a contact</option>
-                                                @foreach($availableContacts as $contact)
-                                                    <option>{{ $contact }}</option>
-                                                @endforeach
-                                        </select>
-                                        @if ($errors->has('availableMembers'))
-                                            <span class="help-block">
-                                            <strong>{{ $errors->first('availableMembers') }}</strong>
-                                        </span>
+                                <div class="col-md-6">
+                                    <select id="availableMembers" class="form-control" name="availableMembers">
+                                        <option selected disabled>Choose a contact</option>
+                                        @if(isset($availableContacts))
+                                            @foreach($availableContacts as $contact)
+                                                <option>{{ $contact }}</option>
+                                            @endforeach
                                         @endif
-                                    </div>
+                                    </select>
+                                    @if ($errors->has('availableMembers'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('availableMembers') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
-                            @endIf
+                            </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary" name="add" value="add">
