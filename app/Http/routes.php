@@ -57,8 +57,8 @@ Route::post('monitoring/groups', 'ContactGroupsController@newGroup');
 Route::patch('monitoring/groups', 'ContactGroupsController@addUser');
 Route::get('monitoring/groups/delete/{group}', 'ContactGroupsController@deleteGroup');
 
-Route::get('monitoring/groups/update/{group}', 'UpdatesController@group');
-Route::patch('monitoring/groups/update', 'UpdatesController@updateGroup');
+Route::get('monitoring/groups/rename/{group}', 'ContactGroupsController@group');
+Route::patch('monitoring/groups/rename', 'ContactGroupsController@updateGroupName');
 
 
 //monitoring hosts routes

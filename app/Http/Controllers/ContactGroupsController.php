@@ -40,32 +40,8 @@ class ContactGroupsController extends Controller
         
         return redirect()->action('ContactGroupsController@groups');
     }
-    public function addUser(Request $request){
-        $accountId=Auth::user()->account_id;
-        $groupName=$accountId . "_" . $request->group;
-        $newMember=$accountId . "_" . $request->member;
+    public function renameGroup(){
 
-        $existingMembers=Group::where('account_id', $accountId)->where('group_name', $groupName)->value('members');
-
-        if(strpos($existingMembers, $newMember) !== false){
-            return back()->withErrors(['member' => 'Contact is already a part of this group']);
-        }
-
-        if($existingMembers) {
-            Group::where('account_id', $accountId)->where('group_name', $groupName)->update(['members' => $existingMembers . "," . $newMember]);
-        } else {
-            Group::where('account_id', $accountId)->where('group_name', $groupName)->update(['members' => $newMember]);
-        }
-
-        $existingGroups=Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->value('contact_groups');
-
-        if($existingGroups){
-            Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->update(['contact_groups' => $existingGroups . "," . $groupName]);
-        }else{
-            Contacts::where('account_id', $accountId)->where('contact_name', $newMember)->update(['contact_groups' => $groupName]);
-        }
-
-        return redirect()->action('ContactGroupsController@groups');
     }
     public function deleteGroup($deletedGroup){
         $accountId=Auth::user()->account_id;
@@ -88,8 +64,78 @@ class ContactGroupsController extends Controller
                     ]);
             }
         };
-            
+
         Group::where('group_name', $groupName)->where('account_id', $accountId)->delete();
         return redirect()->action('ContactGroupsController@groups');
     }
+
+    public function addOrRemoveContact(Request $request){
+        $accountId=Auth::user()->account_id;
+        $group=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->first();
+
+        if(Input::get('nameChange') == 'nameChange'){
+            Group::where('account_id', $accountId)
+                ->where('group_id', $request->group_id)
+                ->update([
+                    'group_name' => $accountId . "_" . $request->alias,
+                    'alias' => $request->alias,
+                ]);
+
+        } elseif(Input::get('add') == 'add') {
+            $contact=Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->value('contact_groups');
+            $group=Group::where('account_id', $accountId)->where('alias', $group)->first();
+
+            if($group->members) {
+                Group::where('account_id', $accountId)
+                    ->where('group_id', $request->group_id)
+                    ->update([
+                        'members' => $group->members . "," . $request->availableMembers,
+                    ]);
+            } else {
+                Group::where('account_id', $accountId)
+                    ->where('group_id', $request->group_id)
+                    ->update([
+                        'members' => $request->availableMembers,
+                    ]);
+            }
+
+            if($contact){
+                Contacts::where('account_id', $accountId)
+                    ->where('alias', $request->availableMembers)
+                    ->update([
+                        'contact_groups' => $contact . "," . $group->group_name
+                    ]);
+            } else {
+                Contacts::where('account_id', $accountId)
+                    ->where('alias', $request->availableMembers)
+                    ->update([
+                        'contact_groups' => $group->group_name
+                    ]);
+            }
+        } elseif(Input::get('remove') == 'remove') {
+            $removedContact=str_replace("*", "", $request->availableMembers);
+            $contact=Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->value('contact_groups');
+
+            if(str_pos(",", $group->members) !== false) {
+                Group::where('account_id', $accountId)->where('group_id', $request->group_id)->update([
+                    'members' => str_replace($removedContact . ",", "", $group->members),
+                ]);
+            } else {
+                Group::where('account_id', $accountId)->where('group_id', $request->group_id)->update([
+                    'members' => str_replace($removedContact, "", $group->members),
+                ]);
+            }
+            if(str_pos(",", $contact) !== false){
+                Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->update([
+                    'contact_groups' => str_replace($group->group_name . ",", "", $contact),
+                ]);
+            } else {
+                Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->update([
+                    'contact_groups' => str_replace($group->group_name, "", $contact),
+                ]);
+            }
+        }
+
+        return redirect()->action('ContactGroupsController@groups');
+}
 }

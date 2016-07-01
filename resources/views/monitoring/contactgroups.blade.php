@@ -11,7 +11,7 @@
                         <ul>
                             @foreach ($groups as $group)
                                 <li>{{ $group->alias }} | 
-                                <a href="/monitoring/groups/update/{{ $group->alias }}">Update</a> |
+                                <a href="/monitoring/groups/update/{{ $group->alias }}">Rename</a> |
                                 <a href="/monitoring/groups/{{ $group->alias }}">Delete</a></li>
                                 @if($group->members[0])
                                     <ul>
@@ -55,50 +55,43 @@
                             </div>
                         </form>
                     </div>
-                    <div class="panel-heading">Add User to Group</div>
+                    <div class="panel-heading">Add or Remove Users</div>
                     <div class="panel-body">
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/groups') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/groups/update') }}">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
 
-                            <div class="form-group{{ $errors->has('group') ? ' has-error' : '' }}">
-                                <label for="group" class="col-md-4 control-label">Group</label>
+
+                            <input id="group_id" type="hidden" name="group_id" value="{{ $group->group_id }}">
+
+                            <div class="form-group{{ $errors->has('availableMembers') ? ' has-error' : '' }}">
+                                <label for="availableMembers" class="col-md-4 control-label">Contact List</label>
+
 
                                 <div class="col-md-6">
-                                    <select id="group" class="form-control" name="group" value="{{ old('group') }}">
-                                        <option selected disabled>Choose a Group</option>
-                                        @foreach($groups as $group)
-                                            <option value="{{ $group->alias }}">{{ $group->alias }}</option>
+                                    <select id="availableMembers" class="form-control" name="availableMembers">
+                                        <option selected disabled>Choose a contact</option>
+                                        @foreach($availableContacts as $contact)
+                                            <option>{{ $contact }}</option>
                                         @endforeach
                                     </select>
-                                    @if ($errors->has('group'))
+                                    @if ($errors->has('availableMembers'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('group') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('member') ? ' has-error' : '' }}">
-                                <label for="member" class="col-md-4 control-label">Member</label>
-
-                                <div class="col-md-6">
-                                    <select required id="member" class="form-control" name="member" value="{{ old('member') }}">
-                                        <option selected disabled>Choose a contact</option>
-                                    </select>
-                                    @if ($errors->has('member'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('member') }}</strong>
+                                        <strong>{{ $errors->first('availableMembers') }}</strong>
                                     </span>
                                     @endif
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary" name="add" value="add">
                                         <i class="fa fa-btn fa-user"></i> Add Member
+                                    </button>
+                                </div>
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary" name="remove" value="remove">
+                                        <i class="fa fa-btn fa-user"></i> Delete Member
                                     </button>
                                 </div>
                             </div>
