@@ -58,31 +58,50 @@
                     <div class="panel-heading">Add or Remove Users</div>
                     <div class="panel-body">
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/groups/update') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/groups/contactUpdate') }}">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
 
-
-                            <input id="group_id" type="hidden" name="group_id" value="{{ $group->group_id }}">
-
-                            <div class="form-group{{ $errors->has('availableMembers') ? ' has-error' : '' }}">
-                                <label for="availableMembers" class="col-md-4 control-label">Contact List</label>
+                            <div class="form-group{{ $errors->has('groupList') ? ' has-error' : '' }}">
+                                <label for="groupList" class="col-md-4 control-label">Contact Group</label>
 
 
                                 <div class="col-md-6">
-                                    <select id="availableMembers" class="form-control" name="availableMembers">
-                                        <option selected disabled>Choose a contact</option>
-                                        @foreach($availableContacts as $contact)
-                                            <option>{{ $contact }}</option>
+                                    <select id="groupList" class="form-control" name="groupList">
+                                        <option selected disabled>Choose a Group</option>
+                                        @foreach ($groups as $group)
+                                            <option>{{ $group->alias }}</option>
                                         @endforeach
                                     </select>
-                                    @if ($errors->has('availableMembers'))
+                                    @if ($errors->has('groupList'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('availableMembers') }}</strong>
+                                        <strong>{{ $errors->first('groupList') }}</strong>
                                     </span>
                                     @endif
                                 </div>
                             </div>
+
+
+                            @if(isset($availableContacts))
+                                <div class="form-group{{ $errors->has('availableMembers') ? ' has-error' : '' }}">
+                                    <label for="availableMembers" class="col-md-4 control-label">Contact List</label>
+
+
+                                    <div class="col-md-6">
+                                        <select id="availableMembers" class="form-control" name="availableMembers">
+                                            <option selected disabled>Choose a contact</option>
+                                                @foreach($availableContacts as $contact)
+                                                    <option>{{ $contact }}</option>
+                                                @endforeach
+                                        </select>
+                                        @if ($errors->has('availableMembers'))
+                                            <span class="help-block">
+                                            <strong>{{ $errors->first('availableMembers') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                            @endIf
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary" name="add" value="add">
@@ -106,17 +125,17 @@
     <script>
 
         $(document).ready(function($){
-            $('#group').change(function(group){
+            $('#groupList').change(function(group){
                 var group_alias=group.target.value;
                 $.get('/group/dropdown', { option: group_alias }, function(data) {
-                    $('#member').empty();
+                    $('#availableMembers').empty();
 
                     if(!$.isEmptyObject(data)) {
                         $.each(data, function (index, value) {
-                            $('#member').append('<option value="' + value + '">' + value + '</option>');
+                            $('#availableMembers').append('<option value="' + value + '">' + value + '</option>');
                         });
                     } else {
-                        $('#member').append('<option selected disabled>No Available Contacts</option>');
+                        $('#availableMembers').append('<option selected disabled>No Available Contacts</option>');
                     }
 
                 });

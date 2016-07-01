@@ -17,11 +17,7 @@ class ContactGroupsController extends Controller
         $accountId=Auth::user()->account_id;
         $groups = Group::where('account_id', $accountId)->get();
 
-        foreach($groups as $group){
-            $group->members = explode(',', $group->members);
-        }
-
-        return view('monitoring.contactgroups', compact('groups'));
+        return view('monitoring.contactgroups', compact('groups', 'availableContacts'));
     }
     public function newGroup(Request $request, Group $group){
         $account_id=Auth::user()->account_id;

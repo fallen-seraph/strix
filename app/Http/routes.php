@@ -54,7 +54,7 @@ Route::patch('monitoring/contacts/update', 'UpdatesController@updateContact');
 //monitoring groups routes
 Route::get('monitoring/groups', 'ContactGroupsController@groups');
 Route::post('monitoring/groups', 'ContactGroupsController@newGroup');
-Route::patch('monitoring/groups', 'ContactGroupsController@addUser');
+Route::patch('monitoring/groups/contactUpdate', 'ContactGroupsController@addOrRemoveContact');
 Route::get('monitoring/groups/delete/{group}', 'ContactGroupsController@deleteGroup');
 
 Route::get('monitoring/groups/rename/{group}', 'ContactGroupsController@group');

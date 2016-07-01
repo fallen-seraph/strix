@@ -17,17 +17,21 @@ class ApiController extends Controller
     }
     public function contactGroupDropdown(){
         $accountId=Auth::user()->account_id;
-        $input = Input::get('option');
 
-        $group_contacts = Group::where('account_id', $accountId)->where('alias', $input)->lists('members');
+        $group = Group::where('account_id', $accountId)->where('alias', Input::get('option'))->get();
 
-        $users = Contacts::where('account_id', $accountId)->lists('contact_name');
+        $group->members = str_replace($accountId . "_", "", $group->members);
+        $group->members = explode(",", $group->members);
 
-        $group_contacts=$group_contacts->toArray();
-        $availableUsers=array_diff($users->toArray(), explode(",", $group_contacts[0]));
+        $contacts = Contacts::where('account_id', $accountId)->lists('alias');
 
-        foreach($availableUsers as &$user){$user=str_replace("1_", "", $user);}
+        $availableContacts = array_diff($contacts->toArray(), $group->members);
 
-        return Response::json($availableUsers);
+        foreach ($group->members as $member) {
+            array_push($availableContacts, $member . "*");
+        }
+        asort($availableContacts);
+
+        return Response::json($availableContacts);
     }
 }
