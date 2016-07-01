@@ -88,6 +88,11 @@
                                 <div class="col-md-6">
                                     <select id="availableMembers" class="form-control" name="availableMembers">
                                         <option selected disabled>Choose a contact</option>
+                                        @if(isset($availableContacts))
+                                            @foreach($availableContacts as $contact)
+                                                <option>{{ $contact }}</option>
+                                            @endforeach
+                                        @endif
                                     </select>
                                     @if ($errors->has('availableMembers'))
                                         <span class="help-block">
