@@ -46,7 +46,7 @@ class UpdatesController extends Controller
         ]);
 
         $contact=Contacts::where('account_id', $accountId)->where('contact_groups', 'like', "%" . $oldName . "%")->select('contact_groups', 'contact_id')->first();
-        dd($oldname);
+        
         Contacts::where('contact_id', $contact->contact_id)->update([
            'contact_groups' => str_replace($oldName, $alias, $contact->contact_groups),
         ]);
