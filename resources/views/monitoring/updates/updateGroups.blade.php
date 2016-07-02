@@ -8,9 +8,11 @@
                     <div class="panel-heading">Rename Group {{ $alias }}</div>
                     <div class="panel-body">
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/groups/update') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/groups/rename') }}">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
+
+                            <input type="hidden" value="{{ $group_id }}" name="group_id" id="group_id">
 
                             <div class="form-group{{ $errors->has('groupName') ? ' has-error' : '' }}">
                                 <label for="alias" class="col-md-4 control-label">Group Name</label>
