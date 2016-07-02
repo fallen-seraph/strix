@@ -32,4 +32,10 @@ class UpdatesController extends Controller
 
         return redirect()->action('ContactsController@contacts');
     }
+    public function groupName($alias){
+        return view('monitoring.updates.updateGroups', compact('alias'));
+    }
+    public function renameGroup(){
+
+    }
 }

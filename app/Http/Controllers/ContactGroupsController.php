@@ -40,9 +40,6 @@ class ContactGroupsController extends Controller
         
         return redirect()->action('ContactGroupsController@groups');
     }
-    public function renameGroup(){
-
-    }
     public function deleteGroup($deletedGroup){
         $accountId=Auth::user()->account_id;
         $groupName=$accountId . "_" . $deletedGroup;
