@@ -39,12 +39,14 @@ class UpdatesController extends Controller
     public function renameGroup(Request $request){
         $accountId=Auth::user()->account_id;
         $oldName=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->value('alias');
+
         Group::where('account_id', $accountId)->where('group_id', $request->group_id)->update([
             'alias' => $request->alias,
             'group_name' => $accountId . "_" . $request->alias,
         ]);
 
         $contact=Contacts::where('account_id', $accountId)->where('contact_groups', 'like', "%" . $oldName . "%")->select('contact_groups', 'contact_id')->first();
+        dd($oldname);
         Contacts::where('contact_id', $contact->contact_id)->update([
            'contact_groups' => str_replace($oldName, $alias, $contact->contact_groups),
         ]);
