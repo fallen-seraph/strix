@@ -37,6 +37,12 @@ class UpdatesController extends Controller
         return view('monitoring.updates.updateGroups', compact('alias', 'group_id'));
     }
     public function renameGroup(Request $request){
+
+        $this->validate($request, [
+            'group_id' => 'required',
+            'alias' => 'required|min:2',
+        ]);
+
         $accountId=Auth::user()->account_id;
         $oldName=Group::where('account_id', $accountId)->where('group_id', $request->group_id)->value('alias');
 
@@ -50,6 +56,6 @@ class UpdatesController extends Controller
         Contacts::where('contact_id', $contact->contact_id)->update([
            'contact_groups' => str_replace($oldName, $request->alias, $contact->contact_groups),
         ]);
-
+        return redirect()->action('ContactGroupsController@groups');
     }
 }
