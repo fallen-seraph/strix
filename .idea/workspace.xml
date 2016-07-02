@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.8059914">
-              <caret line="46" column="108" selection-start-line="46" selection-start-column="108" selection-end-line="46" selection-end-column="108" />
+              <caret line="46" column="106" selection-start-line="46" selection-start-column="106" selection-end-line="46" selection-end-column="106" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -775,7 +775,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UpdatesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8059914">
-          <caret line="46" column="108" selection-start-line="46" selection-start-column="108" selection-end-line="46" selection-end-column="108" />
+          <caret line="46" column="106" selection-start-line="46" selection-start-column="106" selection-end-line="46" selection-end-column="106" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
