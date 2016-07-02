@@ -13,7 +13,7 @@
                                 <li>{{ $group->alias }} | 
                                 <a href="/monitoring/groups/rename/{{ $group->alias }}">Rename</a> |
                                 <a href="/monitoring/groups/delete/{{ $group->alias }}">Delete</a></li>
-                                @if(isset($group->members))
+                                @if($group->members)
                                     <ul>
                                         Members
                                         @foreach ($group->members as $member)
