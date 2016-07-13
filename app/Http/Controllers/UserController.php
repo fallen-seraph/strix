@@ -11,6 +11,7 @@ class UserController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
+	$this->middleware('type');
     }
     public function users(){
         $users = User::where('account_id', Auth::user()->account_id)->lists('email');

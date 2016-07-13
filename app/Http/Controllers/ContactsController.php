@@ -12,6 +12,7 @@ class ContactsController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
+	$this->middleware('type');
     }
     public function contacts(){
         $accountId=Auth::user()->account_id;
