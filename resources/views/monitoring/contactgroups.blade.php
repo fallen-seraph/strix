@@ -82,7 +82,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('availableMembers') ? ' has-error' : '' }}">
-                                <label for="availableMembers" class="col-md-4 control-label">Contact List</label>
+                                <label id="listlabel" for="availableMembers" class="col-md-4 control-label">Contact List</label>
 
 
                                 <div class="col-md-6">
@@ -96,12 +96,12 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" name="add" value="add" id="add" hidden>
+                                    <button type="submit" class="btn btn-primary" name="add" value="add" id="add">
                                         <i class="fa fa-btn fa-user"></i> Add Member
                                     </button>
                                 </div>
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" name="remove" value="remove" id="remove" hidden>
+                                    <button type="submit" class="btn btn-primary" name="remove" value="remove" id="remove">
                                         <i class="fa fa-btn fa-user"></i> Delete Member
                                     </button>
                                 </div>
@@ -116,6 +116,11 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
         $(document).ready(function($){
+	    $('#availableMembers').hide();
+	    $('#add').hide();
+	    $('#remove').hide();
+	    $('#listlabel').hide();
+
             $('#groupList').change(function(group){
                 var group_alias=group.target.value;
                 $.get('/api/dropdown', { option: group_alias }, function(data) {
