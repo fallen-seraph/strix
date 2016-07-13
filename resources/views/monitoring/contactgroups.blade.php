@@ -122,11 +122,10 @@
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
-
         $(document).ready(function($){
             $('#groupList').change(function(group){
                 var group_alias=group.target.value;
-                $.get('/group/dropdown', { option: group_alias }, function(data) {
+                $.get('/api/dropdown', { option: group_alias }, function(data) {
                     $('#availableMembers').empty();
 
                     if(!$.isEmptyObject(data)) {
