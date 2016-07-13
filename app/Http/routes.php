@@ -71,6 +71,6 @@ Route::get('monitoring/hosts/update/{host}', 'UpdatesController@host');
 Route::patch('monitoring/hosts/update', 'UpdatesController@updateHost');
 
 //apis for drop downs across all blades
-Route::get('group/dropdown', 'ApiController@contactGroupDropdown');
+Route::get('api/dropdown', 'ApiController@contactGroupDropdown');
 
 Route::get('settings', 'SettingsController@settings');

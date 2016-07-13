@@ -86,14 +86,7 @@
 
 
                                 <div class="col-md-6">
-                                    <select id="availableMembers" class="form-control" name="availableMembers">
-                                        <option selected disabled>Choose a contact</option>
-                                        @if(isset($availableContacts))
-                                            @foreach($availableContacts as $contact)
-                                                <option>{{ $contact }}</option>
-                                            @endforeach
-                                        @endif
-                                    </select>
+                                    <select id="availableMembers" class="form-control" name="availableMembers"></select>
                                     @if ($errors->has('availableMembers'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('availableMembers') }}</strong>
@@ -103,12 +96,12 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" name="add" value="add">
+                                    <button type="submit" class="btn btn-primary" name="add" value="add" id="add" hidden>
                                         <i class="fa fa-btn fa-user"></i> Add Member
                                     </button>
                                 </div>
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" name="remove" value="remove">
+                                    <button type="submit" class="btn btn-primary" name="remove" value="remove" id="remove" hidden>
                                         <i class="fa fa-btn fa-user"></i> Delete Member
                                     </button>
                                 </div>
@@ -127,8 +120,11 @@
                 var group_alias=group.target.value;
                 $.get('/api/dropdown', { option: group_alias }, function(data) {
                     $('#availableMembers').empty();
+		    $('#availableMembers').show();
 
-                    if(!$.isEmptyObject(data)) {
+                    if(data != "") {
+			$('#availableMembers').append('<option selected disabled>Choose a contact</option>');
+
                         $.each(data, function (index, value) {
                             $('#availableMembers').append('<option value="' + value + '">' + value + '</option>');
                         });
