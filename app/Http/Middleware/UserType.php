@@ -16,7 +16,7 @@ class UserType
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::User()->Type == "sub") {
+        if (Auth::User()->type == "sub") {
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {
