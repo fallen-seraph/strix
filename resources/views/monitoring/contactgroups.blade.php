@@ -129,8 +129,10 @@
                 var group_alias=$('#groupList').val();
                 $.get('/api/group_contact', { group: group_alias, contact: group_contact }, function(data) {
                    if($.isEmptyObject(data)) {
+                       $('#remove').hide();
                        $('#add').show();
                    } else {
+                       $('#add').hide();
                        $('#remove').show();
                    }
                 });
