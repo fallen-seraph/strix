@@ -29,6 +29,8 @@ class ApiController extends Controller
     public function contactGroupButton(){
         $accountId=Auth::user()->account_id;
 
-        $group = Group::where('account_id', $accountId)->where('alias', Input::get('group'))->where('members', 'like', "%" . Input::get('contact') . "%")->first();
+        $group_id = Group::where('account_id', $accountId)->where('alias', Input::get('group'))->where('members', 'like', "%" . Input::get('contact') . "%")->value('group_id');
+
+        return Response::json($group_id);
     }
 }

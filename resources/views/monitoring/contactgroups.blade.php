@@ -115,20 +115,22 @@
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
-        $(document).ready(function($){
+        $(document).ready(function($) {
             $('#availableMembers').hide();
             $('#add').hide();
             $('#remove').hide();
             $('#listlabel').hide();
+        });
 
-            $('#groupList').change(function(group){
-                var group_alias=group.target.value;
-                $.get('/api/group_alias', { option: group_alias }, function(data) {
+        $(document).ready(function($) {
+            $('#groupList').change(function (group) {
+                var group_alias = group.target.value;
+                $.get('/api/group_alias', {option: group_alias}, function (data) {
                     $('#availableMembers').empty();
                     $('#listlabel').show();
-		            $('#availableMembers').show();
+                    $('#availableMembers').show();
 
-                    if(data != "") {
+                    if (data != "") {
                         $('#availableMembers').append('<option selected disabled>Choose a contact</option>');
 
                         $.each(data, function (index, value) {
@@ -140,7 +142,9 @@
                     }
                 });
             });
+        });
 
+        $(document).ready(function($) {
             $('#availableMembers').change(function(alias){
                 var group_contact=alias.target.value;
                 var group_alias=$('#groupList').val();
