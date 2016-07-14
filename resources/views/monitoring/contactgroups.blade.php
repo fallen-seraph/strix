@@ -65,7 +65,6 @@
                             <div class="form-group{{ $errors->has('groupList') ? ' has-error' : '' }}">
                                 <label for="groupList" class="col-md-4 control-label">Contact Group</label>
 
-
                                 <div class="col-md-6">
                                     <select id="groupList" class="form-control" name="groupList">
                                         <option selected disabled>Choose a Group</option>
@@ -83,7 +82,6 @@
 
                             <div class="form-group{{ $errors->has('availableMembers') ? ' has-error' : '' }}">
                                 <label id="listlabel" for="availableMembers" class="col-md-4 control-label">Contact List</label>
-
 
                                 <div class="col-md-6">
                                     <select id="availableMembers" class="form-control" name="availableMembers"></select>

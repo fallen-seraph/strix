@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Auth;
 use App\Group;
-use App\Contacts;
 use Response;
 use App\Http\Requests;
 
