@@ -128,7 +128,7 @@
                 var group_contact=alias.target.value;
                 var group_alias=$('#groupList').val();
                 $.get('/api/group_contact', { group: group_alias, contact: group_contact }, function(data) {
-                   if(data != "") {
+                   if(data == "") {
                        $('#add').show();
                    } else {
                        $('#remove').show();
