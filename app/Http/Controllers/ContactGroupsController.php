@@ -103,7 +103,7 @@ class ContactGroupsController extends Controller
                     ]);
             }
         } elseif(Input::get('remove') == 'remove') {
-            if(str_pos(",", $group->members) !== false) {
+            if(strpos($group->members, ",") !== false) {
                 Group::where('account_id', $accountId)->where('group_id', $request->group_id)->update([
                     'members' => str_replace($request->availableMembers . ",", "", $group->members),
                 ]);
@@ -112,7 +112,7 @@ class ContactGroupsController extends Controller
                     'members' => str_replace($request->availableMembers, "", $group->members),
                 ]);
             }
-            if(str_pos(",", $contact) !== false){
+            if(strpos($contact, ",") !== false){
                 Contacts::where('account_id', $accountId)->where('alias', $request->availableMembers)->update([
                     'contact_groups' => str_replace($request->groupList . ",", "", $contact),
                 ]);
