@@ -84,7 +84,12 @@
                                 <label id="listlabel" for="availableMembers" class="col-md-4 control-label">Contact List</label>
 
                                 <div class="col-md-6">
-                                    <select id="availableMembers" class="form-control" name="availableMembers"></select>
+                                    <select id="availableMembers" class="form-control" name="availableMembers">
+                                        <option selected disabled>Choose a Contact</option>
+                                        @foreach ($contacts as $contact)
+                                            <option>{{ $contact }}</option>
+                                        @endforeach
+                                    </select>
                                     @if ($errors->has('availableMembers'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('availableMembers') }}</strong>
@@ -114,32 +119,8 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
         $(document).ready(function($) {
-            $('#availableMembers').hide();
             $('#add').hide();
             $('#remove').hide();
-            $('#listlabel').hide();
-        });
-
-        $(document).ready(function($) {
-            $('#groupList').change(function (group) {
-                var group_alias = group.target.value;
-                $.get('/api/group_alias', {option: group_alias}, function (data) {
-                    $('#availableMembers').empty();
-                    $('#listlabel').show();
-                    $('#availableMembers').show();
-
-                    if (data != "") {
-                        $('#availableMembers').append('<option selected disabled>Choose a contact</option>');
-
-                        $.each(data, function (index, value) {
-                            $('#availableMembers').append('<option value="' + value + '">' + value + '</option>');
-                        });
-
-                    } else {
-                        $('#availableMembers').append('<option selected disabled>No Available Contacts</option>');
-                    }
-                });
-            });
         });
 
         $(document).ready(function($) {

@@ -24,7 +24,9 @@ class ContactGroupsController extends Controller
             }
         }
 
-        return view('monitoring.contactgroups', compact('groups'));
+        $contacts = Contacts::where('account_id', $accountId)->lists('alias');
+
+        return view('monitoring.contactgroups', compact('groups', 'contacts'));
     }
     public function newGroup(Request $request, Group $group){
         $account_id=Auth::user()->account_id;
