@@ -116,27 +116,40 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
         $(document).ready(function($){
-	    $('#availableMembers').hide();
-	    $('#add').hide();
-	    $('#remove').hide();
-	    $('#listlabel').hide();
+            $('#availableMembers').hide();
+            $('#add').hide();
+            $('#remove').hide();
+            $('#listlabel').hide();
 
             $('#groupList').change(function(group){
                 var group_alias=group.target.value;
-                $.get('/api/dropdown', { option: group_alias }, function(data) {
+                $.get('/api/group_alias', { option: group_alias }, function(data) {
                     $('#availableMembers').empty();
-		    $('#availableMembers').show();
+                    $('#listlabel').show();
+		            $('#availableMembers').show();
 
                     if(data != "") {
-			$('#availableMembers').append('<option selected disabled>Choose a contact</option>');
+                        $('#availableMembers').append('<option selected disabled>Choose a contact</option>');
 
                         $.each(data, function (index, value) {
                             $('#availableMembers').append('<option value="' + value + '">' + value + '</option>');
                         });
+
                     } else {
                         $('#availableMembers').append('<option selected disabled>No Available Contacts</option>');
                     }
+                });
+            });
 
+            $('#availableMembers').change(function(alias){
+                var group_contact=alias.target.value;
+                var group_alias=$('#groupList').val();
+                $.get('/api/group_contact', { group: group_alias, contact: group_contact }, function(data) {
+                   if(data == true) {
+                       $('#add').show();
+                   } else {
+                       $('#remove').show();
+                   }
                 });
             });
         });
