@@ -52,9 +52,9 @@ class HostController extends Controller
             'account_id' => $accountId,
             'host_name' => $hostName,
             'alias' => $request->alias,
-			'address' => $request->address,
-			'contacts' => $request->contacts,
-			'contact_groups' => $request->contact_groups,
+            'address' => $request->address,
+            'contacts' => $request->contacts,
+            'contact_groups' => $request->contact_groups,
         ]);
         
         return redirect()->action('HostController@hosts');

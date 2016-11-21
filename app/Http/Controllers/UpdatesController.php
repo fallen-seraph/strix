@@ -58,4 +58,7 @@ class UpdatesController extends Controller
         ]);
         return redirect()->action('ContactGroupsController@groups');
     }
+    public function host(Request $request){
+        return view('monitoring.updates.updateHost');
+    }
 }
