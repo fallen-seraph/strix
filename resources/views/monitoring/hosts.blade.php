@@ -126,14 +126,10 @@
                                 @endif
                             </div>
                         </div>
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('monitoring/hosts/service') }}">
-                            {{ csrf_field() }}
-                            {{ method_field('PATCH') }}
-                            
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-user"></i> Add Service
+                                        <i class="fa fa-btn fa-user"></i> Add Contact
                                     </button>
                                 </div>
                             </div>
