@@ -45,7 +45,7 @@ class HostController extends Controller
 		
         $this->validate($request, [
             'host_name' => 'required',
-			'address' => 'required',
+            'address' => 'required',
         ]);
 		
         $host->create([
@@ -53,9 +53,19 @@ class HostController extends Controller
             'host_name' => $hostName,
             'alias' => $request->alias,
             'address' => $request->address,
-            'contacts' => $request->contacts,
-            'contact_groups' => $request->contact_groups,
         ]);
+        
+        return redirect()->action('HostController@hosts');
+    }
+    public function addContact(Request $request, Host $hostContacts){
+        $accountId=Auth::user()->account_id;
+		
+        Host::where('account_id', $accountId)
+                ->where('host_id', $hostId)
+                ->update([
+                   'contacts' => $request->contacts,
+                   'contact_groups' => $request->contact_groups,
+                ]);
         
         return redirect()->action('HostController@hosts');
     }

@@ -45,7 +45,7 @@
                         @endforeach
                     </div>
 					
-					<div class="panel-heading">Add Host</div>
+                    <div class="panel-heading">Add Host</div>
                     <div class="panel-body">
 
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/hosts') }}">
@@ -65,7 +65,7 @@
                                     @endif
                                 </div>
                             </div>
-							<div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                                 <label for="address" class="col-md-4 control-label">Address</label>
 
                                 <div class="col-md-6">
@@ -78,42 +78,6 @@
                                     @endif
                                 </div>
                             </div>
-							<div class="form-group{{ $errors->has('contacts') ? ' has-error' : '' }}">
-                                <label for="contacts" class="col-md-4 control-label">Contacts</label>
-
-                                <div class="col-md-6">
-                                    <select id="contacts" class="form-control" name="contacts">
-                                        <option selected disabled>Choose a Contact</option>
-										@foreach($contacts as $contact)
-											<option>{{ trim($contact, Auth::user()->account_id . "_") }}</option>
-										@endforeach
-									</select>
-                                    @if ($errors->has('contacts'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('contacts') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-							
-							<div class="form-group{{ $errors->has('contact_groups') ? ' has-error' : '' }}">
-                                <label for="contact_groups" class="col-md-4 control-label">Contact Groups</label>
-
-                                <div class="col-md-6">
-                                    <select id="contact_groups" class="form-control" name="contact_groups">
-                                        <option selected disabled>Choose a Contact Group</option>
-										@foreach($contact_groups as $groups)
-											<option>{{ trim($groups, Auth::user()->account_id . "_") }}</option>
-										@endforeach
-									</select>
-                                    @if ($errors->has('contact_groups'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('contact_groups') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
@@ -123,6 +87,59 @@
                             </div>
                         </form>
                     </div>
+                    <div class="panel-heading">Add Contact</div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/hosts/contact') }}">
+                        {{ csrf_field() }}
+                        {{ method_field('PATCH') }}
+                        <div class="form-group{{ $errors->has('contacts') ? ' has-error' : '' }}">
+                            <label for="contacts" class="col-md-4 control-label">Contacts</label>
+
+                            <div class="col-md-6">
+                                <select id="contacts" class="form-control" name="contacts">
+                                    <option selected disabled>Choose a Contact</option>
+                                    @foreach($contacts as $contact)
+                                        <option>{{ trim($contact, Auth::user()->account_id . "_") }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('contacts'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('contacts') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('contact_groups') ? ' has-error' : '' }}">
+                            <label for="contact_groups" class="col-md-4 control-label">Contact Groups</label>
+
+                            <div class="col-md-6">
+                                <select id="contact_groups" class="form-control" name="contact_groups">
+                                    <option selected disabled>Choose a Contact Group</option>
+                                        @foreach($contact_groups as $groups)
+                                            <option>{{ trim($groups, Auth::user()->account_id . "_") }}</option>
+                                        @endforeach
+                                </select>
+                                @if ($errors->has('contact_groups'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('contact_groups') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('monitoring/hosts/service') }}">
+                            {{ csrf_field() }}
+                            {{ method_field('PATCH') }}
+                            
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-btn fa-user"></i> Add Service
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
                     <div class="panel-heading">Add Service</div>
                     <div class="panel-body">
 

@@ -64,6 +64,7 @@ Route::patch('monitoring/groups/rename', 'UpdatesController@renameGroup');
 //monitoring hosts routes
 Route::get('monitoring/hosts', 'HostController@hosts');
 Route::post('monitoring/hosts', 'HostController@newHost');
+Route::patch('monitoring/hosts/contact', 'HostController@addContact');
 Route::patch('monitoring/hosts/service', 'HostController@addService');
 Route::get('monitoring/hosts/delete/{host}', 'HostController@deleteHost');
 
