@@ -15,7 +15,6 @@
                                     <li>{{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/delete/{{ $host->host_name }}">Delete</a></li>
                                 </ul>
                                 IP Address:
-                                <ul>
                                     <li>{{ $host->address }}</li>
                                     @if(isset($host->services))
                                         Services:
@@ -25,23 +24,22 @@
                                             @endforeach
                                         </ul>
                                     @endif
-                                    @if(isset($host->contacts))
-                                        Contacts
-                                        <ul>
-                                            @foreach($host->contacts as $contact)
-                                                <li>{{ $contact }}</li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                    @if(isset($host->contact_groups))
-                                        Contact Groups
-                                        <ul>
-                                            @foreach($host->contact_groups as $groups)
-                                                <li>{{ $groups }}</li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                </ul>
+                                @if(isset($host->contacts))
+                                    Contacts
+                                    <ul>
+                                        @foreach($host->contacts as $contact)
+                                            <li>{{ $contact }}</li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                                @if(isset($host->contact_groups))
+                                    Contact Groups
+                                    <ul>
+                                        @foreach($host->contact_groups as $groups)
+                                            <li>{{ $groups }}</li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </ul>
                         @endforeach
                     </div>
