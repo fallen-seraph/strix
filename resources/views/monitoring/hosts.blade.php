@@ -13,24 +13,24 @@
                                 <ul> 
                                     IP Address : {{ $host->address }}
                                     @if(isset($host->services))
-                                        Services :
                                         <ul>
+                                            Services:
                                             @foreach($host->services as $service)
                                                 <li>{{ $service }}</li>
                                             @endforeach
                                         </ul>
                                     @endif
                                     @if(isset($host->contacts))
-                                        Contacts
                                         <ul>
+                                            Contacts:
                                             @foreach($host->contacts as $contact)
                                                 <li>{{ $contact }}</li>
                                             @endforeach
                                         </ul>
                                     @endif
                                     @if(isset($host->contact_groups))
-                                        Contact Groups
                                         <ul>
+                                            Contact Groups
                                             @foreach($host->contact_groups as $groups)
                                                 <li>{{ $groups }}</li>
                                             @endforeach
