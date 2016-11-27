@@ -8,9 +8,9 @@
                     @if (count($hosts) > 0)
                         <div class="panel-heading">Nagios Hosts and Services</div>
                         <div class="panel-body">
-                            <ul>
-                                @foreach ($hosts as $host)
-                                    {{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/delete/{{ $host->host_name }}">Delete</a></li>    
+                            @foreach ($hosts as $host)
+                                {{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/delete/{{ $host->host_name }}">Delete</a></li>      
+                                <ul>
                                     IP Address : {{ $host->address }}
                                     @if(isset($host->services))
                                         Services:
@@ -36,8 +36,8 @@
                                             @endforeach
                                         </ul>
                                     @endif
-                                @endforeach
-                            </ul>
+                                </ul>
+                            @endforeach
                         </div>
                     @endif
                     <div class="panel-heading">Add Host</div>
