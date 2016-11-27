@@ -10,10 +10,8 @@
                         <div class="panel-body">
                             @foreach ($hosts as $host)
                                 {{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/delete/{{ $host->host_name }}">Delete</a>
-                                    <ul>
-                                        IP Address : {{ $host->address }}
-                                    </ul>
-                                    <ul>
+                                <ul>
+                                    <li>IP Address : {{ $host->address }}</li>
                                     @if(isset($host->services))
                                         Services:
                                         <ul>
