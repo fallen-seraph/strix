@@ -92,7 +92,19 @@
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/hosts/contact') }}">
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
-                        <div class="form-group{{ $errors->has('contacts') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="contacts" class="col-md-4 control-label">Contacts</label>
+
+                            <div class="col-md-6">
+                                <select id="contacts" class="form-control" name="contacts">
+                                    <option selected disabled>Host</option>
+                                    @foreach($host as $hosts)
+                                        <option>{{ $host }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="contacts" class="col-md-4 control-label">Contacts</label>
 
                             <div class="col-md-6">
@@ -102,14 +114,9 @@
                                         <option>{{ trim($contact, Auth::user()->account_id . "_") }}</option>
                                     @endforeach
                                 </select>
-                                @if ($errors->has('contacts'))
-                                    <span class="help-block">
-                                    <strong>{{ $errors->first('contacts') }}</strong>
-                                </span>
-                                @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('contact_groups') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <label for="contact_groups" class="col-md-4 control-label">Contact Groups</label>
 
                             <div class="col-md-6">
@@ -119,11 +126,6 @@
                                             <option>{{ trim($groups, Auth::user()->account_id . "_") }}</option>
                                         @endforeach
                                 </select>
-                                @if ($errors->has('contact_groups'))
-                                    <span class="help-block">
-                                    <strong>{{ $errors->first('contact_groups') }}</strong>
-                                </span>
-                                @endif
                             </div>
                         </div>
                             <div class="form-group">
