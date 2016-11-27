@@ -87,6 +87,7 @@
                             </div>
                         </form>
                     </div>
+                    @if (count($hosts) > 0)
                     <div class="panel-heading">Add Contact</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/monitoring/hosts/contact') }}">
@@ -137,7 +138,8 @@
                             </div>
                         </form>
                     </div>
-                    
+                    @endif
+                    @if (count($hosts) > 0)
                     <div class="panel-heading">Add Service</div>
                     <div class="panel-body">
 
@@ -191,6 +193,7 @@
                             </div>
                         </form>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
