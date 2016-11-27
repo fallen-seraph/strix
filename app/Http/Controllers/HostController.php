@@ -61,7 +61,7 @@ class HostController extends Controller
         $accountId=Auth::user()->account_id;
 		
         Host::where('account_id', $accountId)
-                ->where('host_id', $hostId)
+                ->where('host_id', $request->host_id)
                 ->update([
                    'contacts' => $request->contacts,
                    'contact_groups' => $request->contact_groups,

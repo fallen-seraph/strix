@@ -98,8 +98,7 @@
                             <label for="contacts" class="col-md-4 control-label">Host</label>
 
                             <div class="col-md-6">
-                                <select id="contacts" class="form-control" name="contacts">
-                                    <option selected disabled>Host</option>
+                                <select id="contacts" class="form-control" name="host_id">
                                     @foreach($hosts as $host)
                                         <option value="{{ $host->host_id }}">{{ $host->host_name }}</option>
                                     @endforeach
