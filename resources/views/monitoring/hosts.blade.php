@@ -15,15 +15,17 @@
                                     <li>{{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/delete/{{ $host->host_name }}">Delete</a></li>
                                 </ul>
                                 IP Address:
-                                    <li>{{ $host->address }}</li>
-                                    @if(isset($host->services))
-                                        Services:
-                                        <ul>
-                                            @foreach($host->services as $service)
-                                                <li>{{ $service }}</li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
+                                    <ul>
+                                        <li>{{ $host->address }}</li>
+                                        @if(isset($host->services))
+                                            Services:
+                                            <ul>
+                                                @foreach($host->services as $service)
+                                                    <li>{{ $service }}</li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </ul>
                                 @if(isset($host->contacts))
                                     Contacts
                                     <ul>
