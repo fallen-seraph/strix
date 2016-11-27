@@ -93,13 +93,13 @@
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
                         <div class="form-group">
-                            <label for="contacts" class="col-md-4 control-label">Contacts</label>
+                            <label for="contacts" class="col-md-4 control-label">Host</label>
 
                             <div class="col-md-6">
                                 <select id="contacts" class="form-control" name="contacts">
                                     <option selected disabled>Host</option>
-                                    @foreach($host as $hosts)
-                                        <option>{{ $host }}</option>
+                                    @foreach($hosts as $host)
+                                        <option>{{ $host->host_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
