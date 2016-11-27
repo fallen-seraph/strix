@@ -11,9 +11,7 @@
                             @foreach ($hosts as $host)
                                     {{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/delete/{{ $host->host_name }}">Delete</a></li>    
                                 <ul>
-                                    <ul>
-                                        IP Address : {{ $host->address }}
-                                    </ul>
+                                    IP Address : {{ $host->address }}
                                     @if(isset($host->services))
                                         Services:
                                         <ul>
