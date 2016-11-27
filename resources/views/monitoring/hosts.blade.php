@@ -12,27 +12,29 @@
                                     {{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/delete/{{ $host->host_name }}">Delete</a></li>    
                                 <ul> 
                                     IP Address : {{ $host->address }}
-                                        @if(isset($host->services))
-                                            Services :
-                                            <ul>
+                                    @if(isset($host->services))
+                                        Services :
+                                        <ul>
                                             @foreach($host->services as $service)
                                                 <li>{{ $service }}</li>
                                             @endforeach
-                                            </ul>
-                                        @endif
+                                        </ul>
+                                    @endif
                                     @if(isset($host->contacts))
-                                        <li>Contacts
-                                        @foreach($host->contacts as $contact)
-                                            <li>{{ $contact }}</li>
-                                        @endforeach
-                                        </li>
+                                        Contacts
+                                        <ul>
+                                            @foreach($host->contacts as $contact)
+                                                <li>{{ $contact }}</li>
+                                            @endforeach
+                                        </ul>
                                     @endif
                                     @if(isset($host->contact_groups))
-                                        <li>Contact Groups
-                                        @foreach($host->contact_groups as $groups)
-                                            <li>{{ $groups }}</li>
-                                        @endforeach
-                                        </li>
+                                        Contact Groups
+                                        <ul>
+                                            @foreach($host->contact_groups as $groups)
+                                                <li>{{ $groups }}</li>
+                                            @endforeach
+                                        </ul>
                                     @endif
                                 </ul>
                             @endforeach
