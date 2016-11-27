@@ -9,11 +9,11 @@
                         <div class="panel-heading">Nagios Hosts and Services</div>
                         <div class="panel-body">
                             @foreach ($hosts as $host)
-                                {{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/delete/{{ $host->host_name }}">Delete</a></li>      
-                                <ul>
+                                {{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/delete/{{ $host->host_name }}">Delete</a>
                                     <ul>
                                         IP Address : {{ $host->address }}
                                     </ul>
+                                    <ul>
                                     @if(isset($host->services))
                                         Services:
                                         <ul>
