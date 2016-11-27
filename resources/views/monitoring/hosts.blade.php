@@ -10,27 +10,29 @@
                         <div class="panel-body">
                             @foreach ($hosts as $host)
                                     {{ $host->host_name }} | <a href="/monitoring/update/hosts/{{ $host->host_name }}">Update</a> | <a href="/monitoring/hosts/delete/{{ $host->host_name }}">Delete</a></li>    
-                                <ul> 
-                                    IP Address : {{ $host->address }}
+                                <ul>
+                                    <ul>
+                                        IP Address : {{ $host->address }}
+                                    </ul>
                                     @if(isset($host->services))
+                                        Services:
                                         <ul>
-                                            Services:
                                             @foreach($host->services as $service)
                                                 <li>{{ $service }}</li>
                                             @endforeach
                                         </ul>
                                     @endif
                                     @if(isset($host->contacts))
+                                        Contacts:
                                         <ul>
-                                            Contacts:
                                             @foreach($host->contacts as $contact)
                                                 <li>{{ $contact }}</li>
                                             @endforeach
                                         </ul>
                                     @endif
                                     @if(isset($host->contact_groups))
+                                        Contact Groups
                                         <ul>
-                                            Contact Groups
                                             @foreach($host->contact_groups as $groups)
                                                 <li>{{ $groups }}</li>
                                             @endforeach
