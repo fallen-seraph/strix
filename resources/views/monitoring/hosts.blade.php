@@ -101,7 +101,7 @@
                                 <select id="contacts" class="form-control" name="contacts">
                                     <option selected disabled>Host</option>
                                     @foreach($hosts as $host)
-                                        <option>{{ $host->host_name }}</option>
+                                        <option value="{{ $host->host_id }}">{{ $host->host_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
