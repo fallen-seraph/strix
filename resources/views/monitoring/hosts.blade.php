@@ -6,6 +6,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">Nagios Hosts and Services</div>
+                    @if (count($hosts) > 0)
                     <div class="panel-body">
                         @foreach ($hosts as $host)
                             <ul>
@@ -44,7 +45,7 @@
                             </ul>
                         @endforeach
                     </div>
-					
+                    @endif
                     <div class="panel-heading">Add Host</div>
                     <div class="panel-body">
 
